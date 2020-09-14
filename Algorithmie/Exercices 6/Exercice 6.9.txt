@@ -1,0 +1,10 @@
+\\ Module principal
+DEBUT
+	redim tab [n - 1]
+	somme = 0
+	Pour i <- 0 à n
+		somme = somme + tab[i]
+	i suivant
+	Ecrire "La somme des éléments du tableau est égale à ", somme, "."
+FIN
+	

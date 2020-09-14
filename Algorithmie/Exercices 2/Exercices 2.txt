@@ -1,0 +1,40 @@
+﻿Exercice 2.1
+
+Le programme écrit à l'écran 231 , puis 462.
+
+Exercice 2.2
+
+Variables Nombre, Carre en numériques
+Début
+Ecrire "Donnez un nombre : "
+Lire Nombre
+Carre <- Nombre ^2
+Ecrire Carre
+Fin
+
+Exercice 2.3
+
+Variables PrixHT, NombreArticles, TauxTVA et PrixTotalTTC en numériques
+Début
+Lire PrixHT
+Lire NombreArticles
+Lire TauxTVA
+PrixTotalTTc <- NombreArticles * PrixHT * TauxTVA
+Ecrire PrixTotalHT
+Fin
+
+Exercice 2.4
+
+Variable A, B, C, D, E, F, G, Variante1, Variante2, Variante3 et Variante4 en chaînes de caractères
+Début
+A <- "belle marquise "
+B <- "vos "
+C <- "beaux "
+D <- "yeux "
+E <- "me font "
+F <- "mourir "
+G <- "d'amour "
+Variante1 <- A & B & D & C & E & F & G
+Variante2 <- B & C & D & A & E & F & G
+Variante3 <- A & B & C & D & E & G & F
+Variante4 <- G & F & E & A & B & C & D 

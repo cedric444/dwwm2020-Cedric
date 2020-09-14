@@ -1,0 +1,15 @@
+\\ Module principal
+DEBUT
+	plusGrandeValeur <- 0
+	Ecrire "Combien de valeurs allez-vous entrer ?"
+	Lire nombreValeurs
+	Redim tab[nombreValeurs - 1]
+	Pour i <- 0 à nombreValeurs - 1
+		Ecrire "Entrez la valeur numéro ", i + 1, ":"
+		Lire valeur[i]
+		Ecrire tab[i]
+	i suivant
+	Pour i <- 0 à nombreValeurs - 1
+		Si valeur[i] > plusGrandeValeur alors
+		plusGrandeValeur <- valeur[i]
+	i suivant
