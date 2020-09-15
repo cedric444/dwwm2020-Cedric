@@ -2,7 +2,7 @@
 $age = readline("Quel âge a l'enfant?");
 switch ($age) {
     case $age > 12 :
-        echo'L\'enfant est dans la catégorie "Poussin".';
+        echo'L\'enfant est dans la catégorie "Cadet".';
     break;
     case $age > 9 :
         echo'L\'enfant est dans la catégorie "Minime".';
