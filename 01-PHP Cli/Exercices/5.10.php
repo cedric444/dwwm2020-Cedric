@@ -24,5 +24,4 @@ $nombreJoués = demandeEntier("Combien de chevaux avez-vous joué?");
 $X = factorielle($nombrePartants) / factorielle($nombrePartants - $nombreJoués);
 $Y = factorielle($nombrePartants) / (factorielle($nombreJoués) * factorielle($nombrePartants - $nombreJoués));
 
-echo "Dans l'ordre, vous avez une chance sur " . $X . " de gagner.\n";
-echo "Dans le désordre, vous avez une chance sur " . $Y . "de gagner.";
+echo "Dans l'ordre, vous avez une chance sur " . $X . " de gagner.\n Dans le désordre, vous avez une chance sur " . $Y . "de gagner.";
