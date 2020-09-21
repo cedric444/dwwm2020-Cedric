@@ -19,4 +19,5 @@ for($i=0; $i<9; $i++) {
 }
 echo $moyenne = $somme / $i;
 
-
+/* fonction somme : array_sum()
+$moyenne = array_sum($tab)/ count($tab); */
