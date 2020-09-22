@@ -29,7 +29,7 @@ function creerTableauTermineParZero() {
 
 // fonction pour afficher un tableau (avec for)
 function afficherTableau($tab) {
-    for($i=0; $i<=count($tab); $i++) {
+    for($i=0; $i<count($tab); $i++) {
         echo $tab[$i]."\t";
     }
 }
