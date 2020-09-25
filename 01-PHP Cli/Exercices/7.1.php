@@ -19,7 +19,7 @@ for($i=0; $i<$nombreValeurs; $i++)
 
 for($i=1; $i< $nombreValeurs; $i++)
 {
-    if($valeur - 1 == $valeur[$i-1])
+    if($valeur[$i] - 1 == $valeur[$i-1])
     {
         echo"Les éléments du tableau sont tous consécutifs.";
     }

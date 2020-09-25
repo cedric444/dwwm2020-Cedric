@@ -1025,25 +1025,38 @@ echo $c;*/
  */
 function testerGagner($nbErreur, $tab)
 {
-    for($i=0;$i<count($tab);$i++)
-    {
-        if ($tab[$i]="_" && $nbErreur>8)
+    
+    
+        if (in_array("_",$tab))
         {
-            $res = -1;
-        }
-        else if($tab[$i]="_" && $nbErreur<8)
-        {
-            $res = 0;
+            if ($nbErreur >=9)
+            {
+                $res = -1;
+            }
+        
+            else
+            {
+                $res = 0;
+            }
         }   
-        else if($tab[$i]!="_" && $nbErreur<8)    
+        else   
         {
             $res = 1;
         }
-    }
+    
     return $res;
 }
-$t = array( 'B', '_', 'N', 'J', 'O', 'U', 'R' );
+/*$t = array( 'B', '_', 'N', 'J', 'O', 'U', 'R' );
 Echo "Cette méthode doit donner -1 et ca donne " . testerGagner(9, $t)."\n";
 Echo "Cette méthode doit donner 0 et ca donne " . testerGagner(3, $t)."\n";
 $t[1] =  'O' ;
-Echo "Cette méthode doit donner 1 et ca donne " . testerGagner(2, $t)."\n";
+Echo "Cette méthode doit donner 1 et ca donne " . testerGagner(2, $t)."\n";*/
+
+/**
+ * fonction qui lance et qui gère une partie
+ * 
+ */
+function lancerPartie()
+{
+    
+}
