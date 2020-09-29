@@ -25,12 +25,22 @@ afficherTableau($t);*/
  * 
  * @return      [array]       $tab[]     
  */
-function coderMot($mot)
+function coderMot($mot, $niveau)
 {
     $tab = str_split($mot);
-    for($i=0;$i<count($tab);$i++)
+    if ($niveau == 1)
     {
-        $tab[$i] = "_";
+        for($i=0;$i<count($tab);$i++)
+        {
+            $tab[$i] = "_";
+        }
+    }
+    else
+    {
+        for($i = 1; $i < count($tab)-1; $i++)
+        {
+            $tab = "_";
+        }
     }
     return($tab);
 }
@@ -1005,19 +1015,30 @@ function creer_dico()
  * @param   string  $mot
  * 
  */
-function choisirMot()
+function choisirMot($niveau)
 {
     $dico = creer_dico();
-    $nb = rand(0, count($dico)-1);
+    if ($niveau == 4)
+    {
+        do{
+            $nb = rand(0, count($dico)-1);
+        }while(strlen($dico[$nb] > 4));
     return $dico[$nb];
+    }
+    else
+    {
+        return $dico[array_rand($dico)];
+    }
 }
 
 /**
- * fonction qui demande une lettre à l'utilisateur, elle vérifie que le caractère est une lettre et le renvoie en majuscule
+ * fonction qui demande une lettre à l'utilisateur, elle vérifie que le caractère est une lettre, la rentre dans un tableau 
+ * et renvoie le tableau avec les lettres déjà proposées.
  * 
- * @return  char
+ * 
+ * @return  array
  */
-function demanderLettre()
+/*function demanderLettre()
 {
     do
     {
@@ -1025,6 +1046,33 @@ function demanderLettre()
     }while(!intlchar::isalpha($lettre));
     
     return strtoupper($lettre);
+}*/
+function demanderLettre()
+{
+    $listeLettresDejaPropose = [];
+
+    do
+    {
+        $lettre = strtoupper(readline("\nChoisissez une lettre : "));  
+    }while(!intlchar::isalpha($lettre));
+
+    $listeLettresDejaPropose[] = $lettre;
+    $taille = count($listeLettresDejaPropose);
+    
+    echo"Les lettres déjà proposées : ";
+    for($i = 0; $i<$taille; $i++)
+    {
+        if ($i == $taille-1)
+        {
+            echo $listeLettresDejaPropose[$i];
+        }
+        else
+        {
+            echo $listeLettresDejaPropose[$i].", ";
+        }
+    }
+   
+    return $listeLettresDejaPropose;
 }
 /*$c = DemanderLettre();
 echo $c;*/
@@ -1063,24 +1111,63 @@ $t[1] =  'O' ;
 Echo "Cette méthode doit donner 1 et ca donne " . testerGagner(2, $t)."\n";*/
 
 /**
+ * fonction qui demande le niveau de difficulté à l'utilisateur
+ * 
+ * @return  int     niveau de difficulté
+ *  
+ */
+function choisirNiveau()
+{
+    do{
+        echo"\t\tNiveau de difficulté :\n";
+        echo"\tNiveau 1\tNiveau 2\tNiveau 3\tNiveau 4\n";
+        $niveau = readline(" : ");
+
+        if($niveau > 4 || $niveau <1)
+        {
+            echo"Réponse invalide! Recommencez.\n";
+        }   
+    }while($niveau > 4 || $niveau < 1);
+
+    switch ($niveau)
+    {
+        case "1":
+            echo"Niveau Facile! C'est parti!\n";
+        break;
+        case "2":
+            echo"Niveau moyen! C'est parti!\n";
+        break;
+        case "3":
+            echo"Niveau difficile! C'est parti!\n";
+        break;
+        case "4": 
+            echo"Mots courts! C'estparti!\n";
+        break;
+    }
+    return $niveau;
+}
+
+/**
  * fonction qui lance et qui gère une partie
  * 
  */
-function lancerPartie()
+function lancerPartie($niveau)
 {
-    $motATrouver = choisirMot();
+    $motATrouver = choisirMot($niveau);
     $tabMotATrouver = str_split($motATrouver);
-    $motCode = coderMot($motATrouver);
+    $motCode = coderMot($motATrouver, $niveau);
     $nbErreur = 0;
     $gagne = 0;
     $mauvaiseLettre = [];
     do{
+        echo"\n\n\t";
         afficherTableau($motCode);
         if(!empty($mauvaiseLettre))
             afficherMauvaisesLettres($mauvaiseLettre);
         
                 
-        $lettre = demanderLettre();
+        $listeLettresDejaPropose = demanderLettre();
+        $lettre = end($listeLettresDejaPropose);
         $listePositions = testerLettre ($lettre, $tabMotATrouver, 0);
         if(empty($listePositions))
         {
@@ -1093,6 +1180,7 @@ function lancerPartie()
         }
         dessinerPendu($nbErreur);
         $gagne = testerGagner($nbErreur, $motCode);
+        echo chr(27).chr(91).'H'.chr(27).chr(91).'J';
     }while($gagne == 0);
     if($gagne == 1)
     {
@@ -1104,4 +1192,5 @@ function lancerPartie()
     }
     
 }
-lancerPartie();
+$niveau = choisirNiveau();
+lancerPartie($niveau);
