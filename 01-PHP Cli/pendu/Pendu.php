@@ -113,12 +113,29 @@ afficherTableau( ajouterUneLettre('K', $t, 3));*/
  */
 function ajouterLesLettres($lettre, $tab, $listePosition)
 {
-    foreach($listePosition as $elt)
-    {
-        $tab = ajouterUneLettre($lettre, $tab, $elt);  
-    } 
-    return $tab;
-}
+    case 1:
+        foreach($listePosition as $elt)
+        {
+            $tab = ajouterUneLettre($lettre, $tab, $elt);  
+        } 
+        return $tab;
+    case 2:
+    case 3:
+        // on place les lettres aléatoirement
+        $test = testerLettre($lettre, $tab, 0); // on cherche les lettres déjà placées dans le mot codé
+        $pos = array_diff($listePosition, $test); // différence entre les tableaux
+        if(!empty($pos))
+            {
+                $posEtudiee = array_rand($pos);  // s'il reste de lettres à placer
+                $tab =ajouterUneLettre($lettre, $tab, $pos[$pos€tudiee]);
+                return $tab;
+            }
+            else    //il n'y a plus de lettre à placer
+            {
+                return -1;
+            }
+            return -1;
+        }
 /*$motATrouver="BONJOUR";
 $t = array( 'B', '_', 'N', 'J', '_', 'U', '_' );
 echo "Cette méthode doit donner B O N J O U _ et ca donne ";
