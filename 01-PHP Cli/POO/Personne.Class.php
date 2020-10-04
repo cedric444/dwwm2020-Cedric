@@ -6,15 +6,17 @@ class Personne
     private $_nom;
     private $_prenom;
     private $_age;
+    private $_voiturePrincipale;
 
     //Méthodes
 
     //Constructeur
-    public function __construct($nom, $prenom, $age)
+    public function __construct($nom, $prenom, $age, $voiturePrincipale)
     {
         $this->setNom($nom);
         $this->setPrenom($prenom);
         $this->setAge($age);
+        $this->setvoiturePrincipale($voiturePrincipale);
     }
 
     //Assesseurs
@@ -31,6 +33,10 @@ class Personne
     {
         return $this->_age;
     }
+    public function getVoiturePrincipale()
+    {
+        return $this->_voiturePrincipale;
+    }
     
     //Setter
     public function setNom($nom)
@@ -45,12 +51,16 @@ class Personne
     {
         $this->_age = $age > 0 ? $age : null;
     }
+    public function setVoiturePrincipale(Voiture $voiturePrincipale)
+    {
+        $this->_voiturePrincipale = $voiturePrincipale;
+    }
 
     // Autres méthodes
 
     public function toString()
     {
-        $reponse = "le nom de la personne est $this->_nom, son prénom $this->_prenom et son âge $this->_age.";
+        $reponse = "le nom de la personne est $this->_nom, son prénom $this->_prenom et son âge $this->_age. Il possède comme voiture : $this->_voiturePrincipale.";
         return $reponse;
     }
     public function equalsTo($objet)

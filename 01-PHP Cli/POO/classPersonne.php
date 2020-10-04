@@ -6,6 +6,7 @@ class Personne
     private $_prenom;
     private $_dateDeNaissance;
     private $_adresse;
+    private 
 
     //Constructeurs
     public function __construct()
