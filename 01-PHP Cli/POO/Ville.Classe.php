@@ -17,15 +17,15 @@ Class Ville
     }
 
     //getter
-    public function getNom($nom)
+    public function getNom()
     {
         return $this->_nom;
     }
-    public function getRegion($region)
+    public function getRegion()
     {
         return $this->_region;
     }
-    public function getPays($pays)
+    public function getPays()
     {
         return $this->_pays;
     }
@@ -47,12 +47,12 @@ Class Ville
     //Autres fonctions
     public function toString()
     {
-        $reponse = "La ville $this->_nom se situe dans la région $this->_region en $this->_pays.";
+        $reponse = "La ville $this->getNom() se situe dans la région $this->getRegion() en $this->getPays().";
         return $reponse;
     }
     public function equalsTo($objet)
     {
-        if($this->_nom == $objet->getNom() && $this->_region == $objet->getRegion() && $this->_pays == $objet->getPays())
+        if($this->getNom() == $objet->getNom() && $this->getRegion() == $objet->getRegion() && $this->getPays() == $objet->getPays())
         {
             return true;
         }
@@ -60,11 +60,11 @@ Class Ville
     }
     public function compareTo($objet)
     {
-        if($this->_nom > $objet->getNom())
+        if($this->getNom() > $objet->getNom())
         {
             return 1;
         }
-        else if($this->_nom == $objet->getNom())
+        else if($this->getNom() == $objet->getNom())
         {
             return 0;
         }

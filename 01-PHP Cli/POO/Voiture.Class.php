@@ -58,12 +58,12 @@ class Voiture
 
     public function toString()
     {
-        $reponse = "La voiture est de marque $this->_marque, de modèle $this->_modele de l'année $this->_annee. Son immatriculation est $this->_immat.";
+        $reponse = "La voiture est de marque $this->getMarque(), de modèle $this->getModele() de l'année $this->getAnnee(). Son immatriculation est $this->getImmat().";
         return $reponse;
     }
     public function equalsTo($objet)
     {
-        if ($this->_marque == $objet->getMarque() && $this->_modele == $objet->getModele() && $this->_annee == $objet->getAnnee() && $this->_immat == $objet->getAnnee())
+        if ($this->getMarque() == $objet->getMarque() && $this->getModele() == $objet->getModele() && $this->getAnnee == $objet->getAnnee() && $this->getImmat() == $objet->getAnnee())
         {
             return true;
         }
@@ -71,11 +71,11 @@ class Voiture
     }
     public function compareTo($objet)
     {
-        if ($this->_annee< $objet->getAnnee())
+        if ($this->getAnnee()< $objet->getAnnee())
         {
             return 1;
         }
-        if ($this->_annee == $objet->getAnnee()) {
+        if ($this->getAnnee() == $objet->getAnnee()) {
             return 0;
         }
         else

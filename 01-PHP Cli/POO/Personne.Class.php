@@ -11,12 +11,13 @@ class Personne
     //Méthodes
 
     //Constructeur
-    public function __construct($nom, $prenom, $age, $voiturePrincipale)
+    public function __construct($nom, $prenom, $age, $voiturePrincipale, $villeDeResidence)
     {
         $this->setNom($nom);
         $this->setPrenom($prenom);
         $this->setAge($age);
         $this->setvoiturePrincipale($voiturePrincipale);
+        $this->setVille($villeDeResidence);
     }
 
     //Assesseurs
@@ -37,6 +38,10 @@ class Personne
     {
         return $this->_voiturePrincipale;
     }
+    public function getVille()
+    {
+        return $this->_villeDeResidence;
+    }
     
     //Setter
     public function setNom($nom)
@@ -55,17 +60,21 @@ class Personne
     {
         $this->_voiturePrincipale = $voiturePrincipale;
     }
+    public function setVille($villeDeResidence)
+    {
+        $this->_villeDeResidence = $villeDeResidence;
+    }
 
     // Autres méthodes
 
     public function toString()
     {
-        $reponse = "le nom de la personne est $this->_nom, son prénom $this->_prenom et son âge $this->_age. Il possède comme voiture : $this->_voiturePrincipale.";
+        $reponse = "le nom de la personne est $this->getNom(), son prénom $this->getPrenom() et son âge $this->getAge(). Elle possède comme voiture : $this->getVoiturePrincipale(). Elle réside à : $this->getVille().";
         return $reponse;
     }
     public function equalsTo($objet)
     {
-        if($this->_nom == $objet->getNom() && $this->_prenom == $objet->getPrenom() && $this->_age == $objet->getAge())
+        if($this->getNom() == $objet->getNom() && $this->getPrenom() == $objet->getPrenom() && $this->getAge() == $objet->getAge())
         {
             return true;
         }
@@ -73,17 +82,28 @@ class Personne
     }
     public function compareTo($objet)
     {
-        if($this->_nom > $objet->getNom())
+        if($this->getNom() > $objet->getNom())
         {
             return 1;
         }
-        else if($this->_nom == $objet->getNom())
-        {
-            return 0;
-        }
-        else
+        else if($this->getNom() < $objet->getNom())
         {
             return -1;
         }
+        else
+        {
+            if($this->getPrenom() > $objet->getPrenom())
+            {
+                return 1;
+            }
+            else if($this->getPrenom() < $objet->getPrenom())
+            {
+                return -1;
+            }
+            else{
+                return 0;
+            }
+        }
+        
     }
 }

@@ -9,6 +9,9 @@ class Employe
     private $_poste;
     private $_salaire;
     private $_service;
+    static private $_listeSalaries;
+    static private $_compteur = 0;
+    private $_agenceRattache;
 
     /*****************Accesseurs***************** */
     public function getNom()
@@ -70,7 +73,33 @@ class Employe
     {
         $this->_service = $service;
     }
+    public static function getListeSalaries()
+    {
+        return self::$_listeSalaries;
+    }
 
+    public static function setListeSalaries($listeSalaries)
+    {
+        self::$_listeSalaries = $listeSalaries;
+    }
+    public static function getCompteur()
+    {
+        return self::$_compteur;
+    }
+
+    public static function setCompteur($compteur)
+    {
+        self::$_compteur = $compteur;
+    }
+    public function getAgenceRattache()
+    {
+        return $this->_agenceRattache;
+    }
+
+    public function setAgenceRattache($agenceRattache)
+    {
+        $this->_agenceRattache = $agenceRattache;
+    }
     /*****************Constructeur***************** */
 
     public function __construct(array $options = [])
@@ -79,6 +108,8 @@ class Employe
         {
             $this->hydrate($options);
         }
+        self::$_compteur++;
+        
     }
     public function hydrate($data)
     {
@@ -101,7 +132,7 @@ class Employe
      */
     public function toString()
     {
-        return "L'employé s'appelle $this->getNom() $this->getPrenom. Il a été embauché le $this->getDate() au poste de $this->getPoste dans le service $this->getService. Son salaire s'élève à $this->getSalaire().";
+        return "L'employé s'appelle $this->getNom() $this->getPrenom(). Il a été embauché le $this->getDate() au poste de $this->getPoste() dans le service $this->getService(). Son salaire s'élève à $this->getSalaire().";
     }
 
     /**
@@ -124,21 +155,79 @@ class Employe
      * @param [type] $obj2
      * @return void
      */
-    public static function compareTo($obj1, $obj2)
+    public static function compareToNomPrenom($obj1, $obj2)
     {
-        return 0;
+        if($obj1->getNom() < $obj2->getNom())
+        {
+            return -1;
+        }
+        else if ($obj1->getNom() > $obj2->getNom())
+        {
+            return 1;
+        }
+        if ($obj1->getPrenom() < $obj2->getPrenom())
+        {
+            return -1;
+        }
+        else if ($obj1->getPrenom() > $obj2->getPrenom())
+        {
+            return 1;
+        } 
+        else
+        {
+            return 0;
+        }
     }
     public function anciennete()
     {
-        $dateActu = new Datetime('now');
-        $anciennete =  $this->getDateEmbauche()->diff($dateActu);
-        return $anciennete->format("y"); 
+        $dateActu = new DateTime("now");
+        $diff = $dateActu->diff($this->getDateEmbauche());
+        $anciennete = $diff->format("%Y")*1;
+        return $anciennete;  
+    }
+    private function primeSalaire()
+    {
+        $primeSalaire = $this->getSalaire() * 1000 * 5 / 100;
+        return $primeSalaire;
+    }
+    private function primeAnciennete()
+    {
+        $primeAnciennete = $this->getSalaire() * 1000 * 2 / 100 * $this->anciennete();
+        return $primeAnciennete;
     }
     public function prime()
     {
-        $prime = (5 *($this->getSalaire()) / 100) + (((2 * ($this->anciennete()) * $this->getSalaire)) /100);
-        echo "La prime de $this->_prime été transférée sur votre compte.";
+        $prime = $this->primeSalaire() + $this->primeAnciennete();
         return $prime;
     }
-    
+    static public function compareToServiceNomPrenom($obj1, $obj2)
+    {
+        
+        if ($obj1->getService() < $obj2->getService())
+        {
+            return -1;
+        }
+        else if($obj1->getService() > $obj2->getService())
+        {
+            return 1;
+        }
+        else
+        {
+            return self::compareToNomPrenom($obj1, $obj2);
+        }
+    }
+    public function masseSalariale()
+    {
+        return $this->getSalaire()*1000 + $this->prime();
+    }
+    public function chequeVacances()
+    {
+        if ($this->getAnciennete() > 1)
+        {
+            return 1;
+        }
+        else
+        return 0;
+    }
+
 }
