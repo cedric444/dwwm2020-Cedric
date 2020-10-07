@@ -1,13 +1,11 @@
 <?php
-class Agence
+class Enfant
 {
 
     /*****************Attributs***************** */
     private $_nom;
-    private $_adresse;
-    private $_codePostal;
-    private $_ville;
-    private $_restauration;
+    private $_prenom;
+    private $_age;
 
     /*****************Accesseurs***************** */
     public function getNom()
@@ -19,43 +17,26 @@ class Agence
     {
         $this->_nom = ucfirst($nom);
     }
-    public function getAdresse()
+    public function getPrenom()
     {
-        return $this->_adresse;
+        return $this->_prenom;
     }
 
-    public function setAdresse($adresse)
+    public function setPrenom($prenom)
     {
-        $this->_adresse = $adresse;
-    }
-    public function getCodePostal()
-    {
-        return $this->_codePostal;
+        $this->_prenom = ucfirst($prenom);
     }
 
-    public function setCodePostal($codePostal)
+    public function getAge()
     {
-        $this->_codePostal = $codePostal;
+        return $this->_age;
     }
 
-    public function getVille()
+    public function setAge($age)
     {
-        return $this->_ville;
+        $this->_age = $age;
     }
-
-    public function setVille($ville)
-    {
-        $this->_ville = strtoupper($ville);
-    }
-    public function getRestauration()
-    {
-        return $this->_restauration;
-    }
-
-    public function setRestauration($restauration)
-    {
-        $this->_restauration = $restauration;
-    }
+    
     /*****************Constructeur***************** */
 
     public function __construct(array $options = [])
@@ -86,7 +67,7 @@ class Agence
      */
     public function toString()
     {
-        return "L'agence ".$this->getNom()." se situe à l'adresse suivante: ".$this->getAdresse() .", ".$this->getCodePostal(). ",".$this->getVille().".\nRestauration : ".$this->getRestauration();
+        return "Nom : ".$this->getNom()." prénom : ".$this->getPrenom()." âge : ".$this->getAge();
     }
 
     /**
@@ -113,16 +94,26 @@ class Agence
     {
         return 0;
     }
-    public function modeRestauration($restauration)
+    public function recoitChequeNoel()
     {
-        $restauration = readline("L'agence possède-t-elle un restaurant d'entreprise (O/N)? ");
-        if($restauration == "N")
+        $a = $this->getAge();
+        
+        if ($a > 0 && $a < 11)
         {
-            return  "L'employé a droit aux tickets restaurant.";
+            return 20;
+        }
+        else if ($a <16)
+        {
+            return 30;
+        }
+        else if ($a < 19)
+        {
+            return 50;
         }
         else
         {
-            return "L'agence possède un restaurant d'entreprise.";
+            return 0;
         }
+        
     }
 }

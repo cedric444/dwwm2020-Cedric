@@ -1,60 +1,39 @@
 <?php
-class Agence
+class LieuStockage
 {
 
     /*****************Attributs***************** */
-    private $_nom;
-    private $_adresse;
-    private $_codePostal;
-    private $_ville;
-    private $_restauration;
+    private $_NumeroEntrepot;
+    private $_Zone;
+    private $_Ville;
 
     /*****************Accesseurs***************** */
-    public function getNom()
+    public function getNumeroEntrepot()
     {
-        return $this->_nom;
+        return $this->_NumeroEntrepot;
     }
 
-    public function setNom($nom)
+    public function setNumeroEntrepot($NumeroEntrepot)
     {
-        $this->_nom = ucfirst($nom);
+        $this->_NumeroEntrepot = $NumeroEntrepot;
     }
-    public function getAdresse()
+    public function getZone()
     {
-        return $this->_adresse;
-    }
-
-    public function setAdresse($adresse)
-    {
-        $this->_adresse = $adresse;
-    }
-    public function getCodePostal()
-    {
-        return $this->_codePostal;
+        return $this->_Zone;
     }
 
-    public function setCodePostal($codePostal)
+    public function setZone($Zone)
     {
-        $this->_codePostal = $codePostal;
+        $this->_Zone = $Zone;
     }
-
     public function getVille()
     {
-        return $this->_ville;
+        return $this->_Ville;
     }
 
-    public function setVille($ville)
+    public function setVille($Ville)
     {
-        $this->_ville = strtoupper($ville);
-    }
-    public function getRestauration()
-    {
-        return $this->_restauration;
-    }
-
-    public function setRestauration($restauration)
-    {
-        $this->_restauration = $restauration;
+        $this->_Ville = $Ville;
     }
     /*****************Constructeur***************** */
 
@@ -86,7 +65,7 @@ class Agence
      */
     public function toString()
     {
-        return "L'agence ".$this->getNom()." se situe à l'adresse suivante: ".$this->getAdresse() .", ".$this->getCodePostal(). ",".$this->getVille().".\nRestauration : ".$this->getRestauration();
+        return "";
     }
 
     /**
@@ -112,17 +91,5 @@ class Agence
     public static function compareTo($obj1, $obj2)
     {
         return 0;
-    }
-    public function modeRestauration($restauration)
-    {
-        $restauration = readline("L'agence possède-t-elle un restaurant d'entreprise (O/N)? ");
-        if($restauration == "N")
-        {
-            return  "L'employé a droit aux tickets restaurant.";
-        }
-        else
-        {
-            return "L'agence possède un restaurant d'entreprise.";
-        }
     }
 }

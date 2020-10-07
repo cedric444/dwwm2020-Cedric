@@ -12,6 +12,7 @@ class Employe
     static private $_listeSalaries;
     static private $_compteur = 0;
     private $_agenceRattache;
+    private $_listeEnfant =[];
 
     /*****************Accesseurs***************** */
     public function getNom()
@@ -21,7 +22,7 @@ class Employe
 
     public function setNom($nom)
     {
-        $this->_nom = $nom;
+        $this->_nom = ucfirst($nom);
     }
 
     public function getPrenom()
@@ -31,7 +32,7 @@ class Employe
 
     public function setPrenom($prenom)
     {
-        $this->_prenom = $prenom;
+        $this->_prenom = ucfirst($prenom);
     }
 
     public function getDateEmbauche()
@@ -51,7 +52,7 @@ class Employe
 
     public function setPoste($poste)
     {
-        $this->_poste = $poste;
+        $this->_poste = ucfirst($poste);
     }
 
     public function getSalaire()
@@ -71,7 +72,7 @@ class Employe
 
     public function setService($service)
     {
-        $this->_service = $service;
+        $this->_service = ucfirst($service);
     }
     public static function getListeSalaries()
     {
@@ -96,9 +97,18 @@ class Employe
         return $this->_agenceRattache;
     }
 
-    public function setAgenceRattache($agenceRattache)
+    public function setAgenceRattache(Agence $agenceRattache)
     {
         $this->_agenceRattache = $agenceRattache;
+    }
+    public function getListeEnfant()
+    {
+        return $this->_listeEnfant;
+    }
+
+    public function setListeEnfant(Array $listeEnfant)
+    {
+        $this->_Enfant = $listeEnfant;
     }
     /*****************Constructeur***************** */
 
@@ -132,9 +142,41 @@ class Employe
      */
     public function toString()
     {
-        return "L'employé s'appelle $this->getNom() $this->getPrenom(). Il a été embauché le $this->getDate() au poste de $this->getPoste() dans le service $this->getService(). Son salaire s'élève à $this->getSalaire().";
-    }
-
+        $aff = "\n\n*** SALARIE ***\n";
+        $aff .="L'employé s'appelle ".$this->getNom()." ".$this->getPrenom().". Il a été embauché le ".$this->getDateEmbauche()->format('d/m/y')." au poste de ".$this->getPoste();
+        $aff .= " dans le service ".$this->getService().". Il est rattaché à l'agence ".$this->getAgenceRattache()->toString().". Son salaire annuel s'élève à ".$this->getSalaire()."000 euros.";
+        $aff .= $this->recoitChequeVacances()? "Ce salarié bénéficie de chèques vacances\n" : "Ce salarié ne bénéficie pas de chèque vacances.\n";
+        $aff .= "\n***ENFANTS***\n";
+        if (count($this->getListeEnfant() >0)
+        {
+            foreach($this->getListeEnfant() as $enfant)
+            {
+                $aff .= $enfant->toString;
+            }
+        }
+        else
+        {
+            $aff .= "Pas d'enfant";
+        }
+        $aff .= "\n*** CHEQUES NOEL***\n";
+        $cheques = $this->recoitChequeNoel();
+        if (array_sum($cheques) > 0)
+        {
+            foreach ($cheques as $key=>$nbCheque) // on parcours le tableau de chèques
+            {
+                if ($nbCheque > 0)    //  si le nombre de chèque est supérieur à 0
+                {
+                    $aff .= $nbCheque . " chèque(s) de ".$key."\n";   //$nbCheque contient le nombre de chèques  et $key, la valeur du chèque
+                }
+            }
+        }
+        else
+        {
+            $aff .= "Pas de chèques de Noël";
+        }
+        return $aff;
+        }
+          
     /**
      * Renvoi vrai si l'objet en paramètre est égal à l'objet appelant
      *
@@ -155,7 +197,7 @@ class Employe
      * @param [type] $obj2
      * @return void
      */
-    public static function compareToNomPrenom($obj1, $obj2)
+    public static function compareToNomPrenom($obj1, $obj2)                     //méthode qui compare deux objets en fonction du nom des employés
     {
         if($obj1->getNom() < $obj2->getNom())
         {
@@ -178,29 +220,29 @@ class Employe
             return 0;
         }
     }
-    public function anciennete()
-    {
-        $dateActu = new DateTime("now");
-        $diff = $dateActu->diff($this->getDateEmbauche());
-        $anciennete = $diff->format("%Y")*1;
+    public function anciennete()                                    //On crée une méthode pour calculer l'ancienneté de l'employé
+    {   
+        $dateActu = new DateTime("now");                            //On appelle la classe DateTime pour générer la date d'aujourd'hui
+        $diff = $dateActu->diff($this->getDateEmbauche());          //On utilise la fonction diff() pour calculer la différence entre la date actuelle et la date d'embauche
+        $anciennete = $diff->format("%Y")*1;                        //On met la différence au format année
         return $anciennete;  
     }
-    private function primeSalaire()
+    private function primeSalaire()                                 //méthode qui va renvoyer la prime basée sur le salaire
     {
         $primeSalaire = $this->getSalaire() * 1000 * 5 / 100;
         return $primeSalaire;
     }
-    private function primeAnciennete()
+    private function primeAnciennete()                              //méthode qui renvoie la prime basée sur l'ancienneté
     {
         $primeAnciennete = $this->getSalaire() * 1000 * 2 / 100 * $this->anciennete();
         return $primeAnciennete;
     }
-    public function prime()
+    public function prime()                                         //méthode qui renvoie la prime totale
     {
         $prime = $this->primeSalaire() + $this->primeAnciennete();
         return $prime;
     }
-    static public function compareToServiceNomPrenom($obj1, $obj2)
+    static public function compareToServiceNomPrenom($obj1, $obj2)  //on crée une méthode qui compare deux objet en fonction du service de l'employé, qui va permettre de trier le tableau
     {
         
         if ($obj1->getService() < $obj2->getService())
@@ -216,18 +258,25 @@ class Employe
             return self::compareToNomPrenom($obj1, $obj2);
         }
     }
-    public function masseSalariale()
+    public function masseSalariale()                                //méthode qui renvoie la masse salariale d'un employé
     {
         return $this->getSalaire()*1000 + $this->prime();
     }
-    public function chequeVacances()
+    public function recoitChequeVacances()                                //méthode qui permet de savoir si un employé a droit au chèque vacance
     {
-        if ($this->getAnciennete() > 1)
-        {
-            return 1;
-        }
-        else
-        return 0;
+        return ($this->anciennete() >= 1);
+        
     }
-
+    
+    public function recoitChequeNoel()
+    {
+        $cheque = ["0"=>0, "20"=>0, "30"=>0,"50"=>0];
+        foreach($this->getListeEnfant() as $enfant)
+        {
+            $cheque[$enfant->montantChequeNoel()]+=1;
+        }
+        $cheque["0"]= 0;
+        return $cheque;
+    }
+    
 }
