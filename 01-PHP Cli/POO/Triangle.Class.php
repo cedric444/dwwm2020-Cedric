@@ -1,28 +1,29 @@
 <?php
-class Categorie
+class Triangle
 {
 
     /*****************Attributs***************** */
-    private $_libelle;
-    private $_TVA;
+    private $_base;
+    private $_hauteur;
+
     /*****************Accesseurs***************** */
-    public function getLibelle()
+    public function getBase()
     {
-        return $this->_libelle;
+        return $this->_base;
     }
 
-    public function setLibelle($libelle)
+    public function setBase($base)
     {
-        $this->_libelle = $libelle;
+        $this->_base = $base;
     }
-    public function getTVA()
+    public function getHauteur()
     {
-        return $this->_TVA;
+        return $this->_hauteur;
     }
 
-    public function setTVA($TVA)
+    public function setHauteur($hauteur)
     {
-        $this->_TVA = $TVA;
+        $this->_hauteur = $hauteur;
     }    
     /*****************Constructeur***************** */
 
@@ -54,7 +55,7 @@ class Categorie
      */
     public function toString()
     {
-        return "";
+        return "Base : ".$this->getBase().", Hauteur : ".$this->getHauteur().", Perimetre : ".$this->perimetre(). " Aire : ".$this->aire();
     }
 
     /**
@@ -77,21 +78,19 @@ class Categorie
      * @param [type] $obj2
      * @return void
      */
-    public static function compareTo(Categorie $obj1, Categorie $obj2)
+    public static function compareTo($obj1, $obj2)
     {
-        if($obj1->getLibelle() > $obj2->getLibelle())
-        {
-            return 1;
-        }
-        else if ($obj1->getLibelle() < $obj2->getLibelle())
-        {
-            return -1;
-        }
-        else
-            return 0;
+        return 0;
     }
-
-    
-
+    public function perimetre()
+    {
+        $c = sqrt(pow($this->getBase(), 2) + pow($this->getHauteur(), 2));
+        $perimetre = $this->getBase() +$this->getHauteur() + $c;
+        return $perimetre;
+    }
+    public function aire()
+    {
+        return $this->getBase() * $this->getHauteur() /2; 
+    }
     
 }

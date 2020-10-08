@@ -1,33 +1,26 @@
 <?php
-class Categorie
+class Pyramide extends Triangle
 {
 
     /*****************Attributs***************** */
-    private $_libelle;
-    private $_TVA;
+    private $_hauteur2;
+
     /*****************Accesseurs***************** */
-    public function getLibelle()
+    public function getHauteur()
     {
-        return $this->_libelle;
+        return $this->_hauteur2;
     }
 
-    public function setLibelle($libelle)
+    public function setHauteur($hauteur2)
     {
-        $this->_libelle = $libelle;
+        $this->_hauteur2 = $hauteur2;
     }
-    public function getTVA()
-    {
-        return $this->_TVA;
-    }
-
-    public function setTVA($TVA)
-    {
-        $this->_TVA = $TVA;
-    }    
+    
     /*****************Constructeur***************** */
 
     public function __construct(array $options = [])
     {
+        parent::__construct($options);
         if (!empty($options)) // empty : renvoi vrai si le tableau est vide
         {
             $this->hydrate($options);
@@ -54,7 +47,7 @@ class Categorie
      */
     public function toString()
     {
-        return "";
+        return parent::toString()."\n hauteur : ".$this->getHauteur."\nVolume : ".$this->volume();
     }
 
     /**
@@ -77,21 +70,14 @@ class Categorie
      * @param [type] $obj2
      * @return void
      */
-    public static function compareTo(Categorie $obj1, Categorie $obj2)
+    public static function compareTo($obj1, $obj2)
     {
-        if($obj1->getLibelle() > $obj2->getLibelle())
-        {
-            return 1;
-        }
-        else if ($obj1->getLibelle() < $obj2->getLibelle())
-        {
-            return -1;
-        }
-        else
-            return 0;
+        return 0;
     }
-
     
-
+    public function volume()
+    {
+        return parent::aire() / 3 * $this->getHauteur();
+    }
     
 }

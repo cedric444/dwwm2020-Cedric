@@ -1,29 +1,21 @@
 <?php
-class Categorie
+class Cercle
 {
 
     /*****************Attributs***************** */
-    private $_libelle;
-    private $_TVA;
+    private $_diametre;
+
     /*****************Accesseurs***************** */
-    public function getLibelle()
+    public function getDiametre()
     {
-        return $this->_libelle;
+        return $this->_diametre;
     }
 
-    public function setLibelle($libelle)
+    public function setDiametre($diametre)
     {
-        $this->_libelle = $libelle;
+        $this->_diametre = $diametre;
     }
-    public function getTVA()
-    {
-        return $this->_TVA;
-    }
-
-    public function setTVA($TVA)
-    {
-        $this->_TVA = $TVA;
-    }    
+    
     /*****************Constructeur***************** */
 
     public function __construct(array $options = [])
@@ -54,7 +46,7 @@ class Categorie
      */
     public function toString()
     {
-        return "";
+        return "Diamètre : ".$this->getDiametre().", Perimètre : ".$this->perimetre()." Aire : ".$this->aire();
     }
 
     /**
@@ -77,21 +69,17 @@ class Categorie
      * @param [type] $obj2
      * @return void
      */
-    public static function compareTo(Categorie $obj1, Categorie $obj2)
+    public static function compareTo($obj1, $obj2)
     {
-        if($obj1->getLibelle() > $obj2->getLibelle())
-        {
-            return 1;
-        }
-        else if ($obj1->getLibelle() < $obj2->getLibelle())
-        {
-            return -1;
-        }
-        else
-            return 0;
+        return 0;
     }
-
-    
-
+    public function perimetre()
+    {
+        return  $this->getDiametre()*pi();
+    }
+    public function aire()
+    {
+        return pi() * pow($this->getDiametre()/2, 2);   
+    }
     
 }

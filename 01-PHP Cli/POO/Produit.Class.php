@@ -12,7 +12,7 @@ class Produit
     private $_dateValidite;
     private $_categorie;
     private $_lieuxStockage =[];
-    private $_compteur=0;
+    private static $_compteur=0;
     
 
     /*****************Accesseurs***************** */
@@ -66,7 +66,7 @@ class Produit
         return $this->_dateValidite;
     }
 
-    public function setDateValidite($dateValidite)
+    public function setDateValidite(DateTime $dateValidite)
     {
         $this->_dateValidite = $dateValidite;
     }
@@ -84,7 +84,7 @@ class Produit
         return $this->_lieuxStockage;
     }
 
-    public function setLieuxStockage(LieuStockage $lieuxStockage)
+    public function setLieuxStockage(Array $lieuxStockage)
     {
         $this->_lieuxStockage = $lieuxStockage;
     }
@@ -154,46 +154,54 @@ class Produit
     {
         return 0;
     }
+    private function renvoiLieuxStockage()
+    {
+        $aff="";
+        foreach($this->getLieuxStockage() as $lieu)
+        {
+            $aff= $lieu->toString();
+        }
+        return $aff;
+    }
     public function estPerime()                                                     // On génère la date actuelle, on fait la différence avec la date de validité
     {                                                                               // si la différence est inférieure à 0, le produit est périmé
         $dateActu = new DateTime('now');
-        $diff = ($dateActu->diff($this->getDateValidite()))->format('d');
+        $diff = $dateActu->diff($this->getDateValidite());
         return $diff < 0; 
     }
-    public function entreEnStock() 
+    public function entreEnStock($lieu) 
     {
-        
+        $lieux = $this->getLieuxStockage();
+        $lieux[] = $lieu; 
+        return $this->setLieuxStockage($lieux);
     }
     public function prixTTC()                                                      // méthode qui calcule le prix TTC à partir du prix HT et de la TVA
     {
-        $prixTTC = $this->getPrixHT() + ($this->getPrixHT() * $this->getTVA());
+        $prixTTC = $this->getPrixHT() + $this->getPrixHT() * ($this->getCategorie()->getTVA()/100);
         return $prixTTC; 
     }
-    public function triCategorieDesignation($obj1, $obj2)                                      // méthode qui va trier les produit par catégorie puis par désignation
+    public static function triCategorieDesignation(Produit $obj1, Produit $obj2)                                      // méthode qui va trier les produit par catégorie puis par désignation
     {
-        if($obj1->getCategorie() < $obj2->getCategorie())
+        $comp = Categorie::compareTo($obj1->getCategorie(), $obj2->getCategorie());
+        if($comp==0)
         {
-            return 1;
-        }
-        else if ($obj1->getCategorie() > $obj2->getCategorie())
-    
-        {
-            return -1;
-        }
-        else if ($obj1->getCategori() == $obj2->getCategorie())
-        {
-            if($obj1->getDesignation()< $obj2->getDesignation())
+            if($obj1->getDesignation() > $obj2->getDesignation())
             {
                 return 1;
             }
-            else if ($obj1->getDesignation()>$obj2->getDesignation())
+            else if ($obj1->getDesignation() < $obj2->getDesignation())
             {
                 return -1;
             }
+            else
+            {
+                return 0;
+            }
         }
         else
-            return 0;
+        {
+            return $comp;
+        }
     }
-
     
 }

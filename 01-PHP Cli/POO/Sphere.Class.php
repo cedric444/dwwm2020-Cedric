@@ -1,33 +1,18 @@
 <?php
-class Categorie
+class Sphere extends Cercle
 {
 
     /*****************Attributs***************** */
-    private $_libelle;
-    private $_TVA;
+    private $_xxx;
+
     /*****************Accesseurs***************** */
-    public function getLibelle()
-    {
-        return $this->_libelle;
-    }
 
-    public function setLibelle($libelle)
-    {
-        $this->_libelle = $libelle;
-    }
-    public function getTVA()
-    {
-        return $this->_TVA;
-    }
-
-    public function setTVA($TVA)
-    {
-        $this->_TVA = $TVA;
-    }    
+    
     /*****************Constructeur***************** */
 
     public function __construct(array $options = [])
     {
+        parent::__construct($options);
         if (!empty($options)) // empty : renvoi vrai si le tableau est vide
         {
             $this->hydrate($options);
@@ -54,7 +39,7 @@ class Categorie
      */
     public function toString()
     {
-        return "";
+        return "Surface : ".$this->surface().", Volume : ".$this->volume();
     }
 
     /**
@@ -77,21 +62,16 @@ class Categorie
      * @param [type] $obj2
      * @return void
      */
-    public static function compareTo(Categorie $obj1, Categorie $obj2)
+    public static function compareTo($obj1, $obj2)
     {
-        if($obj1->getLibelle() > $obj2->getLibelle())
-        {
-            return 1;
-        }
-        else if ($obj1->getLibelle() < $obj2->getLibelle())
-        {
-            return -1;
-        }
-        else
-            return 0;
+        return 0;
     }
-
-    
-
-    
+    public function surface()
+    {
+        return 4 * pi() * pow(($this->getDiametre()/2), 2); 
+    }
+    public function volume()
+    {
+        return 4/3 * pi() * pow(($this->getDiametre()/2), 3);
+    }
 }

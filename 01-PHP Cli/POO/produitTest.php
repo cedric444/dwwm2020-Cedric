@@ -5,4 +5,4 @@ require "Categorie.Class.php";
 //nb produit/zone;
 //afficher tous les produits
 //nb produit/categorie et /ville
-var_dump($diff);
+

@@ -46,13 +46,12 @@ class Rectangle
     //Méthodes
     public function perimetre()
     {
-        $perimetre = $this->getLongueur() + $this->getLargeur();
-        return $perimetre;
+        return $this->getLongueur() + $this->getLargeur();
     }
     public function aire()
     {
-        $aire = $this->getLongueur() * $this->getLargeur();
-        return $aire;
+        return $this->getLongueur() * $this->getLargeur();
+         
     }
     public function estCarre()
     {
@@ -60,7 +59,7 @@ class Rectangle
     }
     public function afficherRectangle()
     {
-        echo "Longueur : [$this->getLongueur()]  Largeur : [$this->getLargeur()]  Périmètre : [$this->perimetre()]  Aire : [$this->aire()] - ";
+        echo "Longueur : ".$this->getLongueur().", Largeur : ".$this->getLargeur().", Périmètre : ".$this->perimetre().", Aire : ".$this->aire();
     }
 
 }
