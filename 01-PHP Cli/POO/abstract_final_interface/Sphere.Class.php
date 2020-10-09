@@ -1,4 +1,5 @@
 <?php
+
 class Sphere extends Cercle
 {
 
@@ -12,7 +13,6 @@ class Sphere extends Cercle
 
     public function __construct(array $options = [])
     {
-        parent::__construct($options);
         if (!empty($options)) // empty : renvoi vrai si le tableau est vide
         {
             $this->hydrate($options);
@@ -39,7 +39,7 @@ class Sphere extends Cercle
      */
     public function toString()
     {
-        return "Surface : ".$this->surface().", Volume : ".$this->volume();
+        return "";
     }
 
     /**
@@ -68,10 +68,6 @@ class Sphere extends Cercle
     }
     public function surface()
     {
-        return parent::aire() * 4; 
-    }
-    public function volume()
-    {
-        return 4/3 * pi() * pow(($this->getDiametre()/2), 3);
+        return 4 * parent::aire();
     }
 }

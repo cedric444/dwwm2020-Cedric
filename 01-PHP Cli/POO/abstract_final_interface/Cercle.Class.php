@@ -1,18 +1,26 @@
 <?php
-class Sphere extends Cercle
+
+final class Cercle
 {
 
     /*****************Attributs***************** */
-    private $_xxx;
+    private $_diametre;
 
     /*****************Accesseurs***************** */
+    public function getDiametre()
+    {
+        return $this->_diametre;
+    }
 
+    public function setDiametre($diametre)
+    {
+        $this->_diametre = $diametre;
+    }
     
     /*****************Constructeur***************** */
 
     public function __construct(array $options = [])
     {
-        parent::__construct($options);
         if (!empty($options)) // empty : renvoi vrai si le tableau est vide
         {
             $this->hydrate($options);
@@ -39,7 +47,7 @@ class Sphere extends Cercle
      */
     public function toString()
     {
-        return "Surface : ".$this->surface().", Volume : ".$this->volume();
+        return "";
     }
 
     /**
@@ -66,12 +74,9 @@ class Sphere extends Cercle
     {
         return 0;
     }
-    public function surface()
+    public function aire()
     {
-        return parent::aire() * 4; 
+        return pi()*($this->getDiametre());
     }
-    public function volume()
-    {
-        return 4/3 * pi() * pow(($this->getDiametre()/2), 3);
-    }
+    
 }

@@ -1,5 +1,6 @@
 <?php
-class Sphere extends Cercle
+
+class Helloworld implements Inter, World
 {
 
     /*****************Attributs***************** */
@@ -12,7 +13,6 @@ class Sphere extends Cercle
 
     public function __construct(array $options = [])
     {
-        parent::__construct($options);
         if (!empty($options)) // empty : renvoi vrai si le tableau est vide
         {
             $this->hydrate($options);
@@ -39,7 +39,7 @@ class Sphere extends Cercle
      */
     public function toString()
     {
-        return "Surface : ".$this->surface().", Volume : ".$this->volume();
+        return $this->hello()." ".$this->world();
     }
 
     /**
@@ -66,12 +66,12 @@ class Sphere extends Cercle
     {
         return 0;
     }
-    public function surface()
+    public function hello()
     {
-        return parent::aire() * 4; 
+        return "hello";
     }
-    public function volume()
+    public function world()
     {
-        return 4/3 * pi() * pow(($this->getDiametre()/2), 3);
+        return "world";
     }
 }
