@@ -4,31 +4,23 @@ class MonstreDifficile extends MonstreFacile
 {
 
     /*****************Attributs***************** */
-    private $_xxx;
+    private const DEGATSORT = 5;
+    private static $_nombreDifficile;
 
     /*****************Accesseurs***************** */
+    public static function getNombreDifficile()
+    {
+        return self::$_nombreDifficile;
+    }
 
+    public static function setNombreDifficile($nombreDifficile)
+    {
+        self::$_nombreDifficile ++;
+    }
     
     /*****************Constructeur***************** */
 
-    public function __construct(array $options = [])
-    {
-        if (!empty($options)) // empty : renvoi vrai si le tableau est vide
-        {
-            $this->hydrate($options);
-        }
-    }
-    public function hydrate($data)
-    {
-        foreach ($data as $key => $value)
-        {
-            $methode = "set" . ucfirst($key); //ucfirst met la 1ere lettre en majuscule
-            if (is_callable(([$this, $methode]))) // is_callable verifie que la methode existe
-            {
-                $this->$methode($value);
-            }
-        }
-    }
+   
 
     /*****************Autres Méthodes***************** */
     
@@ -66,4 +58,27 @@ class MonstreDifficile extends MonstreFacile
     {
         return 0;
     }
+    public function attaque($joueur, $trace)
+    {
+        if ($trace)
+        {
+            echo"C'est un monstre difficile"."\n";
+        }
+        parent::attaque($joueur, $trace);
+        $joueur->subitDegats($this->sortMagique($trace), $trace);
+    }
+    public function sortMagique($trace)
+    {
+        $valeur = $this->lancerDe();
+        if ($trace)
+        {
+            echo"***               sort magique ".$valeur."\n";
+        }
+        if($valeur==6)
+        {
+            return 0;
+        } 
+        return (self::DEGATSORT * $valeur);        
+    }
+
 }

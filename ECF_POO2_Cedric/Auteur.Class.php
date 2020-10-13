@@ -1,11 +1,14 @@
 <?php
 
-class Joueur
+class Auteur
 {
 
     /*****************Attributs***************** */
     private $_nom;
-    private $_pV;
+    private $_prenom;
+    private $_dateDeNaissance;
+    private $_dateDeDeces;
+    private $_estVivant = true;
 
     /*****************Accesseurs***************** */
     public function getNom()
@@ -17,15 +20,47 @@ class Joueur
     {
         $this->_nom = $nom;
     }
-    public function getPV()
+
+    public function getPrenom()
     {
-        return $this->_pV;
+        return $this->_prenom;
     }
 
-    public function setPV($pV)
+    public function setPrenom($prenom)
     {
-        $this->_pV = $pV;
+        $this->_prenom = $prenom;
     }
+
+    public function getDateDeNaissance()
+    {
+        return $this->_dateDeNaissance;
+    }
+
+    public function setDateDeNaissance(DateTime $dateDeNaissance)
+    {
+        $this->_dateDeNaissance = $dateDeNaissance;
+    }
+
+    public function getDateDeDeces()
+    {
+        return $this->_dateDeDeces;
+    }
+
+    public function setDateDeDeces(DateTime $dateDeDeces)
+    {
+        $this->_dateDeDeces = $dateDeDeces;
+    }
+
+    public function getEstVivant()
+    {
+        return $this->_estVivant;
+    }
+
+    public function setEstVivant($estVivant)
+    {
+        $this->_estVivant = $estVivant;
+    }
+    
     /*****************Constructeur***************** */
 
     public function __construct(array $options = [])
@@ -56,7 +91,11 @@ class Joueur
      */
     public function toString()
     {
-        return "";
+        $aff = "Nom: ".$this->getNom()."\nPrénom: ".$this->getPrenom()."\nDate de Naissance: ".$this->getDateDeNaissance();
+        if (!($this->getEstVivant()))
+        {
+            return $aff .= $this->getDateDeDeces();
+        }
     }
 
     /**
@@ -65,9 +104,12 @@ class Joueur
      * @param [type] $obj
      * @return bool
      */
-    public function equalsTo($obj)
-    {
-        return true;
+    public function equalsTo($object0)                                                      
+    {                   //on vérifie l'égalité de tous les attributs
+        if ($this->getNom() == $object0->getNom() && $this->getPrenom() == $object0->getPrenom() && $this->getDateDeNaissance() == $object0->getDateDeNaissance() && $this->getDateDeDeces() == $object0->getDateDeDeces())
+        {
+            return true;
+        }
     }
     /**
      * Compare 2 objets
@@ -82,50 +124,5 @@ class Joueur
     public static function compareTo($obj1, $obj2)
     {
         return 0;
-    }
-    public function lancerDe()
-    {
-        return De::LancerDe();
-    }
-    public function estVivant()
-    {
-        return ($this->getPV() >0);
-    }
-    public function attaque(MonstreFacile $monstre, $trace)
-    {
-        $valJoueur = $this->lancerDe();
-        $valMonstre = $monstre->lancerDe();
-        if ($trace)
-        {
-            echo $this->getNom()."attaque: ".$valJoueur."\tle Monstre: ".$valMonstre."\n";
-        }
-        if($valJoueur > $valMonstre)
-        {
-            if($trace)
-            {
-                return $monstre->subitDegats();
-                echo"***            ".$this->getNom()." gagne"."\n";
-            }
-        }
-    }
-    public function subitDegats($degats, $trace)
-    {
-        if (!$this->bouclierFonctionne($trace))
-        {
-            $this->setPV($this->getPV() - $degats);
-            if ($trace)
-            {
-                echo"***             ".$this->getNom()." subit des dégats ".$degats. " reste: ".$this->getPV()."\n";
-            }
-        }
-    }
-    private function bouclierFonctionne($trace)
-    {
-        $bouclier = De::lancerDe();
-        if ($trace)
-        {
-            echo"***              bouclier".$bouclier."\n";
-        }
-        return ($bouclier <= 2);
     }
 }

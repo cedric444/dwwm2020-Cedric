@@ -1,50 +1,14 @@
 <?php
 
-class MonstreFacile
+class Set
 {
 
     /*****************Attributs***************** */
-    private const DEGATS = 10;
-    protected $_estVivant = true;
-    private static $_nombreFacile;
+    private $_xxx;
 
     /*****************Accesseurs***************** */
-    public function getLancerDe()
-    {
-        return $this->_lancerDe;
-    }
 
-    public function setLancerDe($lancerDe)
-    {
-        $this->_lancerDe = $lancerDe;
-    }    
-    public function getDegats()
-    {
-        return $this->_degats;
-    }
-
-    public function setDegats($degats)
-    {
-        $this->_degats = $degats;
-    }
-    public function getEstVivant()
-    {
-        return $this->_estVivant;
-    }
-
-    public function setEstVivant($estVivant)
-    {
-        $this->_estVivant = $estVivant;
-    }
-    public static function getNombreFacile()
-    {
-        return self::$_nombreFacile;
-    }
-
-    public static function incrementNombreFacile()
-    {
-        self::$_nombreFacile ++;
-    }
+    
     /*****************Constructeur***************** */
 
     public function __construct(array $options = [])
@@ -102,31 +66,4 @@ class MonstreFacile
     {
         return 0;
     }
-    public function lancerDE()
-    {
-        return De::lancerDe();
-    }
-    public function estVivant()
-    {
-
-    }
-    public function attaque(Joueur $joueur, $trace)
-    {
-        $valMonstre = $this->lancerDe();
-        $valJoueur = $joueur->lancerDe();
-        if ($trace)
-        {
-            echo"Monstre attaque: ".$valMonstre."\t".$joueur->getNom().": ".$valJoueur;
-        }
-        if($valMonstre > $valJoueur)
-        {
-            $joueur->subitDegats(self::DEGATS, $trace);
-        }
-    }
-    public function subitDegats()
-    {
-        $this->setEstVivant(false);
-        self::incrementNombreFacile();
-    }
-
 }

@@ -1,49 +1,41 @@
 <?php
 
-class MonstreFacile
+class Livre
 {
 
     /*****************Attributs***************** */
-    private const DEGATS = 10;
-    protected $_estVivant = true;
-    private static $_nombreFacile;
+    private $_titre;
+    private $_auteur;
+    private $_nombreDePages;
 
     /*****************Accesseurs***************** */
-    public function getLancerDe()
+    public function getTitre()
     {
-        return $this->_lancerDe;
+        return $this->_titre;
     }
 
-    public function setLancerDe($lancerDe)
+    public function setTitre($titre)
     {
-        $this->_lancerDe = $lancerDe;
-    }    
-    public function getDegats()
+        $this->_titre = $titre;
+    }
+    public function getAuteur()
     {
-        return $this->_degats;
+        return $this->_auteur;
     }
 
-    public function setDegats($degats)
+    public function setAuteur(Auteur $auteur)
     {
-        $this->_degats = $degats;
-    }
-    public function getEstVivant()
-    {
-        return $this->_estVivant;
+        $this->_auteur = $auteur;
     }
 
-    public function setEstVivant($estVivant)
+    public function getNombreDePages()
     {
-        $this->_estVivant = $estVivant;
-    }
-    public static function getNombreFacile()
-    {
-        return self::$_nombreFacile;
+        return $this->_nombreDePages;
     }
 
-    public static function incrementNombreFacile()
+    public function setNombreDePages($nombreDePages)
     {
-        self::$_nombreFacile ++;
+        $this->_nombreDePages = $nombreDePages;
     }
     /*****************Constructeur***************** */
 
@@ -75,7 +67,7 @@ class MonstreFacile
      */
     public function toString()
     {
-        return "";
+        return "Titre: ".$this->getTitre()."\nAuteur: ".$this->getAuteur()->toString()."\nNombre de pages: ".$this->getNombreDePages();
     }
 
     /**
@@ -102,31 +94,5 @@ class MonstreFacile
     {
         return 0;
     }
-    public function lancerDE()
-    {
-        return De::lancerDe();
-    }
-    public function estVivant()
-    {
-
-    }
-    public function attaque(Joueur $joueur, $trace)
-    {
-        $valMonstre = $this->lancerDe();
-        $valJoueur = $joueur->lancerDe();
-        if ($trace)
-        {
-            echo"Monstre attaque: ".$valMonstre."\t".$joueur->getNom().": ".$valJoueur;
-        }
-        if($valMonstre > $valJoueur)
-        {
-            $joueur->subitDegats(self::DEGATS, $trace);
-        }
-    }
-    public function subitDegats()
-    {
-        $this->setEstVivant(false);
-        self::incrementNombreFacile();
-    }
-
+    
 }

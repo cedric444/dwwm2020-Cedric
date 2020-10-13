@@ -5,7 +5,9 @@ class Joueur
 
     /*****************Attributs***************** */
     private $_nom;
-    private $_pV;
+    private $_prenom;
+    private $_nationalite;
+    private $_classement;
 
     /*****************Accesseurs***************** */
     public function getNom()
@@ -17,14 +19,35 @@ class Joueur
     {
         $this->_nom = $nom;
     }
-    public function getPV()
+    public function getPrenom()
     {
-        return $this->_pV;
+        return $this->_prenom;
     }
 
-    public function setPV($pV)
+    public function setPrenom($prenom)
     {
-        $this->_pV = $pV;
+        $this->_prenom = $prenom;
+    }
+
+
+    public function getNationalite()
+    {
+        return $this->_nationalite;
+    }
+
+    public function setNationalite($nationalite)
+    {
+        $this->_nationalite = $nationalite;
+    }
+
+    public function getClassement()
+    {
+        return $this->_classement;
+    }
+
+    public function setClassement($classement)
+    {
+        $this->_classement = $classement;
     }
     /*****************Constructeur***************** */
 
@@ -82,50 +105,5 @@ class Joueur
     public static function compareTo($obj1, $obj2)
     {
         return 0;
-    }
-    public function lancerDe()
-    {
-        return De::LancerDe();
-    }
-    public function estVivant()
-    {
-        return ($this->getPV() >0);
-    }
-    public function attaque(MonstreFacile $monstre, $trace)
-    {
-        $valJoueur = $this->lancerDe();
-        $valMonstre = $monstre->lancerDe();
-        if ($trace)
-        {
-            echo $this->getNom()."attaque: ".$valJoueur."\tle Monstre: ".$valMonstre."\n";
-        }
-        if($valJoueur > $valMonstre)
-        {
-            if($trace)
-            {
-                return $monstre->subitDegats();
-                echo"***            ".$this->getNom()." gagne"."\n";
-            }
-        }
-    }
-    public function subitDegats($degats, $trace)
-    {
-        if (!$this->bouclierFonctionne($trace))
-        {
-            $this->setPV($this->getPV() - $degats);
-            if ($trace)
-            {
-                echo"***             ".$this->getNom()." subit des dégats ".$degats. " reste: ".$this->getPV()."\n";
-            }
-        }
-    }
-    private function bouclierFonctionne($trace)
-    {
-        $bouclier = De::lancerDe();
-        if ($trace)
-        {
-            echo"***              bouclier".$bouclier."\n";
-        }
-        return ($bouclier <= 2);
     }
 }

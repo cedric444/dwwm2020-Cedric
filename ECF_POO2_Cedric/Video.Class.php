@@ -1,50 +1,44 @@
 <?php
 
-class MonstreFacile
+class Video
 {
 
     /*****************Attributs***************** */
-    private const DEGATS = 10;
-    protected $_estVivant = true;
-    private static $_nombreFacile;
+    private $_titre;
+    private $_auteur;
+    private $_SousTitres= "Oui";
 
     /*****************Accesseurs***************** */
-    public function getLancerDe()
+    public function getTitre()
     {
-        return $this->_lancerDe;
+        return $this->_titre;
     }
 
-    public function setLancerDe($lancerDe)
+    public function setTitre($titre)
     {
-        $this->_lancerDe = $lancerDe;
-    }    
-    public function getDegats()
-    {
-        return $this->_degats;
+        $this->_titre = $titre;
     }
 
-    public function setDegats($degats)
+    public function getAuteur()
     {
-        $this->_degats = $degats;
-    }
-    public function getEstVivant()
-    {
-        return $this->_estVivant;
+        return $this->_auteur;
     }
 
-    public function setEstVivant($estVivant)
+    public function setAuteur(Auteur $auteur)
     {
-        $this->_estVivant = $estVivant;
-    }
-    public static function getNombreFacile()
-    {
-        return self::$_nombreFacile;
+        $this->_auteur = $auteur;
     }
 
-    public static function incrementNombreFacile()
+    public function getSousTitres()
     {
-        self::$_nombreFacile ++;
+        return $this->_SousTitres;
     }
+
+    public function setSousTitres($SousTitres)
+    {
+        $this->_SousTitres = $SousTitres;
+    }
+    
     /*****************Constructeur***************** */
 
     public function __construct(array $options = [])
@@ -75,7 +69,7 @@ class MonstreFacile
      */
     public function toString()
     {
-        return "";
+        return "Titre: ".$this->getTitre()."\nAuteur: ".$this->getAuteur()->toString()."Sous-Titres: ".$this->getSousTitres();
     }
 
     /**
@@ -101,32 +95,6 @@ class MonstreFacile
     public static function compareTo($obj1, $obj2)
     {
         return 0;
-    }
-    public function lancerDE()
-    {
-        return De::lancerDe();
-    }
-    public function estVivant()
-    {
-
-    }
-    public function attaque(Joueur $joueur, $trace)
-    {
-        $valMonstre = $this->lancerDe();
-        $valJoueur = $joueur->lancerDe();
-        if ($trace)
-        {
-            echo"Monstre attaque: ".$valMonstre."\t".$joueur->getNom().": ".$valJoueur;
-        }
-        if($valMonstre > $valJoueur)
-        {
-            $joueur->subitDegats(self::DEGATS, $trace);
-        }
-    }
-    public function subitDegats()
-    {
-        $this->setEstVivant(false);
-        self::incrementNombreFacile();
     }
 
 }
