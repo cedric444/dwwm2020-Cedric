@@ -1,0 +1,38 @@
+CREATE DATABASE bilanComptable;
+CREATE TABLE regroupementDeClasses
+(
+    idRegroupementDeClasse int(11) not null AUTO_INCREMENT PRIMARY KEY,
+    libelleGroupement varchar(50)
+) ENGINE = INNODB DEFAULT CHARSET = UTF8;
+CREATE TABLE classesDeCompte
+(
+    idClasseComptable int(11) not null AUTO_INCREMENT PRIMARY KEY,
+    libelleClasseDeCompte varchar(50)
+) ENGINE = INNODB DEFAULT CHARSET = UTF8;
+CREATE TABLE Compte
+(
+    idCompte int(11) not null AUTO_INCREMENT PRIMARY KEY,
+    numeroCompte int(11),
+    intituleCompte varchar(50)
+) ENGINE = INNODB DEFAULT CHARSET = UTF8;
+CREATE TABLE LigneEcriture
+(
+    idLigneEcriture int(11) not null AUTO_INCREMENT primary key,
+    intituleLigne varchar(50),
+    creditLigne float,
+    debitLigne varchar(50)
+) ENGINE = INNODB DEFAULT CHARSET = UTF8;
+CREATE TABLE ecriture
+(
+    idEcriture int(11) not null AUTO_INCREMENT PRIMARY KEY,
+    libelleEcriture varchar(50),
+    dateEcriture date
+) ENGINE = INNODB DEFAULT CHARSET = UTF8;
+ALTER TABLE ClassesDeCompte ADD COLUMNS idRegroupementDeClasse in(11);
+ALTER TABLE ClassesDeCompte ADD CONSTRAINT FK_classesDeCompte-regroupementdeClasses FOREIGN KEY (idRegroupementDeClasse) REFERENCES (regroupementdeClasses);
+ALTER TABLE comptes ADD COLUMNS idClasseComptable int(11);
+ALTER TABLE comptes ADD CONSTRAINT FK_compte-classesDeCompte FOREIGN KEY (idClasseComptable) REFERENCES classesDeCompte(idClasseComptable);
+ALTER TABLE lignesEcriture ADD COLUMNS idCompte int(11);
+ALTER TABLE lignesEcriture ADD CONSTRAINT FK_lignesEcriture-compte FOREIGN KEY (idCompte) REFERENCES comptes (idCompte);
+ALTER TABLE lignesEcriture ADD COLUMNS idEcriture int(11);
+ALTER TABLE lignesEcriture ADD CONSTRAINT FK_lignesEcriture-ecritures FOREIGN KEY (idEcriture) REFERENCES ecritures (idEcriture);

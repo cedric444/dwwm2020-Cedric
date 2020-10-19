@@ -1,0 +1,35 @@
+CREATE DATABASE coursesHippiques;
+CREATE TABLE proprietaires
+(
+    idProprietaire int(11) not null AUTO_INCREMENT PRIMARY KEY,
+    nomProprietaire varchar(50),
+    prenomProprietaire varchar(50)
+) ENGINE = INNODB, CHARSET ='UTF-8';
+CREATE TABLE chevaux
+(
+    idCheval int(11) not null AUTO_INCREMENT PRIMARY KEY,
+    nomCheval varchar(50),
+    sexeCheval varchar(50),
+    DateDeNaissanceCheval Date
+) ENGINE = INNODB, CHARSET = 'UTF-8';
+CREATE TABLE jockeys
+(
+    idJockey int(11) not null AUTO_INCREMENT PRIMARY KEY,
+    nomJockey varchar(50),
+    prenomJockey varchar(50),
+    dossardJockey int
+) ENGINE = INNODB, CHARSET = 'UTF-8';
+CREATE TABLE courses
+(
+    idCourse int(11) not null AUTO_INCREMENT PRIMARY KEY,
+    nomCourse varchar(50),
+    dateCourse date,
+    categorieCourse varchar(50)
+) ENGINE = INNODB , CHARSET = 'UTF-8';
+CREATE TABLE champDeCourse
+(
+    idChampDeCourse int(11) not null AUTO_INCREMENT PRIMARY KEY,
+    nomChampDeCourse varchar(50),
+    nombrePlacesTribunes int(11)
+ )ENGINE = INNODB , CHARSET = 'UTF-8';
+
