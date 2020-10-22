@@ -1,0 +1,38 @@
+A: SELECT MAX(cde_total) as montantPlusEleve FROM commandes / SELECT MAX(quantiteCommande*articles.prixArticle) FROM commandes
+INNER JOIN articles ON commandes.idArticle = articles.idArticle 
+
+B: SELECT ROUND(AVG(cde_total), 2) as montantMoyen FROM commandes / SELECT ROUND(AVG(quantiteCommande*articles.prixArticle),2) FROM commandes
+INNER JOIN articles ON commandes.idArticle = articles.idArticle
+
+C: SELECT MIN(cde_total) as montantPlusBas FROM commandes / SELECT MIN(quantiteCommande*articles.prixArticle) FROM commandes
+INNER JOIN articles ON commandes.idArticle = articles.idArticle
+
+D: SELECT COUNT(*) FROM commandes
+
+E: SELECT ROUND(AVG(cde_total), 2) AS montantMoyenParClient FROM commandes GROUP BY commandes.idClient / SELECT ROUND(AVG(quantiteCommande*articles.prixArticle),2) FROM commandes
+INNER JOIN articles ON commandes.idArticle = articles.idArticle GROUP BY idClient
+
+F: SELECT MAX(cde_total) AS montantPlusEleveParClient FROM commandes Group BY idClient / SELECT MAX(quantiteCommande*articles.prixArticle) as 'montant le plus élevé' FROM commandes
+INNER JOIN articles ON commandes.idArticle = articles.idArticle GROUP BY idClient
+
+G: SELECT COUNT(*) FROM commandes GROUP BY idClient
+
+H: SELECT ROUND(AVG(quantiteCommande),2) AS moyenneArticlesParClient FROM commandes GROUP BY clients.idClient
+
+I: SELECT ROUND(AVG(quantiteCommande), 2) FROM commandes GROUP BY commandes.idArticle
+
+J: SELECT articles.descriptionArticle, SUM(quantiteCommande) FROM commandes
+INNER JOIN articles ON commandes.idArticle = articles.idArticle GROUP BY commandes.idArticle
+
+K: SELECT CONCAT(UPPER(nomClient)," ",CONCAT(UPPER(LEFT(prenomClient, 1)),LOWER(SUBSTRING(prenomClient, 2)))) as 'nom du client', dateCommande, ROUND(AVG(quantiteCommande), 2)  AS 'nombre moyen d'articles'FROM commandes
+INNER JOIN clients ON commandes.idClient = clients.idClient GROUP BY clients.idClient
+
+L: SELECT COUNT(*) as 'nombre de commandes', dateCommande FROM commande GROUP BY dateCommande
+
+M: SELECT COUNT(*) as 'nombre de clients' FROM clients
+
+N: SELECT COUNT(DISTINCT(idClient)) as 'nombre de clients qui ont commandés' FROM commandes 
+
+O: SELECT COUNT(DISTINCT(idArticle)) as 'nombre d\'articles différents commandés' FROM commandes
+
+P: SELECT COUNT(DISTINCT(dateCommande)) as 'nombre de jours' FROM commandes

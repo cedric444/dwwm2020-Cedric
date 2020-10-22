@@ -1,0 +1,3 @@
+A: SELECT nomEtudiant, prenomEtudiant, dateNaissanceEtudiant FROM etudiants WHERE dateNaissanceEtudiant < (SELECT dateNaissanceEtudiant FROM etudiants WHERE nomEtudiant = "leclercq" and prenomEtudiant = "jules")
+
+B:SELECT ROUND(AVG(note), 2) FROM avoir_note INNER JOIN epreuves ON avoir_note.idEpreuve = epreuves.idEpreuve WHERE epreuves.idEpreuve = 4

@@ -1,0 +1,25 @@
+===Base de données exercice1
+
+== Structure de la table co
+
+|------
+|Colonne|Type|Null|Valeur par défaut
+|------
+|//**idCommande**//|int(11)|Non|
+|idClient|int(11)|Oui|NULL
+|idArticle|int(11)|Oui|NULL
+|dateCommande|date|Oui|NULL
+|quantiteCommande|int(11)|Oui|NULL
+== Déchargement des données de la table co
+
+<div class="error"><h1>Erreur</h1><p><strong>Requête SQL :</strong>  <a href="#" class="copyQueryBtn" data-text="SELECT idArticle, quantiteCommande FROM commandes as co WHERE (`commandes`.`idArticle` = 6 AND `commandes`.`quantiteCommande` = 9)">Copier</a>
+<a href="./url.php?url=https%3A%2F%2Fdev.mysql.com%2Fdoc%2Frefman%2F5.7%2Fen%2Fselect.html" target="mysql_doc"><img src="themes/dot.gif" title="Documentation" alt="Documentation" class="icon ic_b_help"></a><a href="tbl_sql.php?sql_query=SELECT+idArticle%2C+quantiteCommande+FROM+commandes+as+co+WHERE+%28%60commandes%60.%60idArticle%60+%3D+6+AND+%60commandes%60.%60quantiteCommande%60+%3D+9%29&amp;show_query=1&amp;db=exercice1&amp;table=commandes"><span class="nowrap"><img src="themes/dot.gif" title="Éditer" alt="Éditer" class="icon ic_b_edit">&nbsp;Éditer</span></a>    </p>
+<p>
+<code class="sql"><pre>
+SELECT idArticle, quantiteCommande FROM commandes as co WHERE (`commandes`.`idArticle` = 6 AND `commandes`.`quantiteCommande` = 9)
+</pre></code>
+</p>
+<p>
+    <strong>MySQL a répondu : </strong><a href="./url.php?url=https%3A%2F%2Fdev.mysql.com%2Fdoc%2Frefman%2F5.7%2Fen%2Fserver-error-reference.html" target="mysql_doc"><img src="themes/dot.gif" title="Documentation" alt="Documentation" class="icon ic_b_help"></a>
+</p>
+<code>#1054 - Champ 'commandes.idArticle' inconnu dans where clause</code><br></div>

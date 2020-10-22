@@ -1,0 +1,19 @@
+===Base de données exercice1
+
+== Structure de la table clients
+
+|------
+|Colonne|Type|Null|Valeur par défaut
+|------
+|//**idClient**//|int(11)|Non|
+|nomClient|varchar(50)|Oui|NULL
+|prenomClient|varchar(50)|Oui|NULL
+|dateEntreeClient|date|Oui|NULL
+== Déchargement des données de la table clients
+
+|1|talon|marc|1999-10-22
+|2|talon|sophie|2004-11-16
+|3|talleux|vincent|2005-06-21
+|4|durand|sophie|2006-12-21
+|5|durant|serge|2005-04-05
+|6|dupond|yves|2005-12-04

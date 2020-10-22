@@ -1,0 +1,17 @@
+===Base de données exercice1
+
+== Structure de la table commandes
+
+|------
+|Colonne|Type|Null|Valeur par défaut
+|------
+|//**idCommande**//|int(11)|Non|
+|idClient|int(11)|Oui|NULL
+|idArticle|int(11)|Oui|NULL
+|dateCommande|date|Oui|NULL
+|quantiteCommande|int(11)|Oui|NULL
+== Déchargement des données de la table commandes
+
+|2014-07-07
+|2014-07-08
+|2014-07-09

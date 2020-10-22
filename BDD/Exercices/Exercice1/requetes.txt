@@ -1,0 +1,23 @@
+a: SELECT * FROM clients / SELECT nomClient, prenomClient, idClient, dateEntreeClient FROM clients 
+b: SELECT nomClient FROM clients
+c: SELECT DISTINCT dateCommande FROM commandes
+d: SELECT nomClient FROM clients WHERE nomClient = "sophie"
+e: SELECT idArticle, quantiteCommande FROM commandes WHERE idClient = 1
+f: SELECT UPPER(nomClient) as NomClient FROM clients
+g: SELECT CONCAT(UPPER(LEFT(nomClient, 1)), LOWER(SUBSTRING(nomClient, 2))) as NomClient
+/ SELECT CONCAT(UPPER(LEFT(nomClient, 1)), LOWER(RIGHT(LENGTH -1))) as NomClient
+h: SELECT nomClient FROM clients WHERE LENGTH(nomClient) = 5
+i: SELECT nomClient FROM clients WHERE LEFT (nomClient, 1) = "T" OR nomClient like "__l%"/ 
+SELECT nomClient FROM clients WHERE LEFT nomClient like "T%" OR SUBSTRING(nomClient, 3, 1) = "l"
+j: SELECT idClient, idCommande, ADDDATE(dateCommande, 15) FROM commandes
+k: SELECT NOW() as Date
+l: SELECT nomClient, DATEDIFF((NOW(), dateEntreeClient)/365) as Anciennete FROM clients
+m: SELECT MAX(quantiteCommande) as quantite FROM commande
+n: SELECT SUM(quantiteCommande) as quantiteTotale, UPPER(nomClient) as Nom FROM commandes INNER JOIN clients ON commandes.idClient = clients.idClient WHERE commandes.idClient = 1
+o: SELECT ROUND(AVG(quantiteCommande)? 2) as quantiteMoyenne, CONCAT(UPPER(LEFT(nomClient)),LOWER(SUBSTRING(nomClient, 2))) as Nom FROM commandes
+INNER JOIN clients ON commandes.idClient = clients.idClient
+WHERE commandes.idClient = 2
+p: SELECT CONCAT(UPPER(LEFT(nomClient, 1)), LOWER(SUBSTRING(nomClient, 2))) as Nom, prenomClient, dateEntreeClient FROM clients 
+ORDER BY nomClient
+q: SELECT descriptionArticle, prixArticle FROM articles
+ORDER BY prixArticles DESC
