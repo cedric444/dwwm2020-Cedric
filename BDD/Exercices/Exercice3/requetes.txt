@@ -1,3 +1,16 @@
 A: SELECT nomEtudiant, prenomEtudiant, dateNaissanceEtudiant FROM etudiants WHERE dateNaissanceEtudiant < (SELECT dateNaissanceEtudiant FROM etudiants WHERE nomEtudiant = "leclercq" and prenomEtudiant = "jules")
 
-B:SELECT ROUND(AVG(note), 2) FROM avoir_note INNER JOIN epreuves ON avoir_note.idEpreuve = epreuves.idEpreuve WHERE epreuves.idEpreuve = 4
+B: SELECT CONCAT(nomEtudiant, " ",prenomEtudiant) FROM etudiants WHERE idEtudiant IN (SELECT idEtudiant FROM avoir_note WHERE idEpreuve = 4 AND note > (SELECT ROUND(AVG(note), 2) FROM avoir_note INNER JOIN epreuves ON avoir_note.idEpreuve = epreuves.idEpreuve WHERE epreuves.idEpreuve = 4))
+
+C: SELECT CONCAT(nomEtudiant, " ", prenomEtudiant) AS Nom FROM avoir_note INNER JOIN etudiants ON avoir_note.idEtudiant = etudiants.idEtudiant WHERE note > 12
+
+D:  SELECT CONCAT(nomEtudiant, " ", prenomEtudiant) AS Nom, note FROM avoir_note INNER JOIN etudiants ON avoir_note.idEtudiant = etudiants.idEtudiant WHERE idEpreuve = 4 AND note > (SELECT  note FROM avoir_note INNER JOIN etudiants ON avoir_note.idEtudiant = etudiants.idEtudiant WHERE nomEtudiant = "dupont" AND prenomEtudiant = "luc" AND idEpreuve = 4) 
+
+E: SELECT CONCAT(nomEtudiant, " ", prenomEtudiant) AS Nom, note FROM avoir_note INNER JOIN etudiants ON avoir_note.idEtudiant = etudiants.idEtudiant WHERE note IN (SELECT note FROM avoir_note INNER JOIN etudiants ON avoir_note.idEtudiant = etudiants.idEtudiant WHERE nomEtudiant = "dupont" AND prenomEtudiant = "luc")
+
+F: ALTER TABLE etudiants ADD hobby VARCHAR(30) DEFAULT "sport"
+
+G: ALTER TABLE etudiants ADD newcol INT
+   ALTER TABLE etudiants DROP newcol
+   
+H: 
