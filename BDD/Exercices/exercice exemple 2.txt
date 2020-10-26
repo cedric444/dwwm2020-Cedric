@@ -1,0 +1,7 @@
+1: SELECT prenom, noregion FROM employe INNER JOIN dept ON employe.nodep = dept.nodept
+
+2: SELECT d.nodepT, d.nom, e.nom FROM employe as e INNER JOIN dept as d ON e.nodep = d.nodept ORDER BY nodep
+
+3: SELECT e.nom FROM employe AS e INNER JOIN dept AS d ON d.nodept = e.nodep WHERE d.nom = "distribution"
+
+4: SELECT 

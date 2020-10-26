@@ -1,0 +1,45 @@
+CREATE DATABASE gestionImmobiliere;
+USE DATABASE
+CREATE TABLE individus
+(
+    idIndividu int(11) not null AUTO_INCREMENT PRIMARY KEY,
+    nomIndividu varchar(50),
+    prenomIndividu varchar(50),
+    dateDeNaissance date,
+    numeroTelephoneIndividu varchar(10)
+)ENGINE = INNODB DEFAULT CHARSET = UTF8;
+CREATE TABLE logements
+(
+    idLogement int(11) not null AUTO_INCREMENT PRIMARY KEY,
+    numeroLogement int(3),
+    rueLogement varchar(50),
+    superficieLogement int(5),
+    loyerLogement float
+)ENGINE = INNODB CHARSET = UTF8;
+CREATE TABLE typeLogement
+(
+    idTypeLogement int(11) not null AUTO_INCREMENT PRIMARY KEY,
+    chargesForfaitaires varchar(50)
+)ENGINE = INNODB CHARSET = UTF8;
+CREATE TABLE communes
+(
+    idCommune int(11) not null AUTO_INCREMENT PRIMARY KEY,
+    nomCommune varchar(50),
+    distanceCommuneAgence int(3),
+    nombreHabitants int(2)
+)ENGINE = INNODB CHARSET = UTF8;
+CREATE TABLE quartiers
+(
+    idQuartier int(11) not null AUTO_INCREMENT PRIMARY KEY,
+    libelleQuartier varchar(50)
+)ENGINE = INNODB CHARSET = UTF8;
+ALTER TABLE logements ADD COLUMNS idIndividu int(11);
+ALTER TABLE logementsADD CONSTRAINT FK_logements-indivius FOREIGN KEY (idIndividu) REFERENCES individus(idIndividu);
+ALTER TABLE logements ADD COLUMNS idTypeLogement int(11);
+ALTER TABLE logements ADD CONSTRAINT FK_logements-typesLogement FOREIGN KEY (idTypeLogement) REFERENCES typesLogement (idTypeLogement);
+ALTER TABLE logements ADD COLUMNS idCommune int(11);
+ALTER TABLE logements ADD CONSTRAINT FK_logements-communes FOREIGN KEY (idCommune) REFERENCES communes (idCommune);
+ALTER TABLE logements ADD COLUMNS idQuartier int(11);
+ALTER TABLE logements ADD CONSTRAINT FK_logements-quartiers FOREIGN KEY (idQuartier) REFERENCES quartiers (idQuartier);
+ALTER TABLE quartiers ADD COLUMNS idCommune int(11);
+ALTER TABLE quartiers ADD CONSTRAINT FK_quartiers-communes FOREIGN KEY (idCommune) REFERENCES communes (idCommune);
