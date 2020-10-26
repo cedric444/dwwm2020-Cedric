@@ -175,7 +175,7 @@ class Employe
             $aff .= "Pas de chèques de Noël";
         }
         return $aff;
-        }
+    }
           
     /**
      * Renvoi vrai si l'objet en paramètre est égal à l'objet appelant
