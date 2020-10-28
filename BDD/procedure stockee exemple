@@ -1,0 +1,9 @@
+DELIMITER |
+
+CREATE PROCEDURE nomMaj ()
+    BEGIN
+            UPDATE etudiants SET nomEtudiant = UPPER(nomEtudiant);
+            UPDATE etudiants SET prenomEtudiant = UPPER(prenomEtudiant);
+        END
+        |
+DELIMITER ;
