@@ -1,8 +1,8 @@
 A: SELECT nomEtudiant, prenomEtudiant, dateNaissanceEtudiant FROM etudiants WHERE dateNaissanceEtudiant < (SELECT dateNaissanceEtudiant FROM etudiants WHERE nomEtudiant = "leclercq" and prenomEtudiant = "jules")
 
-B: SELECT CONCAT(nomEtudiant, " ",prenomEtudiant) FROM etudiants WHERE idEtudiant IN (SELECT idEtudiant FROM avoir_note WHERE idEpreuve = 4 AND note > (SELECT ROUND(AVG(note), 2) FROM avoir_note INNER JOIN epreuves ON avoir_note.idEpreuve = epreuves.idEpreuve WHERE epreuves.idEpreuve = 4))
+B: SELECT CONCAT(nomEtudiant, " ",prenomEtudiant) as Nom, note FROM etudiants INNER JOIN avoir_note ON etudiants.idEtudiant = avoir_note.idEtudiant WHERE idEpreuve = 4 AND note > (SELECT ROUND(AVG(note), 2) FROM avoir_note INNER JOIN epreuves ON avoir_note.idEpreuve = epreuves.idEpreuve WHERE epreuves.idEpreuve = 4))
 
-C: SELECT CONCAT(nomEtudiant, " ", prenomEtudiant) AS Nom FROM avoir_note INNER JOIN etudiants ON avoir_note.idEtudiant = etudiants.idEtudiant WHERE note > 12
+C: SELECT CONCAT(nomEtudiant, " ", prenomEtudiant) AS Nom, note FROM avoir_note INNER JOIN etudiants ON avoir_note.idEtudiant = etudiants.idEtudiant WHERE note >= 12
 
 D:  SELECT CONCAT(nomEtudiant, " ", prenomEtudiant) AS Nom, note FROM avoir_note INNER JOIN etudiants ON avoir_note.idEtudiant = etudiants.idEtudiant WHERE idEpreuve = 4 AND note > (SELECT  note FROM avoir_note INNER JOIN etudiants ON avoir_note.idEtudiant = etudiants.idEtudiant WHERE nomEtudiant = "dupont" AND prenomEtudiant = "luc" AND idEpreuve = 4) 
 
@@ -13,4 +13,16 @@ F: ALTER TABLE etudiants ADD hobby VARCHAR(30) DEFAULT "sport"
 G: ALTER TABLE etudiants ADD newcol INT
    ALTER TABLE etudiants DROP newcol
    
-H: 
+H: ALTER TABLE etudiants MODIFY prenomEtudiant VARCHAR(20) NOT NULL
+
+I: INSERT INTO epreuves (idEpreuve, libelleEpreuve, idEnseignantEpreuve, idMatiereEpreuve, dateEpreuve, coefficientEpreuve, anneeEpreuve) VALUES(7, "interro écrite", 9, 1, 1996-10-21, 1, null)
+INSERT INTO avoir_note 
+
+J: UPDATE avoir_note SET note = 07 WHERE idEtudiant = 3 AND idEpreuve = 7 
+
+K: UPDATE avoir_note SET note = note + 1 WHERE idEtudiant = 1 AND idEpreuve = 7
+
+L: ALTER TABLE avoir_note DROP note WHERE idEpreuve = 7
+ALTER TABLE epreuves DROP idEpreuve WHERE idEpreuve = 7 
+
+N: SELECT idMatiere FROM matieres WHERE nomMAtiere = "BD"
