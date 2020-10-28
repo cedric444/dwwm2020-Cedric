@@ -1,0 +1,39 @@
+﻿1: SELECT prenom, noregion FROM employe INNER JOIN dept ON employe.nodep = dept.nodept
+
+2: SELECT d.nodepT AS "numéro département", d.nom AS "nom département", e.nom AS "nom de l'employé" FROM employe as e INNER JOIN dept as d ON e.nodep = d.nodept ORDER BY nodep ASC
+
+3: SELECT e.nom FROM employe AS e INNER JOIN dept AS d ON d.nodept = e.nodep WHERE d.nom = "distribution"
+
+4: SELECT employe.nom as "Nom de l'employé", employe.salaire as "Salaire de l'employé", (SELECT employe.nom FROM employe WHERE titre="Président") as "Nom du patron", (SELECT employe.salaire FROM employe WHERE titre="Président") as "Salaire du Patron" 
+FROM employe 
+WHERE salaire>(SELECT `salaire` FROM employe WHERE `titre`="président") 
+
+5: SELECT nom, titre FROM employe WHERE titre = (SELECT titre FROM employe WHERE nom = "amartakaldire")
+
+6: SELECT nom, salaire, nodep FROM employe WHERE salaire > ANY (SELECT salaire FROM employe WHERE nodep= 31) ORDER BY nodep, salaire
+
+7: SELECT nom, salaire, nodep FROM employe WHERE salaire > (SELECT MAX(salaire) FROM employe WHERE employe.nodep = 31) ORDER BY nodep, salaire
+
+8: SELECT nom, titre FROM employe WHERE nodep = 31 AND titre IN (SELECT titre FROM employe WHERE nodep = 32)
+
+9: SELECT nom, titre FROM employe WHERE nodep =31 AND titre NOT IN (SELECT titre FROM employe WHERE nodep = 32)
+
+10: SELECT nom, titre, salaire FROM employe WHERE titre =(SELECT titre FROM employe WHERE nom = "fairent") AND salaire = (SELECT salaire FROM employe WHERE NOM = "fairent")
+
+11: SELECT dept.nodep, dept.nom, employe.nom FROM dept LEFT JOIN employe ON dept.nodept = employe.nodep ORDER BY employe.nodep 
+
+12: SELECT COUNT *,titre FROM employe GROUP BY titre
+
+13: SELECT ROUND(AVG(employe.salaire), 2), SUM(employe.salaire), dept.noregion FROM employe INNER JOIN dept ON employe.nodep = dept.nodept GROUP BY noregion
+
+14: SELECT nodep FROM employe GROUP BY nodep HAVING COUNT(noemp) >= 3
+
+15: SELECT LEFT (nom, 1) AS initiale FROM employe GROUP BY initiale HAVING COUNT (LEFT(nom, 1) >2
+
+16: SELECT MAX(salaire) as maxi, MIN(salaire) as mini, maxi - mini FROM employe 
+ 
+17: SELECT COUNT(DISTINCT(titre)) FROM employe
+
+18: SELECT COUNT(noemp) as nombre ,titre FROM employe GROUP BY titre
+
+19:
