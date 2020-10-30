@@ -1,17 +1,21 @@
 body {
     background-color: black;
     color: red;
+    padding: 0;
+    margin: 0;
 }
 #image{
     background-image: url("etoile.jpeg");
     background-position: center;
     background-repeat: no-repeat;
+    background-size: contain;
     display: flex;
     flex: 1;
     justify-content: center;
     align-items: center;
     margin-bottom: 50px;
     margin-top: 45px;
+    overflow: hidden;
 }
 
 .titre {
@@ -33,5 +37,20 @@ body {
 li {
     font-size: 1.8em;
     font-weight: bold;
+    margin: 25px;
+    
+}
+.menu{
+    display: flex;
+    margin : 150px;
+    flex: 1;
+    flex-direction: row;
+    justify-content: center;
+
+}
+#ratmetoile {
+    display: flex;
+    
+
 }
 
