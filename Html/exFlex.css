@@ -1,0 +1,86 @@
+.bleu{
+    background-color: blue;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    height: 500px;
+    width: 50%;
+    align-content: space-between;
+}
+.rougegris{
+    display: flex;
+    flex: 1;
+    height: 50px;
+    margin: 5px;
+}
+
+.rouge2 {
+    background-color: red;
+    display: flex;
+    flex: 1;
+    
+    margin: 5px;
+}
+.gris {
+    background-color: gray;
+    display: flex;
+    flex: 1;
+    margin: 5px;
+}
+.jaune{
+    background-color: yellow;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin: 10px;
+}
+.rouge {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.rougebis{
+    background-color: red;
+    flex: 1;
+    margin: 5px;
+}
+.rougeter{
+    background-color: red;
+    flex: 1;
+    margin: 5px;
+}
+.rougequatre{
+    background-color: red;
+    flex: 1;
+    margin: 5px;
+}
+.rougecinq{
+    background-color: red;
+    flex:1 ;
+    margin: 5px;
+}
+.jaune2{
+    display: flex;
+    flex:1;
+    flex-direction: row;
+    margin: 5px;
+}
+.jaunebis{
+    background-color: yellow;
+    flex: 1;
+    margin : 5px;
+}
+.jauneter{
+    background-color: yellow;
+    flex: 1;
+    margin: 5px;
+}
+.vert{
+    background-color: green;
+    flex: 1;
+    margin: 10px;
+}

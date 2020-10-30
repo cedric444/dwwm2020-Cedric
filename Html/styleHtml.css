@@ -1,0 +1,37 @@
+body {
+    background-color: black;
+    color: red;
+}
+#image{
+    background-image: url("etoile.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    margin-top: 45px;
+}
+
+.titre {
+    
+    display: flex;
+    flex: 1;
+    font-size: 5em;
+    font-family: impact;
+    text-transform: uppercase;
+    justify-content: center;
+    color: whitesmoke;
+    
+}
+#RATM{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+li {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
