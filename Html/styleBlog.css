@@ -47,7 +47,12 @@ nav{
     justify-content: center;
     align-items: center;
     border: black solid 2px;
+}.liste{
+    justify-content: left;
+    align-items: center;
+    font-size: 1.5em;
 }
+
 article{
     flex: 1;
 }
@@ -97,4 +102,14 @@ h2{
     width: 100%;
     flex: 0.25;
     justify-content: center;
+}
+footer{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    background-color: rgb(175, 150, 175);
+    border: black solid 2px;
+}
+.pied{
+    font-size: 0.5em;
 }
