@@ -38,7 +38,7 @@ div{
     flex-direction: row;
 }
 nav{
-    flex: 8;
+    flex: 0.5;
     justify-content: center;
     align-items: center;
     border: black solid 2px;
@@ -48,16 +48,28 @@ article{
     margin: 5px;
 }
 .article{
-    flex: 1;
+    flex: 2;
     display: flex;
     flex-direction: column;
-    margin: 20px;
+    
+    
 }
 h2{
     flex: 1;
     justify-content: center;
+    align-items: center;
 }
 .photo{
+    flex: 1;
     width: 100%;
     margin: 5px;
+}
+.photo1{
+    width: 100%;
+}
+.plusInfo{
+    flex: 0.5;
+    justify-content: center;
+    align-items: baseline;
+    border: black solid 2px;   
 }
