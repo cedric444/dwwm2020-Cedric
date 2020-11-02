@@ -38,21 +38,22 @@ div{
     flex-direction: row;
 }
 nav{
-    flex: 0.5;
+    flex: 0.2;
     justify-content: center;
     align-items: center;
     border: black solid 2px;
 }
 article{
     flex: 1;
-    margin: 5px;
+    margin: 10px;
 }
 .article{
     flex: 2;
     display: flex;
     flex-direction: column;
-    
-    
+}
+.comments{
+    border: gray solid 1px;
 }
 h2{
     flex: 1;
@@ -72,8 +73,17 @@ h2{
     justify-content: center;
     align-items: baseline;
     border: black solid 2px;
-    flex-direction: column  
+    flex-direction: column;  
 }
 .bond{
     width: 100%;
+}
+.autres{
+    display: flex;
+    flex: 1;
+}
+.dune, .battlestar{
+    flex: 1;
+    justify-content: center;
+    font-size: 2em;
 }
