@@ -81,9 +81,18 @@ h2{
 .autres{
     display: flex;
     flex: 1;
+    flex-direction: column;
+    margin: 20px;
 }
 .dune, .battlestar{
     flex: 1;
     justify-content: center;
+    align-items: center;
     font-size: 2em;
+    margin: 15px;
+}
+.picture{
+    width: 100%;
+    flex: 0.25;
+    justify-content: center;
 }
