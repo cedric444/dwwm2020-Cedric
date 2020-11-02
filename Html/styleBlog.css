@@ -7,10 +7,11 @@ header{
     display: flex;
     flex-direction: row;
     background-color: rgb(212, 212, 134);
-    margin-bottom: 50px;
 }
 div{
     display: flex;
+    flex: 1;
+    justify-content: center;
 }
 .image{
     flex: 1;
@@ -24,9 +25,13 @@ div{
     font-weight: bolder;
     font-size: 4em;
 }
+.espace{
+    flex: 0.5;
+}
 
 .info{
-    background-color: cornsilk;
+    background-color: 
+    cornsilk;
     flex: 1;
     justify-content: center;
     align-items: center;
@@ -38,22 +43,23 @@ div{
     flex-direction: row;
 }
 nav{
-    flex: 0.2;
+    flex: 1;
     justify-content: center;
     align-items: center;
     border: black solid 2px;
 }
 article{
     flex: 1;
-    margin: 10px;
 }
 .article{
     flex: 2;
     display: flex;
     flex-direction: column;
+    
 }
 .comments{
     border: gray solid 1px;
+    justify-content: left;
 }
 h2{
     flex: 1;
@@ -63,14 +69,12 @@ h2{
 .photo{
     flex: 1;
     width: 100%;
-    margin: 5px;
 }
 .photo1{
     width: 100%;
 }
 .plusInfo{
-    flex: 0.5;
-    justify-content: center;
+    flex: 1;
     align-items: baseline;
     border: black solid 2px;
     flex-direction: column;  
@@ -82,14 +86,12 @@ h2{
     display: flex;
     flex: 1;
     flex-direction: column;
-    margin: 20px;
 }
 .dune, .battlestar{
     flex: 1;
     justify-content: center;
     align-items: center;
     font-size: 2em;
-    margin: 15px;
 }
 .picture{
     width: 100%;
