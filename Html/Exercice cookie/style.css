@@ -1,0 +1,61 @@
+body{
+    display: flex;
+    background-image: url(image/fond.jpg);
+    background-position: center;
+    background-repeat: repeat;
+}
+header{
+    display: flex;
+    flex: 1;
+    background-image: url(image/header.jpg);
+    justify-content: center;
+    align-items: center;
+}
+div{
+    display: flex;
+    flex: 1;
+}
+.page{
+    width: 80vw;
+    flex-direction: column;
+}
+.espace{
+    flex: 1.1;
+}
+.logo{
+    flex: 1;
+}
+#logo{
+    width: 100%;
+}
+.titre{
+    flex: 9;
+    font-weight: bolder;
+}
+section{
+    display: flex;
+    flex: 1;
+}
+nav{
+    display: flex;
+    flex: 1;
+    background-image: url(image/fond1.png);
+    background-position: left;
+    justify-content: center;
+}
+.bouton{
+    flex: 3;
+    background-image: url(image/fond.jpg);
+    border: gray solid 3px;
+    border-radius: 0.3em;
+    box-shadow: 2px 2px gray;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+}
+.description{
+    display: flex;
+    flex: 1;
+    flex-direction: column;    
+}

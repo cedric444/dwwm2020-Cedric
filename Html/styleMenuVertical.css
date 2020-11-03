@@ -1,0 +1,21 @@
+body{
+    display: flex;
+}
+nav{
+    display: flex;
+    flex-flow: column;
+}
+.bouton{
+    display: block;
+    background-color: rgb(82, 82, 160);
+    border: black solid 1px;
+    border-radius: 0.3em;
+    
+}
+.bouton:hover .sousMenu{
+    display: flex;
+}
+.sousMenu{
+    display: none;
+    flex-direction: row;
+}

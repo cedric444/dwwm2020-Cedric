@@ -8,6 +8,7 @@ div{
 }
 .bouton{
     display: block;
+    position: relative;
     background-color: silver;
     border: black solid 1px;
     border-radius: 0.4em;
@@ -24,7 +25,9 @@ div{
 }
 .sousMenu{
     display: none;
-    flex-direction: column;    
+    flex-direction: column;
+    flex-wrap: column wrap;
+
 }
 a{
     text-decoration: none;
