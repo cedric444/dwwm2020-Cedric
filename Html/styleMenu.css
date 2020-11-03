@@ -24,3 +24,6 @@ a{
 .espace{
     flex: 0.3;
 }
+a:focus{
+    color: white;
+}
