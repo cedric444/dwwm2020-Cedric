@@ -16,6 +16,7 @@ div{
 .image{
     flex: 1;
     width: 100%;
+    justify-content: left;
 }
 .titre{
     flex: 2;
@@ -30,8 +31,7 @@ div{
 }
 
 .info{
-    background-color: 
-    cornsilk;
+    background-color: cornsilk;
     flex: 1;
     justify-content: center;
     align-items: center;
@@ -95,7 +95,6 @@ h2{
 .dune, .battlestar{
     flex: 1;
     justify-content: center;
-    align-items: center;
     font-size: 2em;
 }
 .picture{

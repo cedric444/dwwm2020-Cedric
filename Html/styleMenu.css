@@ -1,0 +1,26 @@
+nav{
+    display: flex;
+    width : 35vw;    
+}
+div{
+    display: flex;
+    flex: 1;
+}
+.bouton{
+    background-color: lightcyan;
+    border: black solid 1px;
+    border-radius: 0.25em;
+    justify-content: center;
+    box-shadow: 2px 2px green;
+}
+.bouton:hover{
+    background-color: cadetblue;
+    box-shadow: 4px 4px green;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.espace{
+    flex: 0.3;
+}
