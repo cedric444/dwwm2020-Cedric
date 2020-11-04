@@ -14,22 +14,19 @@ div{
     border-radius: 0.4em;
     box-shadow: 2px 2px black;
     text-align: center;
+    transition: background-color, 3s, linear, transform 4s;
 }
-.bouton:hover{
-    box-shadow: 4px 4px black;
-}
-.bouton:hover .sousMenu{
-    display: flex;
-    background-color: ghostwhite;
-    box-shadow: 4px 4px black;
-}
+
 .sousMenu{
     display: none;
     flex-direction: column;
-    flex-wrap: column wrap;
-
+    margin-top: 1.5em;
+    text-align: center;
 }
-a{
-    text-decoration: none;
-    color: darkblue;
+.bouton:hover .sousMenu{
+    display: flex;
+    position: absolute;
+    background-color: red;
+    box-shadow: 4px 4px black;
+    transform: translate(0, 0px);
 }
