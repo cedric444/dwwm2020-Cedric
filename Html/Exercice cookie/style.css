@@ -6,7 +6,7 @@ html, body {
 body{
     display: flex;
     background-image: url(image/fond.jpg);
-    background-position: center;
+    background-position: 50% 50%;
     justify-content: center;
 }
 header{
@@ -67,25 +67,44 @@ video{
 /**********************************Menu***********************************************/
 nav{
     display: flex;
-    flex: 1;
+    justify-content: center;
     background-image: url(image/fond1.png);
     background-position: left;
-    justify-content: center;
+    padding: 0.2vw 0;
 }
 .bouton{
-    flex: 3;
-    background-image: url(image/fond.jpg);
-    border: gray solid 3px;
+    flex: none;
+    background: linear-gradient(to bottom, #08598c, #3e99d1);
+    border: solid #326280 3px;
     border-radius: 0.3em;
     box-shadow: 2px 2px gray;
     color: white;
-    justify-content: center;
-    align-items: center;
     font-size: 1.2em;
+    padding: 0 0.5vw;
+    position : relative;
 }
 .espace{
     flex: 1.1;
 }
+.sousMenu{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 1.2em;
+    background: linear-gradient(to bottom, #08598c, #3e99d1);
+    border: solid #326280 3px;
+    border-radius: 0.3em;
+    box-shadow: 2px 2px gray;
+    white-space: nowrap;
+    margin-left: -0.5vw;
+}
+.bouton:hover .sousMenu{
+    display: flex; 
+}
+.menu{
+    justify-content: center;
+}
+
 /*********************************Partie1********************************************/
 .partie1{
     display: flex;
@@ -102,6 +121,7 @@ nav{
     flex-direction: column;
     height: 35vh;
     overflow-y: scroll;
+    background: linear-gradient(to bottom rgba(255, 255, 255, 1) 0%, rgba(229, 229, 229, 1) 100%);
         
 }
 .titre2{
@@ -110,19 +130,15 @@ nav{
     font-weight: bolder;
     font-size: 1.5em;
 }
-/*.description{
+.description{
     display: flex;
     flex: 1;   
-}*/
+}
 .ingredients, .recette{
     flex-direction: column;
 }
-.photo{
-    flex: 0.4;    
-}
-.photocook{
-    width: 100%;
-}
+
+
 /*************************************Partie2************************************/
 .partie2{
     flex-direction: column;    
