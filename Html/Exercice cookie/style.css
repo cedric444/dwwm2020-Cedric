@@ -1,15 +1,24 @@
+/****************************Général*********************/
+html, body {
+    margin: 0;
+    padding: 0;
+}
 body{
     display: flex;
     background-image: url(image/fond.jpg);
     background-position: center;
-    background-repeat: repeat;
+    justify-content: center;
 }
 header{
     display: flex;
     flex: 1;
     background-image: url(image/header.jpg);
-    justify-content: center;
+    justify-content: center;    
     align-items: center;
+}
+footer{
+    display: flex;
+    flex: 1;
 }
 div{
     display: flex;
@@ -18,26 +27,44 @@ div{
 .page{
     width: 80vw;
     flex-direction: column;
+    flex:none;
+    display: block;
 }
-.espace{
-    flex: 1.1;
+img{
+    width: 100%;
 }
+video{
+    width: 100%;
+}
+.espaceHor{
+    height: 5vh;
+}
+/*********************************Header, footer**********************************************/
 .logo{
     flex: 1;
 }
-#logo{
-    width: 100%;
-}
-.titre{
-    flex: 9;
-    font-weight: bolder;
-    font-size: 2.5em;
-    justify-content: center;
-}
-.partie1{
+
+.piedPage{
     display: flex;
     flex: 1;
+    background-image: url(image/fond1.png);
 }
+.titre, .textePied{
+    flex: 9;
+    justify-content: center;
+}
+.titre{
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 4em;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-shadow: white 0.1em 0.1em 0.2em;
+}
+.textPied{
+    font-size: 0.9em;
+    font-weight: bolder;
+}
+/**********************************Menu***********************************************/
 nav{
     display: flex;
     flex: 1;
@@ -56,28 +83,39 @@ nav{
     align-items: center;
     font-size: 1.2em;
 }
+.espace{
+    flex: 1.1;
+}
+/*********************************Partie1********************************************/
+.partie1{
+    display: flex;
+    flex: 1;
+}
+
 .video{
     flex: 1;
     height: 35vh; 
 }
 .boxDeroulant{
-    display: flex;
-    flex: 1;
+    
+    flex: 2;
     flex-direction: column;
-    align-items: center;
     height: 35vh;
     overflow-y: scroll;
         
 }
 .titre2{
-    text-align: center;
+    background-image: url(image/fond.jpg);
+    justify-content: center;
     font-weight: bolder;
     font-size: 1.5em;
 }
-.description{
+/*.description{
     display: flex;
-    flex: 1;
-    
+    flex: 1;   
+}*/
+.ingredients, .recette{
+    flex-direction: column;
 }
 .photo{
     flex: 0.4;    
@@ -85,12 +123,31 @@ nav{
 .photocook{
     width: 100%;
 }
+/*************************************Partie2************************************/
 .partie2{
+    flex-direction: column;    
+}
+.titreArticle{
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+.texteArticle{
+    flex: 9;
+    text-align: justify;
+    padding: 0.1em;
+}
+aside{
     display: flex;
     flex: 1;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;    
+    border: blue solid 1px;
+    border-radius: 6px;
+    padding: 0 0.5em;
+    align-items: center;
 }
+
+
+
+
 
 
