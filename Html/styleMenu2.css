@@ -22,11 +22,15 @@ div{
     flex-direction: column;
     margin-top: 1.5em;
     text-align: center;
+    border: white solid 1px;
+    border-radius: 0.4em;
+    box-shadow: inset 2px 2px gold, 2px 2px thistle;
+
 }
 .bouton:hover .sousMenu{
     display: flex;
     position: absolute;
-    background-color: red;
-    box-shadow: 4px 4px black;
-    transform: translate(0, 20px);
+    background-color: white;
+    box-shadow: inset 0 0 2em blue, 0 0 2em red;
+    transform: translate(0, 5px);
 }
