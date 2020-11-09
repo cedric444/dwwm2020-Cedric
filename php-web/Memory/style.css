@@ -1,0 +1,36 @@
+body{
+    display: block;
+    flex: 1;
+}
+header{
+    font-size: large;
+    font-weight: bolder;
+    text-align: center;
+}
+.espace{
+    flex:1;
+}
+.ligne{
+    display: flex;
+    flex: 1;
+}
+.espaceHor{
+    display: block;
+    height: 10vh;
+}
+.case{
+    flex: 1;
+}
+img{
+    width: 100%;
+}
+.verso{
+    display: none;
+}
+.case:hover .verso{
+    display: flex;
+}
+.case:hover .recto{
+    display: none;
+}
+
