@@ -1,0 +1,10 @@
+#formulaire{
+    background-color: green;
+    background: linear-gradient(white, green);
+    width: 25%;
+    height: 250px;
+}
+form{
+    display: block;
+    
+}

@@ -44,3 +44,6 @@ nav{
     font-weight: bolder;
     text-align: center;
 }
+.phoneSousMenu{
+    display: none;
+}
