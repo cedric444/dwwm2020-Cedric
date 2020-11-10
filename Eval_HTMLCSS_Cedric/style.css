@@ -1,0 +1,96 @@
+/************Général***********/
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #F7EFDF;
+    justify-content: center;
+    display: block;
+    width: 90vw;
+}
+
+div{
+    flex: 1;
+}
+aside{
+    flex: 1;
+    border: black solid 1px;
+    border-radius: 1em;
+    text-align: left;
+    padding: 1em;
+}
+page{
+    display: flex;
+}
+.espace{
+    flex: 0.5;
+}
+li{
+    color: #006633;
+    font-size: small;
+}
+.espaceHor{
+    height: 5vh;
+}
+img{
+    width: 100%;
+}
+strong{
+    color: #000066;
+}
+/************Header***************/
+header{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 1.5em;
+}
+/**************Intro***********/
+.introduction{
+    display: flex;
+    flex: 1;
+
+}
+.intro{
+    flex-direction: column;
+    flex: 2;
+    align-items: top;
+}
+.introTitre{
+    font-size: 1.2em;
+    font-weight: bolder;
+    padding: 1.5em;
+    
+}
+
+/*************article***********/
+.parte1{
+    display: block;
+    flex: 1;
+
+}
+.accroche{
+    font-size: 1.5em;
+    font-weight: bolder;
+    padding-top: 0.9em;
+}
+.article1{
+    display: flex;
+    flex: 3;
+}
+.photo{
+    flex: 1;
+    border:#BB8C00 solid 1px;
+}
+.textePhoto{
+    background-color: #F1E3C7;
+}
+.titrePhoto{
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+.titreArticle{
+    font-size: 1.2em;
+    font-weight: bolder;
+    padding-bottom: 0.9em;
+    padding-top: 1em;
+
+}
