@@ -1,0 +1,11 @@
+@media screen and(max-width: 800px){
+    body{
+        display: block;
+    }
+    page{
+        display: block;
+    }
+    .introduction{
+        display: block;
+    }
+}

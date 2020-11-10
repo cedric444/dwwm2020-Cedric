@@ -1,0 +1,135 @@
+/******************Général***********************/
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url("/images/bg.jpg");
+    display: block;
+    
+}
+header{
+    display: flex;
+    flex: 1;
+    background-image: url("/images/sky.jpg");
+    background-position: right;
+    align-items: center;
+}
+div{
+    flex: 1;
+}
+img{
+    width: 100%;
+}
+.espace{
+    flex: 1;
+}
+.espaceHor{
+    height: 10vh;
+}
+
+.demiEspace{
+    flex: 0.5;
+}
+/******************Header*******************/
+.logo{
+    flex: 0.5;
+    padding: 2em;
+}
+.titre{
+    flex: 2;
+    font-size: 2em;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    text-align: center;
+}
+/********************Footer*****************/
+footer{
+    background-image: url("/images/pp.jpg");
+    text-align: center;
+    font-weight: bolder;
+    font-size: 1.5em;
+    padding: 2em;
+}
+/********************Section****************/
+
+article{
+    flex: 2;
+    background-color: white; 
+    text-align: justify;
+}
+.montagne, .plage{
+    display: flex;
+    justify-content: center;
+    border-style: none;
+}
+.imageMontagne, .imagePlage{
+    flex: 2;  
+}
+.plage{
+    flex-direction: row-reverse;
+}
+.titreArticle{
+    font-weight: bolder;
+    text-align: center;
+    padding: 1em;
+}
+.texteArticle{
+    padding-left: 2em;
+    padding-right: 2em;
+    
+}
+.destinations{
+    display: block;
+}
+.ligne{
+    display: flex;
+    flex: 1;   
+}
+.intertitre{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 1.3em;
+    letter-spacing: 4px;
+    word-spacing: 6px;
+    padding: 1.5em;
+}
+
+#paris{
+    background-image: url("/images/08.jpg");
+    text-align: center;
+    padding: 2em;
+}
+#londres{
+    background-image: url("/images/07.jpg");
+    text-align: center;
+    padding: 2em;
+}
+#rome{
+    background-image: url("/images/06.jpg");
+    text-align: center;
+    padding: 2em;
+}
+#bali{
+    background-image: url("/images/05.jpg");
+    text-align: center;
+    padding: 2em;
+}
+#crete{
+    background-image: url("/images/04.jpg");
+    text-align: center;
+    padding: 2em;
+}
+#barcelone{
+    background-image: url("/images/03.jpg");
+    text-align: center;
+    padding: 2em;
+}
+#istanbul{
+    background-image: url("/images/02.jpg");
+    text-align: center;
+    padding: 2em;
+}
+#marrakech{
+    background-image: url("/images/01.jpg");
+    text-align: center;
+    padding: 2em;
+}

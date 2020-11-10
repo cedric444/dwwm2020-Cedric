@@ -30,7 +30,13 @@ div{
 .bouton:hover .sousMenu{
     display: flex;
     position: absolute;
+<<<<<<< HEAD
     background-color: white;
     box-shadow: inset 0 0 2em blue, 0 0 2em red;
     transform: translate(0, 5px);
+=======
+    background-color: blue
+    box-shadow: 4px 4px black;
+    transform: translate(0, 20px);
+>>>>>>> 7354cec390ac992f86aee123386cf5da84ba0fe2
 }
