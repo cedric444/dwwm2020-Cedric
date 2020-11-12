@@ -29,14 +29,12 @@ echo'<div class="page column">
 	<div class="article">
 		<h2>John Mctiernan</h2>
 		<article>
-			<div class="espace"></div>
 			<div class="photo"><img src= "IMG/Mctiernan.jpg" alt= "photo de John Mctiernan"><div class="legende">John Mctiernan en 2016</div></div>
 			<div class="texte">Après les années 70 et le Nouvel Hollywood qui fut caractérisé par des questions idéologiques et existentielles, dues au contexte de la guerre
 du Vietnam et au Watergate, les années 80 voient le retour d\'un cinéma plus de divertissement et notemment du héros.
 En 1985, un film à petit budget, Nomads, se fait remarquer malgré son manque de succès et permet à son réalisateur et scénariste de se retrouver à la tête d\'une grosse
 production, Predator. C\'est ainsi que John Mctiernan va se faire un nom et devenir un des réalisateurs les plus novateurs et influents
 de ces trentes dernières années.</div>
-			<div class="espace"></div>
 		</article>
 	</div>
 	<div class="espaceHor"></div>

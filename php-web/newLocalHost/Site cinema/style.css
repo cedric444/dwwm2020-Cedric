@@ -13,6 +13,9 @@ header{
     background-position: center;
     background: rgba(156, 113, 113, 0.5)
 }
+body{
+    background-color: var(--couleurArticle);
+}
 nav{
     flex: 1;
     width:80vw;
@@ -22,7 +25,7 @@ nav{
 .btn{
     border: black solid 2px;
     justify-content: center;
-    
+    padding: 2em;
 }
 .colonne{
     flex-direction: column;
@@ -35,12 +38,12 @@ img{
     display: block;
 }
 .texte{
-    flex: 2;
+    flex: 1;
 }
 article{
-    display: flex;
-
+    display: block;
     justify-content: center;
+    align-items: center;
 }
 .photo{
     flex: 1;

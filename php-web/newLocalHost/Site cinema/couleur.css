@@ -2,4 +2,7 @@
     --couleur1: #10108b8a;
     --couleur2: rgba(0, 0, 255, 0.897);
     --couleurArticle: linear-gradient(var(--couleur1) 25%, var(--couleur2) 35% );
+    --couleur3: cornflowerblue;
+    --couleur4:  #173c80;
+    --couleurFond: linear-gradient(var(--couleur3), var(--couleur4));
 }
