@@ -1,0 +1,5 @@
+:root{
+    --couleur1: #10108b8a;
+    --couleur2: rgba(0, 0, 255, 0.897);
+    --couleurArticle: linear-gradient(var(--couleur1) 25%, var(--couleur2) 35% );
+}

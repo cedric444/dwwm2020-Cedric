@@ -1,0 +1,121 @@
+/*******************Général*******************/
+body{
+    margin: 0;
+    padding: 0;
+    display: block; 
+    background-image: url("images/bg.jpg");
+}
+
+div{
+    flex: 1;
+}
+img{
+    width: 100%;
+}
+.espace{
+    flex: 0.3;
+}
+.espaceHor{
+    height: 15vh;
+}
+/********************Header******************/
+header{
+    background-image: url("images/sky.jpg");
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+.logo{
+    flex: 1;
+    padding: 3em;
+}
+.titre{
+    flex: 2;
+    font-size: 2em;
+    font-weight: bolder;
+    text-align: center;
+}
+/********************Footer*******************/
+footer{
+    background-image: url("images/pp.jpg");
+    font-size: 1.5em;
+    text-align: center;
+    padding: 1em;
+}
+/********************Partie1******************/
+.montagne, .plage{
+    display: flex;
+    flex: 1;
+    justify-items: center;
+}
+article{
+    
+    display: flex;
+    flex-direction: column;
+    
+}
+.article{
+     background-color: white;
+}
+
+.titreArticle{
+    font-size: 1.2em;
+    font-weight: bolder;
+    text-align: center;
+    padding-bottom: 4em;    
+}
+.texteArticle{
+    font-size: 1.1em;
+    text-align: justify;
+
+}
+.plage{
+    flex-direction: row-reverse;
+}
+.deco{
+    flex: 1;  
+}
+
+/*******************Partie2*******************/
+.destination{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 1.3em;
+}
+.ligne{
+    display: flex;
+    flex: 1;
+    text-align: center;
+}
+#paris{
+    background-image: url("images/08.jpg");
+    padding: 2em;
+}
+#londres{
+    background-image: url("images/07.jpg");
+    padding: 2em;
+}
+#rome{
+    background-image: url("images/06.jpg");
+    padding: 2em;
+}
+#bali{
+    background-image: url("images/05.jpg");
+    padding: 2em;
+}
+#crete{
+    background-image: url("images/04.jpg");
+    padding: 2em;
+}
+#barcelone{
+    background-image: url("images/03.jpg");
+    padding: 2em;
+}
+#istanbul{
+    background-image: url("images/02.jpg");
+    padding: 2em;
+}
+#marrakech{
+    background-image: url("images/01.jpg");
+    padding: 2em;
+}

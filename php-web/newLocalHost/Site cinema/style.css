@@ -1,0 +1,60 @@
+html, div, nav{
+    display: flex;
+    flex: 1;
+}
+header, body{
+    flex-direction: column;
+    text-align: center;
+
+}
+header{
+    background-image: url("IMG/banniere.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background: rgba(156, 113, 113, 0.5)
+}
+nav{
+    flex: 1;
+    width:80vw;
+    align-items: center;
+    background-color: var(--couleurArticle);    
+}
+.btn{
+    border: black solid 2px;
+    justify-content: center;
+    
+}
+.colonne{
+    flex-direction: column;
+}
+img{
+    width: 100%;
+}
+
+.article{
+    display: block;
+}
+.texte{
+    flex: 2;
+}
+article{
+    display: flex;
+
+    justify-content: center;
+}
+.photo{
+    flex: 1;
+    flex-direction: column;
+    border : black solid 1px;
+}
+.espace{
+    flex: 0.5;
+}
+.espaceHor{
+    height: 10vh;
+}
+.legende{
+    font-size: small;
+}
+
+
