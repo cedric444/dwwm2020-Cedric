@@ -1,0 +1,18 @@
+div{
+    display: flex;
+    flex: 1;
+}
+header{
+    text-align: center;
+}
+.colonne{
+    flex-direction: column;
+}
+.groupe{
+    border: black solid 1px;
+    border-radius: 1em;
+    padding: 2em;
+}
+.annee{
+    font-weight: bolder;
+}
