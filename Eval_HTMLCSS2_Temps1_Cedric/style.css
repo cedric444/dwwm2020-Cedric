@@ -1,0 +1,88 @@
+/**************Général**************/
+html{
+    display: block;
+}
+body{
+    margin: 0;
+    padding: 0;
+    display: block;
+    background-color: rgb(199, 192, 192);
+}
+div{
+    display: flex;
+    flex: 1;
+    flex-wrap: nowrap;
+}
+img{
+    width: 100%;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+.espaceHor{
+    height: 5vh;
+}
+
+/**************Header**************/
+.sousMenu{
+    display: none;
+    position: absolute;
+    flex-flow: column wrap;
+    margin-top: 4em;
+    background-color: teal;
+    color: white;
+}
+.btn{
+    color: blue;
+    font-weight: bolder;
+    position: relative;
+    flex: 5;
+}
+.imageHeader{
+    border-top: blue solid 4px;
+}
+.btn:hover .sousMenu{
+    display: flex;
+    flex-direction: column;
+}
+.btn:hover{
+    background-color: rgba(0, 68, 255, 0.924);
+    color: white;
+}
+
+/**************Contenu**************/
+
+.contenu{
+    display: block;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+}
+.titreArticle{
+    color: blue;
+    font-weight: bold;
+    padding-bottom: 5vh;
+}
+.texte{
+    display: block;
+    flex: 2;
+    padding: 2em;
+    text-align: left;
+}
+.footerContenu{
+    color: blue;
+    font-weight: bold;
+}
+.logoFooter{
+    flex: 0.1;
+}
+/**************Footer**************/
+footer{
+    display: flex;
+    background-color: rgb(0, 60, 128);
+    color: white;
+}
