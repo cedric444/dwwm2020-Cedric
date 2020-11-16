@@ -1,0 +1,77 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+div{
+    /*display: flex;*/
+    flex: 1;
+    justify-content: center;
+}
+header{
+    font-size: 4em;
+    font-weight: bolder;
+}
+.tab{
+    display: flex;
+    padding: 2em;
+    flex-direction: column;
+    color: white;
+}
+.libelle{
+    background-color: aqua;
+    border: white solid 1px;
+    padding: 2em;
+}
+.contenu{
+    /*display: block;*/
+    align-items: center;
+}
+.employe{
+    flex-direction: row;
+}
+.espaceHor{
+    display: block;
+    height: 5vh;
+    flex: 0;
+}
+.cache{
+    display: none;
+}
+.generique, .infoAgence{
+    display: flex;
+}
+
+
+
+/******************employeDetail*******************/
+
+.tab2{
+    display: flex;
+    
+}
+.page{
+    display: block;
+}
+}.ligne{
+    flex-direction: column;
+}
+.categorie{
+    display: flex;
+    justify-content: left;
+    padding: 2em;
+}
+.nom{
+    font-size: 1.5em;
+    font-weight: bolder;
+    text-align: center;
+}
+.information, .poste, .agence{
+    flex: 3;
+    background-color: aquamarine;
+    border-radius: 1.5em;
+}
+.info{
+    background-color: darkblue;
+    color: white;
+    border: solid white 2px;
+}
