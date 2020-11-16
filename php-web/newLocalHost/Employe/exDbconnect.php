@@ -36,7 +36,25 @@ while($donnees= $requeteM->fetch(PDO::FETCH_ASSOC))
 var_dump($employes);*/
 
 /************requete d'ajout simple************/
-$q= $db->exec('INSERT INTO employes(nom, prenom) VALUES("Dubois", "Leonard")');
-var_dump($q);
+/*$q= $db->exec('INSERT INTO employes(nom, prenom) VALUES("Dubois", "Leonard")');
+var_dump($q);*/
 
 /************requete d'ajout paramétré**********/
+/*$employe= new Employe(["nom"=>"Dufour", "prenom"=>"Patrice"]);
+
+$q= $db->prepare('INSERT INTO employes(nom, prenom) VALUES(:nom, :prenom)');
+
+$q->bindValue(':nom', $employe->getNom());
+$q->bindValue(':prenom',$employe->getPrenom());
+
+$reponse= $q->execute();
+var_dump($reponse);*/
+
+/***********requete d'ajout composé************/
+$employe= new Employe(["nom"=>"Renaud", "prenom"=>"Emilie"]);
+var_dump($employe);
+$q= $db->prepare('INSERT INTO employes(nom, prenom) VALUES('.$employe->getNom().', '.$employe->getPrenom().')');
+var_dump($q);
+var_dump($db);
+$reponse= $q->execute();
+var_dump($reponse);

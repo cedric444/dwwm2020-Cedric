@@ -28,6 +28,7 @@ header{
 }
 .employe{
     flex-direction: row;
+    word-spacing: 4em;
 }
 .espaceHor{
     display: block;
@@ -37,8 +38,11 @@ header{
 .cache{
     display: none;
 }
-.generique, .infoAgence{
+.generique{
     display: flex;
+}
+.ligne{
+    display: block;
 }
 
 
@@ -52,7 +56,7 @@ header{
 .page{
     display: block;
 }
-}.ligne{
+.ligne{
     flex-direction: column;
 }
 .categorie{
