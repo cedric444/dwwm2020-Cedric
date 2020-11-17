@@ -65,6 +65,7 @@ foreach($tableau as $unClient)
 echo'on met à jour l\'id 1'.'<br>';
 $c->setNomClient($c->getNomClient().'sss');
 ClientsManager::update($c);
+var_dump($c);
 $cRecharge = ClientsManager::findById(1);
 var_dump($cRecharge);
 

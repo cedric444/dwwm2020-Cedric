@@ -19,6 +19,7 @@ class ClientsManager
         $q->bindValue(":nomClient", $obj->getNomClient());
         $q->bindValue(":prenomClient", $obj->getPrenomClient());
         $q->bindValue(":codePostal", $obj->getCodePostal());
+        $q->bindValue("ville", $obj->getVille());
         $q->bindValue(":idClient", $obj->getIdClient());
         $q->execute();
     }
