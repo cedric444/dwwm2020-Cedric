@@ -28,7 +28,8 @@ header{
 }
 .employe{
     flex-direction: row;
-    word-spacing: 4em;
+    word-spacing: 8em;
+    font-size: 1.5em;
 }
 .espaceHor{
     display: block;
@@ -44,6 +45,7 @@ header{
 .ligne{
     display: block;
 }
+
 
 
 
