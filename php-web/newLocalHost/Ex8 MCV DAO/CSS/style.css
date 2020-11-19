@@ -1,9 +1,12 @@
-body, header, div{
+body, header, .contenu, .espace{
     display: flex;
     flex: 1;
 }
 .colonne{
     flex-direction: column;
+}
+div {
+    display: block;
 }
 
 .titre{
@@ -11,4 +14,15 @@ body, header, div{
     font-size: 3em;
     justify-content: center;
     align-items: center;
+}
+h1{
+    text-align: center;
+}
+.btn{
+    display: flex;
+    flex: 1;
+    padding: 1em;
+    border: black solid 1px;
+    background-color: cornflowerblue;
+    justify-content: center;
 }
