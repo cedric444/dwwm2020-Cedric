@@ -2,7 +2,8 @@
 include 'head.php';
 include 'header.php';
 
-$reponse= new Produits(["libelleProduit"=>$_POST["LibelleProduit"], "prix"=>$_POST["Prix"], "DateDePeremption"=>$_POST["DateDePeremprion"]]);
+$reponse= new Produits(["libelleProduit"=>$_POST["libelleProduit"], "prix"=>$_POST["prix"], "dateDePeremption"=>$_POST["dateDePeremption"]]);
+var_dump($reponse);
 ProduitsManager::add($reponse);
 
-header('Location:../../index.php');
+/*header('Location:../../index.php');*/
