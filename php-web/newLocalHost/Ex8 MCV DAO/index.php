@@ -85,18 +85,17 @@ include "PHP/VIEW/header.php";
 echo '<h1>Liste des produits</h1>'.'<br>';
 echo'<div class="contenu">
 <div class="espace"></div>
-<div class="btn"><a href="add.php">Ajouter</a></div>
-<div class="espace"></div></div><div class="colonne">';
+<div class="btn"><a href="PHP/VIEW/add.php">Ajouter</a></div>
+<div class="espace"></div></div>';
 $tableau = ProduitsManager::getList();
 foreach($tableau as $elt)
 {
-    echo'<div><div class="elt colonne">'. $elt->getLibelleProduit().'</div>'.'
-    <div class="btn"><a href="delete.php">Supprimer</a></div>
-    <div class="btn"><a href="PHP/VIEW/edit.php">Afficher</a></div>
-    <div class="btn"><a href="add.php">Modifier</a></div><div>'.'<br>';
+    echo'<div class="elt>'. $elt->getLibelleProduit().'</div>';
+    echo'<div class="btn"><a href="PHP/VIEW/delete.php?id='.$elt->getIdProduit().'">Supprimer</a></div>
+    <div class="btn"><a href="PHP/VIEW/edit.php?id='.$elt->getIdProduit().'">Afficher</a></div>
+    <div class="btn"><a href="PHP/VIEW/add.phpid='.$elt->getIdProduit().'">Modifier</a></div>'.'<br>';
 }
 echo'</div>';
-
 
 
 
