@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.31, for Win64 (x86_64)
 --
--- Host: localhost    Database: pemiereguerre
+-- Host: localhost    Database: bilancomptable
 -- ------------------------------------------------------
 -- Server version	5.7.31
 
@@ -16,12 +16,12 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Current Database: `pemiereguerre`
+-- Current Database: `bilancomptable`
 --
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `pemiereguerre` /*!40100 DEFAULT CHARACTER SET latin1 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `bilancomptable` /*!40100 DEFAULT CHARACTER SET latin1 */;
 
-USE `pemiereguerre`;
+USE `bilancomptable`;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -32,4 +32,4 @@ USE `pemiereguerre`;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-10 17:15:31
+-- Dump completed on 2020-11-18 17:15:30

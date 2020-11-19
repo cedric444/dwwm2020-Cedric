@@ -264,4 +264,4 @@ USE `gestion_hotels`;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-10 17:15:31
+-- Dump completed on 2020-11-18 17:15:31
