@@ -15,29 +15,29 @@ class Clients
         return $this->_idClient;
     }
 
-    public function setIdClient($idClient)
+    public function setIdClient(int $idClient)
     {
         $this->_idClient = $idClient;
     }
     
     public function getNomClient()
     {
-        return $this->_nom;
+        return $this->_nomClient;
     }
 
-    public function setNomClient($nom)
+    public function setNomClient($nomClient)
     {
-        $this->_nom = $nom;
+        $this->_nomClient = $nomClient;
     }
 
     public function getPrenomClient()
     {
-        return $this->_prenom;
+        return $this->_prenomClient;
     }
 
-    public function setPrenomClient($prenom)
+    public function setPrenomClient($prenomClient)
     {
-        $this->_prenom = $prenom;
+        $this->_prenomClient = $prenomClient;
     }
 
     public function getCodePostal()

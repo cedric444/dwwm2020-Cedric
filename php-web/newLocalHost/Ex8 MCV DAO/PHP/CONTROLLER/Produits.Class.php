@@ -14,7 +14,7 @@ class Produits
         return $this->_idProduit;
     }
 
-    public function setIdProduit($idProduit)
+    public function setIdProduit(int $idProduit)
     {
         $this->_idProduit = $idProduit;
     }

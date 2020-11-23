@@ -2,6 +2,7 @@
 
 include "PHP/VIEW/head.php";
 include "PHP/VIEW/header.php";
+include "PHP/VIEW/listeClients.php";
 
 /*Test Manager*/
 
@@ -90,16 +91,12 @@ echo'<div class="contenu">
 $tableau = ProduitsManager::getList();
 foreach($tableau as $elt)
 {
-    echo'<div class="elt>'. $elt->getLibelleProduit().'</div>';
-    echo'<div class="btn"><a href="PHP/VIEW/delete.php?id='.$elt->getIdProduit().'">Supprimer</a></div>
+    echo'<div class="liste"><div class="elt">'. $elt->getLibelleProduit().'</div>';
+    echo'<div class="btn"><a href="PHP/VIEW/formDelete.php?id='.$elt->getIdProduit().'">Supprimer</a></div>
     <div class="btn"><a href="PHP/VIEW/edit.php?id='.$elt->getIdProduit().'">Afficher</a></div>
-    <div class="btn"><a href="PHP/VIEW/add.phpid='.$elt->getIdProduit().'">Modifier</a></div>'.'<br>';
+    <div class="btn"><a href="PHP/VIEW/formUpdate.php?id='.$elt->getIdProduit().'">Modifier</a></div></div>'.'<br>';
 }
-echo'</div>';
-
-
-
-
+echo'<br></div>';
 
 
 include "PHP/VIEW/footer.php";
