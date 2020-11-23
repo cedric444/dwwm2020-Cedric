@@ -1,10 +1,12 @@
 <?php
 
 
-$idProduit= $_GET["id"];
+$idProduit= $_GET['id'];
+
 $produit= ProduitsManager::findById($idProduit);
 
-echo'<form method="POST" action="update.php">
+
+echo'<form method="POST" action="index.php?code=update">
 <input name="idProduit" value="'.$produit->getIdProduit().'"type="hidden"/>
 <label for="libelleProduit">Libelle Produit : </label>
 <input name="libelleProduit" value ="'.$produit->getLibelleProduit().'" placeholder="libelle produit">

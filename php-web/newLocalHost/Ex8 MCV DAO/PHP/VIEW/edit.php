@@ -8,7 +8,7 @@ echo'<div class="liste"><div class="detail">'.$idProduit.'</div><div class="espa
 <div class="detail">'.$q->getLibelleProduit($idProduit).'</div><div class="espace"></div>
 <div class="detail">'.$q->getPrix($idProduit).'</div><div class="espace"></div>
 <div class="detail">'.$q->getDateDePeremption($idProduit).'</div></div>
-<button type="reset"><a href="index.php?code=liste">Retour</a></button>';
+<button type="reset"><a href="index.php?code=default">Retour</a></button>';
 
 
 

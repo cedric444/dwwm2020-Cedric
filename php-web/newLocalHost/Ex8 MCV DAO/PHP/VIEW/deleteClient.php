@@ -1,7 +1,7 @@
 <?php
 
-$idClient= $_POST["id"];
-$supp =ClientsManager::findById($idClient);
+$supp= new Clients($_POST);
+
 ClientsManager::delete($supp);
 
-header("location:index.php?code=default2");
+header("location:index.php?code=listeClients");

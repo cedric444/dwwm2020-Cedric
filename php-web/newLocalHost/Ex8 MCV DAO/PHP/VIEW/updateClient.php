@@ -1,7 +1,7 @@
 <?php
 
 $cl= new Clients($_POST);
-var_dump($cl);
+//var_dump($cl);
 ClientsManager::update($cl);
 
-/*header('location:index.php?code=default2');*/
+header('location:index.php?code=listeClients');

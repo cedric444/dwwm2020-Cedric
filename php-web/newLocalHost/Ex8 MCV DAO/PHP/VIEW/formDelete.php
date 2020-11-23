@@ -1,15 +1,17 @@
 <?php
 
 
-$idProduit= $_GET["id"];
+$idProduit= $_GET['id'];
 $q= ProduitsManager::findById($idProduit);
-
-echo'<form method="POST" action="index.php?code=supprime2">
+//var_dump($q);
+echo'<form method="POST" action="index.php?code=actionDelete"/>
+<input name="idProduit" value='.$q->getIdProduit().' type="hidden">
 <label for="libelleProduit">Libelle Produit : </label>
-<input name="libelleProduit" placeholder="libelle produit">
+<input name="libelleProduit" value="'.$q->getLibelleProduit().'" disabled>
 <label for="prix">Prix : </label>
-<input name="prix" placeholder="prix">
+<input name="prix" value="'.$q->getPrix().'" disabled>
 <label for="dateDePeremption">Date de peremption : </label>
-<input name="dateDePeremption" placeholder="date de peremption">
-<button type="submit"><a href="index.php?code=supprime">Supprimer</a></button>
-<button type="reset"><a href="index.php?code=liste">Retour</a></button>';
+<input name="dateDePeremption" value="'.$q->getDateDePeremption().'" disables
+d>
+<button type="submit">Supprimer</a></button>
+<button type="reset"><a href="index.php?code=default">Retour</a></button>';

@@ -3,4 +3,4 @@
 $cl= new Clients($_POST);
 ClientsManager::add($cl);
 
-header('Location:../../index.php');
+header('Location:index.php?code=listeClients');

@@ -1,8 +1,6 @@
 <?php
-include 'head.php';
-include 'header.php';
 
-echo'<form method="POST" action="resultat.php">
+echo'<form method="POST" action="index.php?code=actionAjout">
 <label for="libelleProduit">Libelle Produit : </label>
 <input name="libelleProduit" placeholder="libelle produit">
 <label for="prix">Prix : </label>
@@ -10,4 +8,4 @@ echo'<form method="POST" action="resultat.php">
 <label for="dateDePeremption">Date de peremption : </label>
 <input name="dateDePeremption" placeholder="date de peremption">';
 echo'<button type="submit">Envoyer</button>
-<button type="reset"><a href="index.php?code=liste">Annuler</a></button>';
+<button type="reset"><a href="index.php?code=default">Annuler</a></button>';
