@@ -1,7 +1,5 @@
 <?php
 
-include 'head.php';
-include 'header.php';
 
 $idProduit= $_GET["id"];
 $produit= ProduitsManager::findById($idProduit);
@@ -15,5 +13,5 @@ echo'<form method="POST" action="update.php">
 <label for="dateDePeremption">Date de peremption : </label>
 <input name="dateDePeremption" value ="'.$produit->getDateDePeremption().'"placeholder="date de peremption">';
 echo'<button type="submit">Modifier</button>
-<button type="reset"><a href="../../index.php">Annuler</a></button>';
+<button type="reset"><a href="index.php?code=liste">Annuler</a></button>';
 

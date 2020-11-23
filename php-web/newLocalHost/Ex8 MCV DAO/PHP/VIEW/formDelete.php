@@ -13,4 +13,4 @@ echo'<form method="POST" action="delete.php">
 <label for="dateDePeremption">Date de peremption : </label>
 <input name="dateDePeremption" placeholder="date de peremption">
 <button type="submit"><a href="delete.php">Supprimer</a></button>
-<button type="reset"><a href="../../index.php">Retour</a></button>';
+<button type="reset"><a href="index.php?code=liste">Retour</a></button>';
