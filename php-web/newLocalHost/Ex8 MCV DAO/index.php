@@ -38,11 +38,14 @@ $routes=[
     "modif"=>["PHP/VIEW/", "FormUpdate", "Modifier un produit"],
     "delete"=>["PHP/VIEW/", "FormDelete", "Effacer un produit"],
     "test"=>["PHP/MODEL/", "Test", "Test manager"],
-    "default2"=>["PHP/VIEW/", "ListeClient", "Liste des clients"],
+    "default2"=>["PHP/VIEW/", "ListeClients", "Liste des clients"],
     "detail2"=>["PHP/VIEW/", "EditClient", "Détail du client"],
     "ajout2"=>["PHP/VIEW/", "FormAddClient", "Ajouter un client"],
     "modif2"=>["PHP/VIEW/", "FormUpdateClient", "Modifier un client"],
-    "delete2"=>["PHP/VIEW/", "FormDeleteClient", "Effacer un client"]
+    "delete2"=>["PHP/VIEW/", "FormDeleteClient", "Effacer un client"],
+    "add2"=>["PHP/VIEW/", "addClient.php", "ajouter un client"],
+    "update2"=>["PHP/VIEW/", "updateClient", "modifier un client"],
+    "supprime2"=>["PHP/VIEW/","deleteClient", "supprimer un client"],
 ];
 
 if(isset($_GET['code']))

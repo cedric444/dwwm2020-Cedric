@@ -1,12 +1,10 @@
 <?php
 
-include 'head.php';
-include 'header.php';
 
 $idClient= $_GET["id"];
 $cl= ClientsManager::findById($idClient);
 
-echo'<form method="post" action="updateClient.php">
+echo'<form method="post" action="index.php?code=update2">
 <input name"idClient" value="'.$cl->getIdClient().'" type="hidden">
 <label for="nomClient">Nom du client</label>
 <input name="nomClient" value="'.$cl->getNomClient().'"/>
@@ -17,5 +15,5 @@ echo'<form method="post" action="updateClient.php">
 <label for="ville">Ville</label>
 <input name="ville" value="'.$cl->getVille().'"/>';
 
-echo'<button type="submit"><a href="updateClient.php">Modifier</a></button>
-<button type="reset"><a href="../../index.php">Retour</a></button></form>';
+echo'<button type="submit"><a href="index.php?code=update2">Modifier</a></button>
+<button type="reset"><a href=index.php?code=default2">Retour</a></button></form>';

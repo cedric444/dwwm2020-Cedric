@@ -15,4 +15,5 @@ foreach($tableau as $elt)
     <div class="btn"><a href="index.php?code=modif&id='.$elt->getIdProduit().'">Modifier</a></div></div>'.'<br>';
 }
 echo'<br></div>';
+echo'<a href="index.php?code=default2">Liste des clients</a>';
 
