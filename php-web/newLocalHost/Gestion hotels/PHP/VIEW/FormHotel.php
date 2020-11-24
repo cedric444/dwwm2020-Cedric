@@ -6,7 +6,7 @@ if (isset ($_GET['id']))
     $idHotel= $_GET['id'];
     if($idHotel!=false)
     {
-        $client= HotelsManager::findById($idHotel);
+        $hotelChoisi= HotelsManager::findById($idHotel);
     }
 }
 
@@ -31,7 +31,7 @@ switch ($mode)
         }
     case 'edit' :
         {
-            echo'echo <form >  
+            echo'<form >  
             <input name="idHotel"  value="' . $hotelChoisi->getidHotel() . '" type="hidden" />';
             break;
         }

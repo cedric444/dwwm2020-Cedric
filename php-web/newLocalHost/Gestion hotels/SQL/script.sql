@@ -14,6 +14,13 @@ CREATE TABLE IF NOT EXISTS `hotels` (
   KEY `FK_Hotels_idStation` (`idStation`)
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
+CREATE TABLE IF NOT EXISTS Stations(
+  `idStation` int (11) NOT NULL AUTO_INCREMENT,
+  `nomStation` Varchar (25) NOT NULL,
+  `altitudeStation` int NOT NULL,
+  PRIMARY KEY (`idStation` )
+)ENGINE=InnoDB;
+
 --
 -- Déchargement des données de la table `hotels`
 --
@@ -34,3 +41,12 @@ INSERT INTO `hotels` (`idHotel`, `nomHotel`, `categorieHotel`, `adresseHotel`, `
 (13, 'Chalets les edelweiss', 3, '8 Avenue des sapins', 'Alpe d Huez', 8),
 (14, 'Chalets les panoramas', 2, '3 Chemin de la neige', 'Areches', 6),
 (15, 'Chalets les sapins', 5, '3 Rue des pissenlits', 'Beaufort', 8);
+
+INSERT INTO `stations`  VALUES(1, 'La Montagne', 2500);
+INSERT INTO `stations`  VALUES(2, 'Le Sud', 200);
+INSERT INTO `stations`  VALUES(3, 'La Plage', 10);
+INSERT INTO `stations`  VALUES(4, 'Alpe d Huez', 1860);
+INSERT INTO `stations`  VALUES(5, 'Areches', 1200);
+INSERT INTO `stations`  VALUES(6, 'Beaufort', 1200);
+INSERT INTO `stations`  VALUES(7, 'Aussois', 1500);
+INSERT INTO `stations`  VALUES(8, 'Avoriaz', 1800);
