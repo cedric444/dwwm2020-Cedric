@@ -34,21 +34,9 @@ $routes=[
     "default"=>["PHP/VIEW/", "ListeProduit", "Liste de produits"],
     "liste"=>["PHP/VIEW/", "ListeProduit", "Liste de produits"],
     "detail"=>["PHP/VIEW/", "Edit", "Détail du produit"],
-    //"ajout"=>["PHP/VIEW/", "FormAdd", "Ajouter un produit"],
-    //"modif"=>["PHP/VIEW/", "FormUpdate", "Modifier un produit"],
-    //"delete"=>["PHP/VIEW/", "FormDelete", "Effacer un produit"],
-    //"actionDelete"=>["PHP/VIEW/", "delete", "Effacer un produit"],
-    //"update"=>["PHP/VIEW/", "update", "Modifier un produit"],
-    //"actionAjout"=>["PHP/VIEW/", "resultat", "Ajouter un produit"],
     "test"=>["PHP/MODEL/", "Test", "Test manager"],
     "listeClients"=>["PHP/VIEW/", "ListeClients", "Liste des clients"],
     "detailClient"=>["PHP/VIEW/", "EditClient", "Détail du client"],
-    "ajoutClient"=>["PHP/VIEW/", "FormAddClient", "Ajouter un client"],
-    "modifClient"=>["PHP/VIEW/", "FormUpdateClient", "Modifier un client"],
-    "deleteClient"=>["PHP/VIEW/", "FormDeleteClient", "Effacer un client"],
-    "actionAjoutClient"=>["PHP/VIEW/", "addClient", "ajouter un client"],
-    "updateClient"=>["PHP/VIEW/", "updateClient", "modifier un client"],
-    "actionDeleteClient"=>["PHP/VIEW/","deleteClient", "supprimer un client"],
     "formProduit"=>["PHP/VIEW/", "FormProduit", "Formulaire produits"],
     "formClient"=>["PHP/VIEW/", "FormClient", "Formulaire clients"],
     "actionProduit"=>["PHP/VIEW/", "ActionProduit", "Action sur les produits"],
@@ -74,20 +62,6 @@ else
 }
 
 
-/*echo '<h1>Liste des produits</h1>'.'<br>';
-echo'<div class="contenu">
-<div class="espace"></div>
-<div class="btn"><a href="PHP/VIEW/add.php">Ajouter</a></div>
-<div class="espace"></div></div>';
-$tableau = ProduitsManager::getList();
-foreach($tableau as $elt)
-{
-    echo'<div class="liste"><div class="elt">'. $elt->getLibelleProduit().'</div>';
-    echo'<div class="btn"><a href="PHP/VIEW/formDelete.php?id='.$elt->getIdProduit().'">Supprimer</a></div>
-    <div class="btn"><a href="PHP/VIEW/edit.php?id='.$elt->getIdProduit().'">Afficher</a></div>
-    <div class="btn"><a href="PHP/VIEW/formUpdate.php?id='.$elt->getIdProduit().'">Modifier</a></div></div>'.'<br>';
-}
-echo'<br></div>';
 
 
-include "PHP/VIEW/footer.php";*/
+include "PHP/VIEW/footer.php";
