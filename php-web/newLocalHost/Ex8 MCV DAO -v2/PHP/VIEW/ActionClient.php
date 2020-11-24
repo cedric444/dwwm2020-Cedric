@@ -1,5 +1,6 @@
 <?php
 $mode= $_GET['mode'];
+
 $cl= new Clients($_POST);
 
 switch($mode){
@@ -8,7 +9,7 @@ switch($mode){
         ClientsManager::add($cl);
         break;
     }
-    case 'modif':
+    case 'update':
     {
         ClientsManager::update($cl);
         break;

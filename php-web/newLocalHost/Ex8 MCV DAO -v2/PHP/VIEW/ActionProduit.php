@@ -8,7 +8,7 @@ switch($mode){
         ProduitsManager::add($prod);
         break;
     }
-    case 'modif':
+    case 'update':
     {
         ProduitsManager::update($prod);
         break;
@@ -19,4 +19,4 @@ switch($mode){
         break;
     }
 }
-header('Location:index.php?code=liste');
+/*header('Location:index.php?code=liste');*/

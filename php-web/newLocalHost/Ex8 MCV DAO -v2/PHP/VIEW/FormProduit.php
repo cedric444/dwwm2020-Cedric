@@ -15,30 +15,30 @@ switch($mode)
 {
     case 'ajout':
     {
-        echo'<form method="POST" action="index.php?code=formProduit&mode=ajout">';
+        echo'<form method="POST" action="index.php?code=actionProduit&mode=ajout">';
         break;        
     }
     case 'update':
     {
-        echo'<form method="POST" action="index.php?code=formProduit&mode=update"/>
-        <input name="idProduit" value="'.$produit->getIdProduit().'" type="hidden"/>';
+        echo'<form method="POST" action="index.php?code=actionProduit&mode=update"/>
+        <input name="idProduit" value='.$produit->getIdProduit().' type="hidden"/>';
         break;
     }
     case 'delete':
     {
-        echo'<form method="POST" action="index.php?code=formProduit&mode=delete">
-        <input name="idProduit" value="'.$produit->getIdProduit().'" type="hidden"/>';
+        echo'<form method="POST" action="index.php?code=actionProduit&mode=delete">
+        <input name="idProduit" value='.$produit->getIdProduit().' type="hidden"/>';
         break;
     }
 }
 ?>
 
 <label for="libelleProduit">Libelle Produit : </label>
-<input name="libelleProduit" <?php if($mode!='ajout') {echo'value="'.$produit->getLibelleProduit().'"';} else{echo'placeholder="libelle produit"';} if($mode=='delete'){echo'disabled';}?>/>
+<input name="libelleProduit" <?php if($mode!="ajout") {echo'value="'.$produit->getLibelleProduit().'"';} else{echo'placeholder="libelle produit"';} if($mode=="delete"){echo'disabled';}?>/>
 <label for="prix">Prix : </label>
-<input name="prix" <?php if($mode!='ajout') {echo'value='.$produit->getPrix().'';} else{echo'placeholder="prix"';} if($mode=='delete'){echo'disabled';}?>>
+<input name="prix" <?php if($mode!="ajout") {echo'value='.$produit->getPrix().'';} else{echo'placeholder="prix"';} if($mode=="delete"){echo'disabled';}?>>
 <label for="dateDePeremption">Date de peremption : </label>
-<input name="dateDePeremption" <?php if($mode!='ajout') {echo'value ="'.$produit->getDateDePeremption().'"';} else{echo'placeholder="date de peremption"';} if($mode=='delete'){echo'disabled';}?>/>
+<input name="dateDePeremption" <?php if($mode!="ajout") {echo'value ="'.$produit->getDateDePeremption().'"';} else{echo'placeholder="date de peremption"';} if($mode=="delete"){echo'disabled';}?>/>
 
 
 <?php
