@@ -41,6 +41,8 @@ $routes=[
     "formClient"=>["PHP/VIEW/", "FormClient", "Formulaire clients"],
     "actionProduit"=>["PHP/VIEW/", "ActionProduit", "Action sur les produits"],
     "actionClient"=>["PHP/VIEW/", "ActionClient", "Action sur les clients"],
+    "formInscription"=>["PHP/VIEW/", "FormInscription", "Formulaire Inscription"],
+    "actionInscription"=>["PHP/VIEW/", "ActionInscription", "Inscription"]
 ];
 
 if(isset($_GET['code']))
