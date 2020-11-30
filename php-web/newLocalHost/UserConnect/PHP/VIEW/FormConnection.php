@@ -7,5 +7,5 @@
         <label for="motDePasse">mot de passe :</label>
         <input type="text" name="motDePasse"/>
     </div>
-    <button type="submit">Envoyer</button>
+    <div class="submit"><button type="submit">Envoyer</button>
 </form>

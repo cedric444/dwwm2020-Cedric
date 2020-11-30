@@ -32,20 +32,26 @@ function AfficherPage($page)
     include 'PHP/VIEW/Footer.php';
 }
 
+function crypte($mot)
+{
+    return md5(md5($mot)) . (strlen($mot)**3);
+}
+
 //on active la connexion à la base de données
 DbConnect::init();
 session_start();  // initialise la variable de Session
 /* création d'u tableau de redirection, en fonction du codePage, on choisit la page à afficher */
 $routes = [
-    "default" => ["PHP/VIEW/", "FormConnection", "Identification"],
+    "default" => ["PHP/VIEW/", "Accueil", "Accueil"],
 
     "inscription" => ["PHP/VIEW/", "FormInscription", "Identification"],
-    "actionInscription" => ["PHP/VIEW/", "actionInscription", "xx"],
+    "actionInscription" => ["PHP/VIEW/", "ActionInscription", "xx"],
     "connection" => ["PHP/VIEW/", "FormConnection", "Identification"],
-    "actionConnection" => ["PHP/VIEW/", "actionConnection", "xx"],
+    "actionConnection" => ["PHP/VIEW/", "ActionConnection", "xx"],
     "accueil" => ["PHP/VIEW/", "Accueil", "Accueil"],
-    "deconnection" => ["PHP/VIEW/", "ActionDeconnection", "xx"]
-   
+    "deconnection" => ["PHP/VIEW/", "ActionDeconnection", "xx"],
+    "admin"=> ["PHP/VIEW/", "Admin", "admin"],
+    "user"=> ["PHP/VIEW/", "User", "user"]   
 ];
 
 if (isset($_GET["codePage"]))

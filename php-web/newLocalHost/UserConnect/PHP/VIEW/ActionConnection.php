@@ -2,7 +2,7 @@
 $user = UsersManager::findByPseudo($_POST['pseudo']);
 if($user != false)
 {
-    if(md5($_POST['motDePasse'])== $user->getMotDePasse())
+    if(crypte($_POST['motDePasse'])== $user->getMotDePasse())
     {
         echo'la connexion est réussie';
         $_SESSION['users']= $user;
