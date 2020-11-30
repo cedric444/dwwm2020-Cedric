@@ -1,4 +1,4 @@
-<form action="index.php?codePage=actionConnection" method="POST">
+<form action="index.php?codePage=actionInscription" method="POST">
 
 <div>
     <label for="nomUser">Nom :</label>

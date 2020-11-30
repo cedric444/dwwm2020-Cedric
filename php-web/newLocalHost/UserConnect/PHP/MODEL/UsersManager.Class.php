@@ -67,7 +67,7 @@ class UsersManager
         $db = DbConnect::getDb();
         if(!in_array(";",str_split($pseudo)))
         {
-            $q = $db->query("SELECT * FROM Users WHERE pseudo ='" . $pseudo."'");
+            $q = $db->query("SELECT * FROM Users WHERE pseudo ='" . $pseudo. "'");
             $results = $q->fetch(PDO::FETCH_ASSOC);
             if ($results != false)
             {
