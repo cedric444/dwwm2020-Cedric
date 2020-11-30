@@ -16,4 +16,6 @@ foreach($tableau as $elt)
 }
 echo'<br></div>';
 echo'<a href="index.php?code=listeClients">Liste des clients</a>';
+echo'<br>';
+echo'<a href="index.php?code=formInscription">incription</a>';
 

@@ -4,12 +4,12 @@ class UtilisateursManager
     public static function add(Utilisateurs $obj)
     {
         $db = DbConnect::getDb();
-        $q = $db->prepare("INSERT INTO Utilisateurs (nomUtilisateur, prenomUtilisateur, mdp, mail, roleUtilisateur, pseudo) VALUES (:nomUtilisateurs, :prenomUtilisateurs, :mdp, :mail, :roleUtilisateur, :pseudo)");
+        $q = $db->prepare("INSERT INTO Utilisateurs (nomUtilisateur, prenomUtilisateur, mdp, mail, roleUtilisateur, pseudo) VALUES (:nomUtilisateur, :prenomUtilisateur, :mdp, :mail, :roleUtilisateur, :pseudo)");
         $q->bindValue(":nomUtilisateur", $obj->getNomUtilisateur());
         $q->bindValue(":prenomUtilisateur", $obj->getPrenomUtilisateur());
         $q->bindValue(":mdp", $obj->getMdp());
         $q->bindValue(":mail", $obj->getMail());
-        $q->bindValue(":roleUtilisateur", $obj->getMail());
+        $q->bindValue(":roleUtilisateur", $obj->getRoleUtilisateur());
         $q->bindValue(":pseudo", $obj->getPseudo());
         $q->execute();
     }
@@ -54,7 +54,7 @@ class UtilisateursManager
     {
         $db =DbConnect::getDb();
         $liste = [];
-        $q = $db->query("SELECT *FROM Utilisateurs");
+        $q = $db->query("SELECT * FROM Utilisateurs");
         while ($donnees =$q->fetch(PDO::FETCH_ASSOC))
         {
             if ($donnees != false)

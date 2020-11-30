@@ -42,7 +42,9 @@ $routes=[
     "actionProduit"=>["PHP/VIEW/", "ActionProduit", "Action sur les produits"],
     "actionClient"=>["PHP/VIEW/", "ActionClient", "Action sur les clients"],
     "formInscription"=>["PHP/VIEW/", "FormInscription", "Formulaire Inscription"],
-    "actionInscription"=>["PHP/VIEW/", "ActionInscription", "Inscription"]
+    "actionInscription"=>["PHP/VIEW/", "ActionInscription", "Inscription"],
+    "formConnexion"=>["PHP/VIEW/", "FormConnexion", "Formulaire Connexion"],
+    "actionConnexion"=>["PHP/VIEW/", "ActionConnexion", "Connexion"]
 ];
 
 if(isset($_GET['code']))
