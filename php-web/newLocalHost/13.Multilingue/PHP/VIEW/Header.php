@@ -28,8 +28,18 @@ else
             ?>
             
         </div>
-        <div class="titre"><?php texte('Gestion des produits');?></div>
-        <div class="logo">
+        <?php echo'<div class="titre">'. texte('GestProd').'</div>';?>
+        <div class="lang">
+            <div>
+                <a href="<?php echo $uri ?> lang=EN">
+                    <img src="IMG/flag-gb.png" alt="drapeau anglais"></a>
+            </div>
+            <div></div>
+            <div>
+                <a href="<?php echo $uri ?> lang=FR">
+                    <img src="IMG/flag-fr.png" alt="drapeau français"></a>
+            </div>
+            <div></div>
             <?php
             if (isset($_SESSION['user']))
             {
