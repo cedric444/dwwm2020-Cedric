@@ -1,5 +1,4 @@
-<body class="colonne">
-    <header>
+<header>
         <div class="espace"></div>
         <div class="titre"><?php echo $titre ?></div>
         <div class= "connect colonne">
@@ -15,4 +14,4 @@
             }
             ?>
         </div>
-    </header>
+</header>
