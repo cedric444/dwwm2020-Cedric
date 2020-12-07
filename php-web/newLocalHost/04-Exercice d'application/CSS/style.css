@@ -1,0 +1,155 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+body,header,footer,nav,div,a,input{
+    display: flex;
+    flex: 1;
+}
+
+body{
+    background: var(--body);
+}
+
+header,footer{
+    background-color: var(--couleurHF);
+}
+
+footer{
+    margin-top: 1em;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    position: static;
+    bottom: 0;
+    width: 100%;
+}
+
+nav{
+    background-color: var(--colorNav);
+    padding: 1em;
+}
+
+a{
+    text-decoration: none;
+    color: var(--lien)
+}
+
+.flex{
+    flex: 2;
+}
+
+.logo{
+    margin: 1em;
+}
+img{
+    width: 100%;
+}
+
+.colonne{
+    flex-direction: column;
+}
+
+.margin{
+    margin: 4em;
+}
+
+.marginLight{
+    margin: 1em;
+}
+
+.centre{
+    justify-content: center;
+    align-items: center;
+}
+
+.espace{
+    flex: 1;
+}
+
+.size{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.marginBouton{
+    margin: 0em 1.5em;
+}
+
+.titre{
+    flex: 6;
+    justify-content: center;
+    align-self: center;
+    font-size: 2.5em;
+    font-weight: bolder;
+}
+
+.titreDescriptif{
+    font-size: 1.5em;
+}
+
+.ajouter{
+    border: 2px solid black;
+    padding:0.7em 1em;
+    cursor:pointer;
+}
+
+.libelle{
+    background:linear-gradient(to bottom, #e8f7ec 5%, #979e93 100%);
+    background-color:#979e93;
+    border:1px solid #979e93;
+    padding:0.7em 1em;
+    text-shadow:0px 1px 0px #979e93;
+    color:black;
+    flex : 5;
+}
+
+.details{
+    border: 2px solid black;
+    padding:0.7em 1em;
+    background: var(--detail); 
+    cursor:pointer;
+    align-items: center;
+}
+
+.modifier{
+    border: 2px solid black;
+    padding:0.7em 1em; 
+    cursor:pointer;
+    align-items: center;
+}
+
+.supprimer{
+    border: 2px solid black;
+    padding:0.7em 1em;
+    background: var(--supprimer); 
+    cursor:pointer;
+    align-items: center;
+}
+
+.return{
+    box-shadow: 3px 4px 0px 0px #91b8b3;
+    background: var(--return);
+    border:1px solid #566963;
+    cursor:pointer;
+    padding:7px 25px;
+    text-shadow:0px 1px 0px #2b665e;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+.imgaccueil{
+    margin-top: 3em;
+    border: double 9px var(--couleurHF);
+
+}
+.white{
+    background-color: white;
+}
+
+.grosflex {
+    flex: 5;
+}
