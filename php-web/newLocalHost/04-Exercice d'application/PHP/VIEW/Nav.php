@@ -12,6 +12,7 @@
     {
         echo '<div><a class="centre size" href="index.php?c=listeClients">';?><?php echo texte("btnsclientnav");?><?php echo'</a></div>
         <div><a class="centre size" href="index.php?c=listeVentes">';?><?php echo texte("btnventenav");?><?php echo' </a></div>
+        <div><a class=" size" href="index.php?c=formInscription">';?><?php echo texte("btninscnav");?><?php echo'</a></div>
         <div><a class="centre size" href="index.php?c=formConnexion">';?><?php echo texte("btnconnectnav");?><?php echo'</a></div>';
     }
 

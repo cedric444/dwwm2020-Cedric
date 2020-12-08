@@ -36,7 +36,7 @@ $listeRole = RolesManager::getList();
     </div>   
     <div class="colonne marginLight">
             
-        <div class="centre size" for="confirmationMotDePasse"><?php echo texte("Confirmer mot de passe");?> :</div>
+        <div class="centre size" for="confirmationMotDePasse"><?php echo texte("confirmer mot de passe");?> :</div>
         <div>
             <div class="espace"></div>
             <input class="libelle" type="text" name="confirmationMotDePasse" required/>
@@ -63,7 +63,7 @@ $listeRole = RolesManager::getList();
 
     <div class="colonne marginLight">
             
-        <div class="centre size" for="pseudo"><?php echo texte("Pseudo");?> :</div>
+        <div class="centre size" for="pseudo"><?php echo texte("pseudo");?> :</div>
         <div>
             <div class="espace"></div>
             <input class="libelle" type="text" name="pseudo" required/>
