@@ -2,7 +2,7 @@
 echo'<div class="contenu colonne">
 <div class="margin">
 <div class="espace"></div>
-<div class="ajouter"><a class="centre size" href="index.php?code=formUsers&mode=ajouter">Ajouter un utilisateur</a></div>
+<div class="ajouter"><a class="centre size" href="index.php?code=formUsers&m=ajouter">'.texte("Ajouter").'</a></div>
 <div class="espace"></div>
 </div>';
 
@@ -12,12 +12,12 @@ foreach($liste as $elt)
     echo'<div class="liste">
     <div class="espace"></div>
     <div class="libelle centre marginBouton size">'.$elt->getNomUser().' '.$elt->getPrenomUser().'</a></div>
-    <div class="details centre marginBouton"><a class="centre size" href="index.php?code=formUsers&mode=afficher&id='.$elt->getIdUser().'">Details</a></div>';
+    <div class="details centre marginBouton"><a class="centre size" href="index.php?code=formUsers&m=afficher&id='.$elt->getIdUser().'">'.texte("Afficher").'</a></div>';
 }
 echo '</div>
  <div>
     <div class="espace"></div>
-    <div class="return"><a class="centre size" href="index.php?code=default">Retour</a></div>
+    <div class="return"><a class="centre size" href="index.php?code=default">'.texte("Retour").'</a></div>
     <div class="espace"></div>
 </div>
 </body>

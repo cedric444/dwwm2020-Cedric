@@ -1,4 +1,4 @@
-<body class="colonne">
+<body>
 
 <?php $uri = $_SERVER['REQUEST_URI'];
 if (substr($uri, strlen($uri) - 1) == "/") // se termine par /

@@ -59,5 +59,35 @@ class ProduitsManager
 			}
 		}
 		return $liste;
-	}
+    }
+    
+    public static function getCouleur()
+    {
+        $db= DbConnect::getDb();
+        $liste= [];
+        $q= $db->query("SELECT DISTINCT couleurProduit FROM produits");
+        while($donnees = $q->fetch(PDO::FETCH_ASSOC))
+        {
+            if($donnees != false)
+            {
+                $liste[] = new Produits($donnees);
+            }
+        }
+        return $liste;
+    }
+
+    public static function getListByCouleur($couleur)
+    {
+        $db=DbConnect::getDb();
+        $liste= [];
+        $q =$db->query('SELECT * FROM produits WHERE couleurProduit ="'.$couleur.'"');
+        while($donnees = $q->fetch(PDO::FETCH_ASSOC))
+        {
+            if($donnees != false)
+            {
+                $liste = new Produits($donnees);
+            }
+        }
+        return $liste;
+    }
 }

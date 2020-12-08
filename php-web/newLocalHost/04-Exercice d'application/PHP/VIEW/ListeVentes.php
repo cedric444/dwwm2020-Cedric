@@ -3,7 +3,7 @@
 echo'<div class="contenu colonne">
 <div class="margin">
 <div class="espace"></div>
-<div class="ajouter"><a class="centre size" href="index.php?code=formVentes&mode=ajouter">Ajouter une vente</a></div>
+<div class="ajouter"><a class="centre size" href="index.php?code=formVentes&m=ajouter">'.texte("Ajouter").'</a></div>
 <div class="espace"></div>
 </div>';
 
@@ -12,15 +12,17 @@ foreach($liste as $elt)
 {
     echo'<div class="liste">
     <div class="espace"></div>
-    <div class="libelle centre marginBouton size">'.$elt->getIdRepres().'<br>'.$elt->getIdProd().'<br>'.$elt->getIdClient().'<br>'.$elt->getQuantite().'</a></div>
-    <div class="details centre marginBouton"><a class="centre size" href="index.php?code=formVentes&mode=afficher&id='.$elt->getIdVente().'">Details</a></div>';
+    <div class="libelle centre marginBouton size">'.$elt->getIdRepres().'<br>'.$elt->getIdProduit().'<br>'.$elt->getIdVente().'<br>'.$elt->getQuantite().'</a></div>
+    <div class="details centre marginBouton"><a class="centre size" href="index.php?code=formVentes&m=afficher&id='.$elt->getIdVente().'">'.texte("Afficher").'</a></div>
+    <div class="modifier centre marginBouton"><a class="centre size" href="index.php?code=formVentes&m=modifier&id='.$elt->getIdVente().'">'.texte("Modifier").'</a></div>
+    <div class="modifier centre marginBouton"><a class="centre size" href="index.php?code=formVentes&m=supprimer&id='.$elt->getIdVente().'">'.texte("Supprimer").'</a></div>';
+    
 }
 echo '</div>
  <div>
     <div class="espace"></div>
-    <div class="return"><a class="centre size" href="index.php?code=default">Retour</a></div>
+    <div class="return"><a class="centre size" href="index.php?code=default">'.texte("Retour").'</a></div>
     <div class="espace"></div>
 </div>
 </body>
 </html>';
-}

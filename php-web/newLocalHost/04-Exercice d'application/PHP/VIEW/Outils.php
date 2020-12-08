@@ -6,17 +6,17 @@ function ChargerClasse($classe)
 	{
 		require "PHP/CONTROLLER/" . $classe . ".Class.php";
 	}
-	if (file_exists("PHP/MODEL/" . $classe . ".Class.php"))
+	if (file_exists("PHP/mL/" . $classe . ".Class.php"))
 	{
-		require "PHP/MODEL/" . $classe . ".Class.php";
+		require "PHP/mL/" . $classe . ".Class.php";
 	}
 }
 spl_autoload_register("ChargerClasse");
 
-/*function crypte($mot)
+function crypte($mot)
 {
 	return md5(md5($mot));
-}*/
+}
 
 function texte($codeTexte)
 {
@@ -33,7 +33,7 @@ function afficherPage($page)
 
 	include 'PHP/VIEW/Head.php';
 	include 'PHP/VIEW/Header.php';
-	//include 'PHP/VIEW/Nav.php';
+	include 'PHP/VIEW/Nav.php';
 	include $chemin.$nom.'.php';
 	include 'PHP/VIEW/Footer.php';
 }
