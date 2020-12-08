@@ -1,27 +1,27 @@
 <?php
 
-$m= $_GET['m'];
+$mode= $_GET['m'];
 
-switch($m)
+switch($mode)
 {
     case "ajouter":
     {
-        echo'<form action="index.php?code=actionClients&m=ajouter" method="POST">';
+        echo'<form action="index.php?c=actionClients&m=ajouter" method="POST">';
         break;
     }
     case "afficher":
     {
-        echo'<form action="index.php?code=actionClients&m=afficher" method="POST">';
+        echo'<form action="index.php?c=actionClients&m=afficher" method="POST">';
         break;
     }
     case "modifier":
     {
-        echo'<form action="index.php?code=actionClients&m=modifier" method="POST">';
+        echo'<form action="index.php?c=actionClients&m=modifier" method="POST">';
         break;
     }
     case "supprimer":
     {
-        echo'<form action="index.php?code=actionClients&m="supprimer" method="POST">';
+        echo'<form action="index.php?c=actionClients&m=supprimer" method="POST">';
         break;
     }
 }
@@ -78,7 +78,7 @@ switch ($m)
 </div>
 <div>
 <div class="espace"></div>
-<div class="return"><a class="centre size" href="index.php?page=listeClients"><?php echo texte("Retour")?></a></div>
+<div class="return"><a class="centre size" href="index.php?c=listeClients"><?php echo texte("Retour")?></a></div>
 <div class="espace"></div>
 </div>
 

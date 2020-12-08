@@ -21,7 +21,7 @@ switch($m)
     }
     case "supprimer":
     {
-        echo'<form action="index.php?code=actionRepresentants&m="supprimer" method="POST">';
+        echo'<form action="index.php?code=actionRepresentants&m=supprimer" method="POST">';
         break;
     }
 }

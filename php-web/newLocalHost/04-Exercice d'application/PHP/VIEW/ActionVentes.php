@@ -1,6 +1,6 @@
 <?php
 
-$m=$_GET['m'];
+$mode=$_GET['m'];
 
 $vente=new Ventes($_POST);
 
@@ -20,4 +20,4 @@ switch($m){
         VentesManager::delete($vente);
     }   
 }
-// header("location:index.php?code=listeVentes");
+header("location:index.php?c=listeVentes");

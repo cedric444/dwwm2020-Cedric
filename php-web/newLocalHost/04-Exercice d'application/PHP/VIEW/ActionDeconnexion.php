@@ -2,4 +2,4 @@
 
 session_destroy();
 
-header("Location: index.php?code=accueil");
+header("Location: index.php?c=accueil");

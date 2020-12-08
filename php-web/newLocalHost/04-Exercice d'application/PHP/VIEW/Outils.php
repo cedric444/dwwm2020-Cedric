@@ -6,9 +6,9 @@ function ChargerClasse($classe)
 	{
 		require "PHP/CONTROLLER/" . $classe . ".Class.php";
 	}
-	if (file_exists("PHP/mL/" . $classe . ".Class.php"))
+	if (file_exists("PHP/MODEL/" . $classe . ".Class.php"))
 	{
-		require "PHP/mL/" . $classe . ".Class.php";
+		require "PHP/MODEL/" . $classe . ".Class.php";
 	}
 }
 spl_autoload_register("ChargerClasse");

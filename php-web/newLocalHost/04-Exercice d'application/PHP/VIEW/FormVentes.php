@@ -8,22 +8,22 @@ switch($mode)
 {
     case "ajouter":
     {
-        echo'<form action="index.php?code=actionVentes&m=ajouter" method="POST">';
+        echo'<form action="index.php?c=actionVentes&m=ajouter" method="POST">';
         break;
     }
     case "afficher":
     {
-        echo'<form action="index.php?code=actionVentes&m=affficher" method="POST">';
+        echo'<form action="index.php?c=actionVentes&m=affficher" method="POST">';
         break;
     }
     case "modifier":
     {
-        echo'<form action="index.php?code=actionVentes&m=modifier" method="POST">';
+        echo'<form action="index.php?c=actionVentes&m=modifier" method="POST">';
         break;
     }
     case "supprimer":
     {
-        echo'<form action="index.php?code=actionVentes&m=supprimer" method="POST">';
+        echo'<form action="index.php?c=actionVentes&m=supprimer" method="POST">';
         break;
     }
 }
@@ -130,7 +130,7 @@ switch ($mode)
 </div>
 <div>
 <div class="espace"></div>
-<div class="return"><a class="centre size" href="index.php?page=listeVentes"><?php echo texte("Retour")?></a></div>
+<div class="return"><a class="centre size" href="index.php?c=listeVentes"><?php echo texte("Retour")?></a></div>
 <div class="espace"></div>
 </div>
 

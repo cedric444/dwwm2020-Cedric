@@ -22,4 +22,4 @@ switch($mode)
         ProduitsManager::delete($prod);
     }   
 }
-// header("location:index.php?code=listeProduits");
+header("location:index.php?c=listeProduits");

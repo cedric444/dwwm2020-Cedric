@@ -12,9 +12,12 @@ if($_POST['motDePasse'] == $_POST['confirmationMotDePasse'])
     else
     {
         echo'Le pseudo existe déjà';
+        header("refresh:3;url=index.php?c=formInscription");
     }
 }
 else
 {
     echo'La confirmation ne correspond pas au mot de passe';
+    header("refresh:3;url=index.php?c=formInscription");
 }
+header("Location: index.php?c=accueil");

@@ -1,6 +1,6 @@
 <?php
 
-$m=$_GET['m'];
+$mode=$_GET['m'];
 
 $client=new Clients($_POST);
 
@@ -20,4 +20,4 @@ switch($m){
         ClientsManager::delete($client);
     }   
 }
-// header("location:index.php?code=listeClients");
+header("location:index.php?c=listeClients");

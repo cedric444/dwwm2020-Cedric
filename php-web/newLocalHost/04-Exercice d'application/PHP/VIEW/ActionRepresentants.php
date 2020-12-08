@@ -1,6 +1,6 @@
 <?php
 
-$m=$_GET['m'];
+$mode=$_GET['m'];
 
 $repres=new Representants($_POST);
 
@@ -20,4 +20,4 @@ switch($m){
         RepresentantsManager::delete($repres);
     }   
 }
-// header("location:index.php?code=listeRepresentants");
+header("location:index.php?c=listeRepresentants");

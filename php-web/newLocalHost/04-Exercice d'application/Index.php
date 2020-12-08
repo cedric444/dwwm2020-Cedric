@@ -54,10 +54,10 @@ $routes= [
 ];
 
 
-if(isset($_GET["code"]))
+if(isset($_GET["c"]))
 {
 
-	$page=$_GET["code"];
+	$page=$_GET["c"];
 
 	if(isset($routes[$page]))
 	{

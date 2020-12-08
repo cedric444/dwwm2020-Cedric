@@ -4,7 +4,7 @@ $listeRole = RolesManager::getList();
 
 ?>
 
-<form method="POST" action="index.php?code=actionInscription">
+<form method="POST" action="index.php?c=actionInscription">
 <div class="contenu colonne">
     <div class="colonne marginLight">
             
@@ -73,7 +73,7 @@ $listeRole = RolesManager::getList();
 </div>
 <div>
             <div class="espace"></div>
-            <div class="return marginLight"><a class="centre" href="index.php?code=accueil"><?php echo texte("Retour");?></a></div>
+            <div class="return marginLight"><a class="centre" href="index.php?c=accueil"><?php echo texte("Retour");?></a></div>
             <div class="espace"></div>
         </div>
 <div>

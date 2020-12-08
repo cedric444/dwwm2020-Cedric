@@ -17,7 +17,7 @@ else
 ?>
     <header>
         <div class="logo">
-            <a href="index.php?page=default">
+            <a href="index.php?c=default">
                 <img src="./IMG/logo.jpg" alt="logo">
             </a>
         </div>
