@@ -60,4 +60,19 @@ class HotelsManager
 		}
 		return $liste;
 	}
+	public static function getLIstByStation($idStation)
+	{
+		$idStation= (int) $idStation;
+		$db=DbConnect::getDb();
+		$liste=[];
+		$q=$db->query("SELECT * FROM Hotels where idStation=$idStation");
+		while($donnees = $q->Fetch(PDO::FETCH_ASSOC))
+		{
+			if($donnees!=false)
+			{
+				$liste[]= new Hotels($donnees);
+			}
+		}
+		return $liste;
+	}
 }

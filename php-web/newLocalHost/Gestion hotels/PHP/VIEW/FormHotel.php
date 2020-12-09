@@ -14,25 +14,29 @@ switch ($mode)
 {
     case 'ajout' :
     {
-        echo'<form action="index.php?codePage=actionHotel&mode=ajout" method="POST">';
+        echo'<h4>Ajouter un hôtel</h4>
+        <form id="formulaire" method="post" action="index.php?codePage=actionHotel&mode=ajout">';
         break;
     }
     case 'update' :
         {
-            echo'<form action="index.php?codePage=actionHotel&mode=update" method="POST">
-            <input name="idHotel"  value="' . $hotelChoisi->getidHotel() . '" type="hidden" />';
+            echo'<h4>Modifier un hôtel</h4>
+            <form id="formulaire" method="post" action="index.php?codePage=actionProduit&mode=update">';
+    
             break;
         }
     case 'delete' :
         {
-            echo'<form action="index.php?codePage=actionHotel&mode=delete" method="POST">
-            <input name="idHotel"  value="' . $hotelChoisi->getidHotel() . '" type="hidden" />';
+            echo'<h4>Supprimer un hôtel</h4>
+            <form id="formulaire" method="post" action="index.php?codePage=actionProduit&mode=delete">';
+            
             break;
         }
     case 'edit' :
         {
-            echo'<form >  
-            <input name="idHotel"  value="' . $hotelChoisi->getidHotel() . '" type="hidden" />';
+            echo'<h4>Editer un hôtel</h4>
+            <form id="formulaire" method="post">';  
+            
             break;
         }
 }

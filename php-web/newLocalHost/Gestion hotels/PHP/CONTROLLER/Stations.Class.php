@@ -34,7 +34,7 @@ class Stations
         return $this->_altitudeStation;
     }
 
-    public function setAltitudeStation($altitudeStation)
+    public function setAltitudeStation(int $altitudeStation)
     {
         $this->_altitudeStation = $altitudeStation;
     }

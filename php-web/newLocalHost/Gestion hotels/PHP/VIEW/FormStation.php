@@ -9,7 +9,7 @@ if(isset($_GET['id']))
     $idStation= $_GET['id'];
     if($idStation!=false)
     {
-        $station=StationsManager::findById($station);
+        $station=StationsManager::findById($idStation);
     }
 }
 
@@ -17,54 +17,58 @@ switch($mode)
 {
     case "ajout" :
         {
-            echo'<form action="index.php?codePage=actionStation&mode=ajout" method="POST"/>';
+            echo'<h4>Ajouter une station</h4>
+            <form id="formulaire" action="index.php?codePage=actionStation&mode=ajout" method="POST"/>';
             break;
         }
     case "update" :
         {
-            echo'<form action="index.php?codePage=actionStation&mode=update" method="POST"/>';
+            echo'<h4>Modifier une station</h4>
+            <form action="index.php?codePage=actionStation&mode=update" method="POST"/>';
             break;
         }
     case "delete" :
         {
-            echo'<form action="index.php?codePage=actionStation&mode=delete" method="POST"/>';
+            echo'<h4>Supprimer une station</h4>
+            <form action="index.php?codePage=actionStation&mode=delete" method="POST"/>';
             break;
         }
     case "edit" :
         {
-            echo'<form>
-            <input name="idStation" value="'.$station->getIdStation().'" type="hidden"/>';
+            echo'<form id="formulaire" method="POST">';
+            
             break;
         }
 }
 
 ?>
 
-<div>
-    <label for="nomStation">Nom :</label>
-    <input name="nomStation" <?php if($mode!="ajout"){echo'value="'.$station->getNomStation().'"';}if($mode=="delete"||$mode=="edit"){echo'disabled';}?>/>
+<input type="hidden" name="idStation" <?php if(isset($station)) echo'value="'.$station->getIdStation().'"';?> >
+<div class="ligneDetail">
+<div class="nomInput">Nom :</div>
+<div class="input"><input type="text" name="nomStation" <?php if(isset($station)) echo'value="'.$station->getNomStation().'"'; ?> >
+<div class="altitudeInput">altitude :</div>
+<div class="input"><input type="text" name="altitudeStation" <?php if(isset($station)) echo'value="'.$station->getAltitudeStation().'"'; ?> >
 </div>
-<div>
-    <label for="altitudeStation">Altitude :</label>
-    <input name="altitudeStation" <?php if($mode!="ajout"){echo'value="'.$station->getAltitudeStation().'"';}if($mode=="delete"||$mode=="edit"){echo'disabled';}?>/>
-</div>
+
+
 
 <?php
 switch ($mode)
 {
     case "ajout":    
     {
-        echo '    <button type="submit">Ajouter une station</button>';
+        echo '<div class="ligneDetail"><input type="submit" value="Ajouter" class=" crudBtn crudBtnEdit"/>';
         break;
     }
     case "update":   
     {
-        echo '    <button type="submit">Modifier la station</button>';
+        echo '<div class="ligneDetail"><input type="submit" value="Modifier" class=" crudBtn crudBtnEdit"/>';
         break;
     }
     case "delete":    
     {
-        echo '    <button type="submit">Supprimer la station</button>';
+        echo '<div class="ligneDetail"><input type="submit" value="Supprimer" class=" crudBtn crudBtnEdit"/>';
         break;
     }
 }

@@ -6,12 +6,9 @@ echo'<div class="centre size"><select>';
         foreach($liste as $uneCouleur)
         {
             
-            $sel = "";
-            //if ($uneCouleur->getIdProduit()== 
-               // $sel="selected";
-            
+            $sel = "";            
         
-        echo '<option value="'.$uneCouleur->getCouleurProduit().'"'.$sel; echo '>'.$uneCouleur->getCouleurProduit().'</option>';
+            echo '<option value="'.$uneCouleur->getCouleurProduit().'"'.$sel; echo '>'.$uneCouleur->getCouleurProduit().'</option>';
         }
     
     ?>

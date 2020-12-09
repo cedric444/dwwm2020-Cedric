@@ -27,6 +27,7 @@ function AfficherPage($page)
 
     include 'PHP/VIEW/Head.php';
     include 'PHP/VIEW/Header.php';
+    include 'PHP/VIEW/Nav.php'; 
     include $chemin . $nom . '.php'; //Chargement de la page en fonction du chemin et du nom
     include 'PHP/VIEW/Footer.php';
 }
@@ -36,10 +37,13 @@ DbConnect::init();
 
 /* création d'u tableau de redirection, en fonction du codePage, on choisit la page à afficher */
 $routes=[
-    "default"=>["PHP/VIEW/", "ListeHotels", "Liste des hôtels"],
-    "liste"=>["PHP/VIEW/", "ListeHotels", "Liste des hôtels"],
+    "default"=>["PHP/VIEW/", "ListeHotel", "Liste des hôtels"],
+    "liste"=>["PHP/VIEW/", "ListeHotel", "Liste des hôtels"],
+    "listeStation"=>["PHP/VIEW/", "ListeStation", "Liste des stations"],
     "actionHotel"=>["PHP/VIEW/", "ActionHotel", "Action sur les hotels"],
-    "formHotel"=>["PHP/VIEW/", "FormHotel", "Formulaire hotel"]
+    "formHotel"=>["PHP/VIEW/", "FormHotel", "Formulaire hotel"],
+    "formStation"=>["PHP/VIEW/", "FormStation", "Formulaire station"],
+    "actionStation"=>["PHP/VIEW/", "ActionStation", "Action sur les stations"],
 ];
 
 if (isset($_GET["codePage"]))

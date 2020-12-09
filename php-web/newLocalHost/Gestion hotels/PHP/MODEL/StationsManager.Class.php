@@ -19,7 +19,6 @@ class StationsManager
 		$q->bindValue(":idStation", $obj->getIdStation());
 		$q->bindValue(":nomStation", $obj->getNomStation());
 		$q->bindValue(":AltitudeStation", $obj->getAltitudeStation());
-		$q->bindValue(":idStation", $obj->getIdStation());
 		$q->execute();
 	}
 	public static function delete(Stations $obj)
