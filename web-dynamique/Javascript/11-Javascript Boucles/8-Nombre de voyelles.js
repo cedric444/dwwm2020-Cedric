@@ -1,14 +1,14 @@
 var mot = prompt("entrer un mot");
-var lettre = "";
+var lettre;
 var i = 0;
 var cpt= 0;
- while(i < mot.length)
- {
-     if(lettre=="a" || lettre=="e" || lettre=="i" || lettre=="o" || lettre=="u" || lettre=="y")
-     {
-         cpt++;
-         mot.substr(i);
-     }
-     i++;
- }
- console.log(cpt);
+
+for (i= 0; i<mot.length; i++)
+{
+    if(mot[i]=="a" || mot[i]=="e" || mot[i]=="i" || mot[i]=="o" || mot[i]=="u" || mot[i]=="y")
+    {
+        cpt++;
+        mot= mot.substring(mot.indexOf((mot[i]+1)), mot.length);
+    }
+}
+console.log(cpt);
