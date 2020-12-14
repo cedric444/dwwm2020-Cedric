@@ -10,9 +10,9 @@ function afficherTableau(tab)
 {
     for (var elt in tab)
     {
-        write(elt);
+        document.write(elt);
     }
-    write("\n");
+    document.write("\n");
 }
 
 /**
@@ -44,7 +44,7 @@ function coderMot(mot, niveau)
     return tab;
 }
 
-function creer_dico()
+function creerDico()
 {
     //Cree le dictionnaire de mots
     tabMots =["AEROPORT",
@@ -792,94 +792,94 @@ function dessinerPendu(nbErreur)
     switch (nbErreur)
     {
         case 0:
-            write("                      " + "\n");
-            write("                      " + "\n");
-            write("                      " + "\n");
-            write("                      " + "\n");
-            write("                      " + "\n");
-            write("                      " + "\n");
-            write("                      " + "\n");
-            write("                      " + "\n");
+            document.write("                      " + "\n");
+            document.write("                      " + "\n");
+            document.write("                      " + "\n");
+            document.write("                      " + "\n");
+            document.write("                      " + "\n");
+            document.write("                      " + "\n");
+            document.write("                      " + "\n");
+            document.write("                      " + "\n");
             break;
         case 1:
-            write("                      " + "\n");
-            write("                      " + "\n");
-            write("                      " + "\n");
-            write("                      " + "\n");
-            write("                      " + "\n");
-            write("                      " + "\n");
-            write("                      " + "\n");
-            write("     ________         " + "\n");
+            document.write("                      " + "\n");
+            document.write("                      " + "\n");
+            document.write("                      " + "\n");
+            document.write("                      " + "\n");
+            document.write("                      " + "\n");
+            document.write("                      " + "\n");
+            document.write("                      " + "\n");
+            document.write("     ________         " + "\n");
             break;
         case 2:
-            write("                      " + "\n");
-            write("      |               " + "\n");
-            write("      |               " + "\n");
-            write("      |               " + "\n");
-            write("      |               " + "\n");
-            write("      |               " + "\n");
-            write("      |               " + "\n");
-            write("     _|_______        " + "\n");
+            document.write("                      " + "\n");
+            document.write("      |               " + "\n");
+            document.write("      |               " + "\n");
+            document.write("      |               " + "\n");
+            document.write("      |               " + "\n");
+            document.write("      |               " + "\n");
+            document.write("      |               " + "\n");
+            document.write("     _|_______        " + "\n");
             break;
         case 3:
-            write("     ________         " + "\n");
-            write("      |               " + "\n");
-            write("      |               " + "\n");
-            write("      |               " + "\n");
-            write("      |               " + "\n");
-            write("      |               " + "\n");
-            write("      |               " + "\n");
-            write("     _|_______        " + "\n");
+            document.write("     ________         " + "\n");
+            document.write("      |               " + "\n");
+            document.write("      |               " + "\n");
+            document.write("      |               " + "\n");
+            document.write("      |               " + "\n");
+            document.write("      |               " + "\n");
+            document.write("      |               " + "\n");
+            document.write("     _|_______        " + "\n");
             break;
         case 4:
-            write("     ________         " + "\n");
-            write("      |     |         " + "\n");
-            write("      |               " + "\n");
-            write("      |               " + "\n");
-            write("      |               " + "\n");
-            write("      |               " + "\n");
-            write("      |               " + "\n");
-            write("     _|_______        " + "\n");
+            document.write("     ________         " + "\n");
+            document.write("      |     |         " + "\n");
+            document.write("      |               " + "\n");
+            document.write("      |               " + "\n");
+            document.write("      |               " + "\n");
+            document.write("      |               " + "\n");
+            document.write("      |               " + "\n");
+            document.write("     _|_______        " + "\n");
             break;
         case 5:
-            write("     ________         " + "\n");
-            write("      |     |         " + "\n");
-            write("      |     O         " + "\n");
-            write("      |               " + "\n");
-            write("      |               " + "\n");
-            write("      |               " + "\n");
-            write("      |               " + "\n");
-            write("     _|_______        " + "\n");
+            document.write("     ________         " + "\n");
+            document.write("      |     |         " + "\n");
+            document.write("      |     O         " + "\n");
+            document.write("      |               " + "\n");
+            document.write("      |               " + "\n");
+            document.write("      |               " + "\n");
+            document.write("      |               " + "\n");
+            document.write("     _|_______        " + "\n");
             break;
         case 6:
-            write("     ________         " + "\n");
-            write("      |     |         " + "\n");
-            write("      |     O         " + "\n");
-            write("      |     |         " + "\n");
-            write("      |     |         " + "\n");
-            write("      |               " + "\n");
-            write("      |               " + "\n");
-            write("     _|_______        " + "\n");
+            document.write("     ________         " + "\n");
+            document.write("      |     |         " + "\n");
+            document.write("      |     O         " + "\n");
+            document.write("      |     |         " + "\n");
+            document.write("      |     |         " + "\n");
+            document.write("      |               " + "\n");
+            document.write("      |               " + "\n");
+            document.write("     _|_______        " + "\n");
             break;
         case 7:
-            write("     ________          " + "\n");
-            write("      |     |          " + "\n");
-            write("      |     O          " + "\n");
-            write("      |    /|\\        " + "\n");
-            write("      |     |          " + "\n");
-            write("      |                " + "\n");
-            write("      |                " + "\n");
-            write("     _|_______         " + "\n");
+            document.write("     ________          " + "\n");
+            document.write("      |     |          " + "\n");
+            document.write("      |     O          " + "\n");
+            document.write("      |    /|\\        " + "\n");
+            document.write("      |     |          " + "\n");
+            document.write("      |                " + "\n");
+            document.write("      |                " + "\n");
+            document.write("     _|_______         " + "\n");
             break;
         case 8:
-            write("     ________          " + "\n");
-            write("      |     |          " + "\n");
-            write("      |     O          " + "\n");
-            write("      |    /|\\        " + "\n");
-            write("      |     |          " + "\n");
-            write("      |    / \\        " + "\n");
-            write("      |                " + "\n");
-            write("     _|_______         " + "\n");
+            document.write("     ________          " + "\n");
+            document.write("      |     |          " + "\n");
+            document.write("      |     O          " + "\n");
+            document.write("      |    /|\\        " + "\n");
+            document.write("      |     |          " + "\n");
+            document.write("      |    / \\        " + "\n");
+            document.write("      |                " + "\n");
+            document.write("     _|_______         " + "\n");
             break;
         default:
             break;
@@ -898,17 +898,17 @@ function dessinerPendu(nbErreur)
 
  function testerLettre(lettre, tab, depart)
  {
-    var tabRec = array.slice(tab, depart);
+    var tabRec = tab.slice(depart);
     
-    var res = tabRec.findIndex(lettre);
-    if(res===-1)
+    var res = tabRec.indexOf(lettre);
+    if(res==-1)
     {
         return[];
     }
     else
     {
         var reponse = res + depart;
-        var tabPos = array.concat(reponse, testerLettre(lettre, tab, res+ depart +1));
+        var tabPos = reponse.concat( testerLettre(lettre, tab, res+ depart +1));
         return tabPos;
     }
  }
@@ -984,17 +984,17 @@ function ajouterLesLettres(val, tab, tabPos, niveau)
  */
 function afficherMauvaisesLettres(listeLettres)
 {
-    write("\nLes lettres non présentes sont :");
+    document.write("\nLes lettres non présentes sont :");
     taille = listeLettres.length;
     for(i=0; i<taille; i++)
     {
         if(i == taille -1)
         {
-            write(listeLettres[i]+"\n");
+            document.write(listeLettres[i]+"\n");
         }
         else
         {
-            write(listeLettres[i]+", ");
+            document.write(listeLettres[i]+", ");
         }
     }
 }
@@ -1033,7 +1033,7 @@ function demanderLettre()
 {
     do
     {
-        write("\n");
+        document.write("\n");
         var lettre = prompt("Entrer une lettre").toLowerCase();
     }while(lettre.length >1);
     return lettre;
@@ -1073,8 +1073,8 @@ function choisirNiveau()
 {
     do
     {
-        write("\t\tNiveau de difficulé :\n");
-        write("\tFacile (1)\t Normal (2)\t Difficile (3)\t Court(4)");
+        document.write("\t\tNiveau de difficulé :\n");
+        document.write("\tFacile (1)\t Normal (2)\t Difficile (3)\t Court(4)");
         var niveau= prompt(" : ");
 
         if(niveau > 4 || niveau < 1)
@@ -1085,16 +1085,16 @@ function choisirNiveau()
     switch (niveau)
     {
         case "1":
-            write("\nNiveau Facile ! C'est parti ! \n");
+            document.write("\nNiveau Facile ! C'est parti ! \n");
             break;
         case "2":
-            write("\nNiveau Normal ! C'est parti ! \n");
+            document.write("\nNiveau Normal ! C'est parti ! \n");
             break;
         case "3":
-            write("\nNiveau Difficile ! C'est parti ! \n");
+            document.write("\nNiveau Difficile ! C'est parti ! \n");
             break;
         case "4":
-            write("\nNiveau Court ! C'est parti ! \n");
+            document.write("\nNiveau Court ! C'est parti ! \n");
             break;
     }
     return niveau;
@@ -1108,10 +1108,50 @@ function choisirNiveau()
 function lancerPartie(niveau)
 {
     var motATrouver = choisirMot(niveau);
-    write(motATrouver+"\n");
+    document.write(motATrouver+"\n");
     var tabMotAtrouver = motATrouver.split("");
-    var motCode = coderMot(motAtrouver, niveau);
+    var motCode = coderMot(motATrouver, niveau);
     var nbErreur = 0;
     var gagne = false;
     var mauvaisesLettres = [];
+    do
+    {
+        document.write("\n\n\t");
+        afficherTableau(motCode);
+        dessinerPendu(nbErreur);
+        if((mauvaisesLettres)!=null)
+        {
+            afficherMauvaisesLettres(mauvaisesLettres);
+        }
+        var lettre = demanderLettre();
+        var lesPositions = testerLettre(lettre, tabMotAtrouver, 0);
+        if(lesPositions == null)
+        {
+            nbErreur++;
+            mauvaisesLettres = lettre;
+        }
+        else
+        {
+            var reponse = ajouterLesLettres(lettre, motCode, lesPositions, niveau);
+            if (reponse==-1)
+            {
+                nbErreur++;
+                mauvaisesLettres = lettre;
+            }
+            else
+            {
+                motCode= reponse;
+            }
+        }
+        var gagne = testerGagner(nbErreur, motCode);
+    }while(gagne==0);
+    if (gagne==1)
+    {
+        alert("Bravo! Vous avez gagné!!! le mot à trouver était "+motATrouver+"\n");
+    }
+    else
+    {
+        alert("Vous avez perdu!!! Le mot à trouver était "+motATrouver+"\n");
+    }
 }
+lancerPartie();
