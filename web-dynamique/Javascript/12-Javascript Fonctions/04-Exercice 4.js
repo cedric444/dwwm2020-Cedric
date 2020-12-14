@@ -1,5 +1,7 @@
 function multiples(n, x)
 {
+    var n = parseInt(prompt("entrer un nombre"));
+    var x = parseInt(prompt("entrer un deuxieme nombre"));
     for(i=1; i<=n; i++)
     {
         var result= i * x;
@@ -45,10 +47,10 @@ function nbLettres(phrase, lettre)
 {
     for (i=0; i<phrase.length; i++)
     {
-        if(mot[i] == lettre)
+        if(phrase[i] == lettre)
         {
             cpt++;
-            mot = mot.substring(indexOf(mot[i]+1), mot.length);
+            phrase = phrase.substring(indexOf(phrase[i]+1), phrase.length);
         }
     }
     console.log(cpt);
@@ -57,8 +59,6 @@ function nbLettres(phrase, lettre)
 var options= prompt("1- Multiples\n2- Somme et moyenne\n3- Recherche du nombre de voyelles\n4- Recherche du nombre de caractères suivants\nEntrez votre option : ");
 if (options==1)
 {
-    var n = parseInt(prompt("entrer un nombre"));
-    var x = parseInt(prompt("entrer un deuxieme nombre"));
     multiples(n, x);
 }
 else if(options==2)
@@ -71,5 +71,5 @@ else if(options==3)
 }
 else if(options==4)
 {
-    nbLettres();
+    nbLettres(phrase, lettre);
 }
