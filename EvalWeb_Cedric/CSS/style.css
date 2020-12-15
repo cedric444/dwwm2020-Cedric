@@ -1,0 +1,126 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+header,footer,nav,div,a,input{
+    display: flex;
+    flex: 1;
+}
+
+body{
+    background-color: #f8cbad;
+}
+
+header,footer{
+
+}
+
+footer{
+    margin-top: 1em;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    position: static;
+    bottom: 0;
+    width: 100%;
+}
+
+nav{
+    padding: 1em;
+    justify-content: baseline;
+}
+
+a{
+    text-decoration: none;
+   
+}
+
+
+.logo{
+    margin: 1em;
+}
+img{
+    width: 100%;
+}
+
+.colonne, .liste{
+    flex-direction: column;
+    align-items: center;
+}
+
+.margin{
+    margin: 4em;
+}
+
+.centre{
+    align-items: center;
+}
+
+.espace{
+    flex: 1;
+}
+
+.size{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+
+
+.titre{
+    flex: 4;
+    justify-content: center;
+    align-self: center;
+    font-size: 2.5em;
+    font-weight: bolder;
+}
+
+.titreDescriptif{
+    font-size: 1em;
+}
+
+.ajouter{
+    border: 1px solid black;
+    
+    cursor:pointer;
+}
+
+.modifier{
+    border: 2px solid black;
+    padding:0.7em 1em;
+    cursor:pointer;
+    align-items: center;
+    width: 60vw;
+}
+
+.supprimer{
+    border: 2px solid black;
+    padding:0.7em 1em;
+    background: var(--supprimer); 
+    cursor:pointer;
+    align-items: center;
+}
+
+.return{
+    cursor:pointer;
+    padding:7px 25px;
+    
+    margin-top: 25%;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+.white{
+    background-color: white;
+}
+.btnConnect{
+	border: solid black 1px;
+	border-radius: 1em;
+	background-color: #f2a16a;
+}
+espaceHor{
+	height: 10vh;
+}
