@@ -1,0 +1,35 @@
+body, div
+{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+}
+.ligne
+{
+    flex-direction: row;
+    justify-content: center;
+    background-color: white;
+    border: none;
+}
+div{
+    border : solid black 1px;
+    font-size: 1.2em;
+    padding: 1em;
+    border: none;
+}
+.espace{
+    flex: 0.01;
+    background-color: white;
+    border: none;
+}
+#result
+{
+    flex: 4;
+    border: black solid 1px;
+
+}
+.btn
+{
+    background-color: gray;
+}
