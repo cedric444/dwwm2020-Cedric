@@ -11,24 +11,17 @@ function deplace(dleft, dtop) {
 }
 
 var carre = document.getElementById("carre");
-
-document.addEventListener("keydown", (e)=>{
-    console.log(e.code);
-    switch(e.code){
-        case "ArrowLeft":
-            deplace(-5,0);
-            break;
-        case "ArrowRight":
-            deplace(5,0);
-            break;
-        case "ArrowUp":
-            deplace(0,-5);
-            break;
-        case "ArrowDown":
-            deplace(0,5);
-            break;
+var sourisEnfoncee = false;
+carre.addEventListener("mousedown", (e)=>{
+    sourisEnfoncee =true;
+});
+carre.addEventListener("mouseup", (e)=>{
+    sourisEnfoncee = false;
+});
+document.addEventListener("mousemove", (e)=>{
+    if(sourisEnfoncee == true)
+    {
+        carre.style.top = parseInt(e.clientY) +"px";
+        carre.style.left = parseInt(e.clientX) +"px";
     }
 });
-
-    
- 
