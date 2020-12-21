@@ -4,18 +4,122 @@ div{
     justify-content: center;
 }
 #carre{
-    height: 5em;
-    width: 5em;
+    height: 2em;
+    width: 2em;
     background-color: green;
     position: absolute;
-    left: 100px;
-    top: 100px;
+    left: 60px;
+    top: 150px;
 }
 #rect1{
     background-color: red;
-    width: 3em;
-    height: 5em;
+    width: 2em;
+    height: 3em;
     position: absolute;
-    right: 250px;
-    top: 200px;
+    left: 620px;
+    top: 410px;
+}
+#mur1{
+    background-color: black;
+    width: 1em;
+    height: 18em;
+    position: absolute;
+    left: 30px;
+    top: 240px; 
+}
+#mur2{
+    background-color: black;
+    width: 40em;
+    height: 1em;
+    position: absolute;
+    left: 30px;
+    top: 520px;
+}
+#mur3{
+    background-color: black;
+    width: 1em;
+    height: 10em;
+    position: absolute;
+    left: 165px;
+    top : 370px;
+}
+#mur4{
+    background-color: black;
+    width: 1em;
+    height: 10em;
+    position: absolute;
+    left: 100px;
+    top : 250px;
+}
+#mur5{
+    background-color: black;
+    width: 35em;
+    height: 1em;
+    position: absolute;
+    left: 110px;
+    top : 250px;
+}
+#mur6{
+    background-color: black;
+    width: 1em;
+    height: 10em;
+    position: absolute;
+    left: 230px;
+    top : 250px;
+}
+#mur7{
+    background-color: black;
+    width: 20em;
+    height: 1em;
+    position: absolute;
+    left: 230px;
+    top : 400px;
+}
+#mur8{
+    background-color: black;
+    width: 18em;
+    height: 1em;
+    position: absolute;
+    left: 310px;
+    top : 320px;
+}   
+#mur9{
+    background-color: black;
+    width: 1em;
+    height: 10em;
+    position: absolute;
+    left: 590px;
+    top : 320px;
+}
+#mur10{
+    background-color: black;
+    width: 5em;
+    height: 1em;
+    position: absolute;
+    left: 590px;
+    top : 465px;
+}   
+#mur11{
+    background-color: black;
+    width: 1em;
+    height: 17.9em;
+    position: absolute;
+    left: 660px;
+    top : 250px;
+}
+#mur12{
+    background-color: black;
+    width: 15em;
+    height: 1em;
+    position: absolute;
+    left: 249px;
+    top : 465px;
+}
+#mur13{
+    background-color: black;
+    width: 1em;
+    height: 4.1em;
+    position: absolute;
+    left: 485px;
+    top : 415px;
 }

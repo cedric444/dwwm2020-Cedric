@@ -10,7 +10,7 @@ function deplace(dleft, dtop) {
     var topRect1 = styleRect1.top;
     var leftRect1 = styleRect1.left;
     //on modifie les positions left et top actuelles
-    if(!(leftActuel<leftRect1+rect1.width && leftActuel+carre.width>leftRect1 && topActuel<topRect1 +rect1.height && topActuel +carre.height>topRect1))
+    if(!(parseInt(topActuel)<parseInt(leftRect1)+parseInt(rect1.width) && parseInt(leftActuel)+parseInt(carre.width)>parseInt(leftRect1) && parseInt(topActuel)<parseInt(topRect1) +rect1.height && parseInt(topactuel) +parseInt(carre.height)>parseInt(topRect1)))
     {
     carre.style.top = parseInt(topActuel) + dtop + 'px';
     carre.style.left = parseInt(leftActuel) + dleft + 'px';
