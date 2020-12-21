@@ -5,9 +5,16 @@ function deplace(dleft, dtop) {
     //on recupere les positions left et top actuelles
     var topActuel = styleCarre.top;
     var leftActuel = styleCarre.left;
+    //on recupere les positions de l'obstacle
+    var styleRect1 = window.getComputedStyle(rect1, null);
+    var topRect1 = styleRect1.top;
+    var leftRect1 = styleRect1.left;
     //on modifie les positions left et top actuelles
+    if(!(leftActuel<leftRect1+rect1.width && leftActuel+carre.width>leftRect1 && topActuel<topRect1 +rect1.height && topActuel +carre.height>topRect1))
+    {
     carre.style.top = parseInt(topActuel) + dtop + 'px';
     carre.style.left = parseInt(leftActuel) + dleft + 'px';
+    }
 }
 
 var carre = document.getElementById("carre");

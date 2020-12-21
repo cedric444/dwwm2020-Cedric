@@ -11,3 +11,11 @@ div{
     left: 100px;
     top: 100px;
 }
+#rect1{
+    background-color: red;
+    width: 3em;
+    height: 5em;
+    position: absolute;
+    right: 250px;
+    top: 200px;
+}
