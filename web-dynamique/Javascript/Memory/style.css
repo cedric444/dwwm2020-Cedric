@@ -1,36 +1,37 @@
-body{
-    display: block;
+div,
+body {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+.page {
+    width: 80%;
     flex: none;
+    flex-direction: column;
+    display: block;
 }
-header{
-    font-size: large;
-    font-weight: bolder;
-    text-align: center;
+
+.case {
+    flex-direction: column;
 }
-.espace{
-    flex:1;
+
+.demi {
+    flex: 0.5;
 }
-.ligne{
-    display: flex;
-    flex: 1;
-}
-.espaceHor{
-    
-    height: 10vh;
-}
-.case{
-    flex: 1;
-}
-img{
-    width: 100%;
-}
-.verso{
-    display: none;
-}
-.case:hover .verso{
-    display: flex;
-}
-.case:hover .recto{
+
+.verso {
     display: none;
 }
 
+/* .case:hover .verso {
+    display: flex;
+}
+
+.case:hover .recto {
+    display: none;
+} */
+
+.espaceHor {
+    height: 2vh;
+}

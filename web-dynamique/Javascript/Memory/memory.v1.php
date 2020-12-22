@@ -31,5 +31,6 @@ for ($lig=1;$lig<5;$lig++)  // on boucle pour faire les lignes
     echo '<div class="espaceHor"></div>';   // permet un espace entre 2 lignes
 }
 echo '
+<script src="script.js"></script>
 </body>
 </html>';
