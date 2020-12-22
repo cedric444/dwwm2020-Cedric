@@ -5,9 +5,7 @@ function deplace(dleft, dtop) {
     var styleCarre = window.getComputedStyle(carre, null);
     //on recupere les positions left et top actuelles
     var topCarre = parseInt(styleCarre.top);
-    console.log(topCarre);
     var leftCarre = parseInt(styleCarre.left);
-    console.log(leftCarre);
     var wCarre = parseInt(styleCarre.width);
     var hCarre = parseInt(styleCarre.height);
     //on recupere les positions des obstacles
@@ -18,30 +16,30 @@ function deplace(dleft, dtop) {
         var leftObstacle = parseInt(styleObstacle.left);
         var wObstacle = parseInt(styleObstacle.width);
         var hObstacle = parseInt(styleObstacle.height);
-        deplacement_ok = deplacement_ok && depl_ok(topObstacle, leftObstacle, wObstacle, hObstacle, topCarre + dtop, leftCarre + dleft, wCarre, hCarre) 
+        deplacement_ok = deplacement_ok && depl_ok(topObstacle, leftObstacle, wObstacle, hObstacle, topCarre + dtop, leftCarre + dleft, wCarre, hCarre,element) 
     });
     //on modifie les positions left et top actuelles
-    var cheat = false;
-    document.addEventListener("keydown", e=>{
-        if(e.key=="ù")
-        {
-            cheat = true;
-        }
-    });
-    if(deplacement_ok || cheat)
+    if(deplacement_ok)
     {
         document.getElementById('carre').style.top = topCarre + dtop + 'px';
         document.getElementById('carre').style.left = leftCarre + dleft + 'px';
     }
-    
-    
 }
-function depl_ok(topObstacle, leftObstacle, wObstacle, hObstacle, topCarre, leftCarre, wCarre, hCarre)
+
+
+function depl_ok(topObstacle, leftObstacle, wObstacle, hObstacle, topCarre, leftCarre, wCarre, hCarre,obstacle)
 {
     if(leftCarre < leftObstacle + wObstacle && leftCarre + wCarre > leftObstacle && topCarre < topObstacle + hObstacle && topCarre + hCarre > topObstacle)
     {
+        if(obstacle.id=="rect1")
+        {
+            alert("Vous avez gagné!!!");
+        }
+        else{
+        compteur ++;
+        console.log(compteur);
         return false;
-        
+        }
     }
     return true;
 }
@@ -71,7 +69,9 @@ down.addEventListener("click", function(){
 });
 
 
-//Déplacement clavier
+/*******************************Déplacement clavier*************************/
+
+
 var carre = document.getElementById("carre");
 
 document.addEventListener("keydown", (e)=>{
@@ -92,10 +92,14 @@ document.addEventListener("keydown", (e)=>{
     }
 });
 
-//Déplacement souris
+/****************************Déplacement souris***************************/
+
+
 var ecartY, ecartX;
 var carre = document.getElementById("carre");
 var sourisEnfoncee = false;
+
+
 carre.addEventListener("mousedown", (e)=>{
     ecartY = parseInt(window.getComputedStyle(carre).top) - parseInt(e.clientY);
     ecartX = parseInt(window.getComputedStyle(carre).left) - parseInt(e.clientX);
@@ -112,15 +116,22 @@ document.addEventListener("mousemove", (e)=>{
 });
 
 function deplacementSouris(e) {
-    if (!collision(parseInt(e.clientY) + ecartY, parseInt(e.clientX) + ecartX))
+    var arriv = document.getElementById("rect1");
+    if(arrivee(arriv, parseInt(e.clientY)+ecartY, parseInt(e.clientX)+ecartX))
+    {
+        console.log("gagné");
+    }
+    else if (!collision(parseInt(e.clientY) + ecartY, parseInt(e.clientX) + ecartX))
     {
         carre.style.top = parseInt(e.clientY) + ecartY + "px";
         carre.style.left = parseInt(e.clientX) + ecartX + "px";
     }
 };
 
-//gestion des obstacles
+/************************gestion des obstacles*************************/
 
+
+var compteur = 0;
 function collisionUnObstacle(obstacle, posX, posY) {
     var styleCarre= window.getComputedStyle(carre);
     var wCarre = parseInt(styleCarre.width);
@@ -132,7 +143,10 @@ function collisionUnObstacle(obstacle, posX, posY) {
     var hObstacle = parseInt(styleObstacle.height);
     if (posY < leftObstacle + wObstacle && posY + wCarre > leftObstacle && posX < topObstacle + hObstacle && posX + hCarre > topObstacle) {
         sourisEnfoncee = false;
+        compteur++;
+        console.log(compteur);
         return true;
+        
     }
     return false;
 }
@@ -146,4 +160,71 @@ function collision(posX, posY)
     });
     return !pasCollision;
 }
+
+
+/***************************Chrono*****************************/
+
+
+var total = 100;
+var timer;
+var startTimer = 100;
+document.getElementById("chrono").innerHTML = 100;
+
+function countDown(){
+    document.getElementById("chrono").innerHTML = 100;
+    total--;
+    timer = setTimeout(countDown, 1000);
+    if (total>0)
+    {
+        document.getElementById("chrono").innerHTML = total;
+    }
+    if (total == 0)
+    {
+        document.getElementById("chrono").innerHTML = total;
+        alert("perdu");
+        StopCount();
+    }
+}
+
+function startCount(){          // fonction qui démarre le chrono
+    if(startTimer){
+        startTimer= 100;
+        countDown();
+    }
+}
+
+function StopCount(){           //On réinitialise le chrono
+    clearTimeout(total);
+    startTimer = 100;
+}
+
+start.addEventListener("click", e=>{
+    startCount();
+});
+
+/***************************Arrivée************************/
+
+function arrivee(rect1, posX, posY)
+{
+    var styleCarre= window.getComputedStyle(carre);
+    var wCarre = parseInt(styleCarre.width);
+    var hCarre = parseInt(styleCarre.height);
+    var styleRect1 = window.getComputedStyle(rect1);
+    var topRect1 = parseInt(styleRect1.top);
+    var leftrect1 = parseInt(styleRect1.left);
+    var wRect1 = parseInt(styleRect1.width);
+    var hRect1 = parseInt(styleRect1.height);
+    if (posY < leftrect1 + wRect1 && posY + wCarre > leftrect1 && posX < topRect1 + hRect1 && posX + hCarre > topRect1) {
+        sourisEnfoncee = false;
+        alert("Vous avez gagné!!!");
+        return true;
+        
+    }
+    return false;
+}
+
+/**********************Bonus************************/
+
+var bonus = document.getElementsByClassName("bonus");
+
 

@@ -3,9 +3,19 @@ div{
     flex: 1;
     justify-content: center;
 }
+.contenu {
+    display:flex;
+}
+.espace{
+    flex: 2;
+}
+#chrono{
+    flex: 0.5;
+    border: black solid 1px;
+}
 #carre{
-    height: 2em;
-    width: 2em;
+    height: 1.5em;
+    width: 1.5em;
     background-color: green;
     position: absolute;
     left: 60px;
@@ -122,4 +132,24 @@ div{
     position: absolute;
     left: 485px;
     top : 415px;
+}
+.bonus{
+    height: 1em;
+    width: 1em;
+    background-color: yellow;    
+}
+#b1{
+    position: absolute;
+    left: 125px;
+    top: 280px;
+}
+#b2{
+    position: absolute;
+    left: 465px;
+    top: 430px;
+}
+#b3{
+    position: absolute;
+    left : 640px;
+    top: 500px;
 }
