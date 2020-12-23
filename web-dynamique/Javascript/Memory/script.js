@@ -1,46 +1,81 @@
-// var cartesR = document.querySelectorAll("recto");
-// var cartesV = document.querySelectorAll("verso");
-// var uneCarteR, uneCarteV;
 var nbImage = 0;
 var image1, image2;
 var nbPaire = 0;
-var carteR = document.getElementsByClassName("recto");
+var listeImages = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,];
+var liste2 = new Array;
+var cartesRecto = document.getElementsByClassName("recto");
+function initialise()
+{
+    for (var i=0; i< listeImages.length; i++)
+    {
+        liste2[i] = [listeImages[i], Math.floor(Math.random()*100)];
+    }
+    liste2.sort((a,b) => a[1]-b[1]);
 
-// cartesV.forEach(elt =>{
-//     cartesV.style = window.getComputedStyle(elt);
-//     uneCarteV = elt;
-// })
+    for (let i=0; i<listeImages.length; i++)
+    {
+        listeImages[i] = liste2[i][0];
+    
+    listeImages[i].src="Images/"+listeImages[i]+".jpg";
+    cartesRecto[i].addEventListener("click", selectionImage);
+     retourne(cartesRecto[i], true);
+    // retourne(listeImages[i], false);
+    }
+
+}
 
 function retourne(image, vrai)
 {
     if(vrai)
-    { 
-        image.style.visibility="visible";
+    {
+        image.style.display="flex";
     }
     else
     {
-        image.style.visibility="hidden";
+        image.style.display="none";
     }
 }
 
 function verif(image1, image2)
 {
-    document.addEventListener("click", (e)=>{
-        cartesR.forEach(element =>{
-            cartesR.style = window.getComputedStyle(element);
-            uneCarteR = element; 
-    });
     if(image1 == image2)
     {
-        nbPaire++
+        nbPaire++;
     }
     else
     {
-        setTimeout(function(){
-            uneCarteR.target.parentNode.getElementsByClassName("verso")[0].style.display="flex";
-            uneCarteR.target.parentNode.getElementsByClassName("recto")[0].style.display="none";
-            retourne(image, false), 2000;
-        });
+        setTimeout(function () {
+            retourne(image1, false);
+            retourne(image1.parentNode.getElementsByClassName("recto")[0], true);
+            retourne(image2, false);
+            retourne(image2.parentNode.getElementsByClassName("recto")[0], true);
+        }, 500);
     }
-});
+
 }
+
+function selectionImage(e)
+{
+    nbImage++;
+    if(nbImage<=2)
+    {
+        imageSelectionnee = e.target;
+        image= imageSelectionnee.parentNode.getElementsByClassName("verso")[0];
+        retourne(imageSelectionnee, false);
+        retourne(image, true);
+        if(nbImage==1)
+        {
+            image2 = image1;
+        }
+        else
+        {
+            verif(image1, image2);
+            nbImage-=2;
+            if (nbPaire==8)
+            {
+                alert("vous avez gagné!!!");
+            }
+        }
+    }
+}
+initialise();
