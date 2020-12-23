@@ -78,4 +78,13 @@ function selectionImage(e)
         }
     }
 }
+
+function solution() {
+    var cartesRecto = document.getElementsByClassName("recto");
+    for (let i = 0; i < cartesRecto.length; i++) {
+        affiche(cartesRecto[i], false);
+        affiche(cartesRecto[i].parentNode.getElementsByClassName("verso")[0], true);
+
+    }
+}
 initialise();

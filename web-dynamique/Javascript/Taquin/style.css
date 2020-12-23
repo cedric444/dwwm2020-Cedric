@@ -1,0 +1,31 @@
+html, body{
+    display: flex;
+    flex-direction:column; 
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+header{
+    
+    justify-items: center;
+}
+.contenu{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+.ligne{
+    flex-direction: row;
+    height: 10vh;
+}
+button{
+    width: 100%;
+    height: 75%;
+}
+.vide{
+    border: none;
+    background-color: white;
+}
+.plein{
+    background-color: darkgray;
+}
