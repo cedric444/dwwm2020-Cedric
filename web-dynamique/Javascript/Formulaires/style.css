@@ -1,28 +1,40 @@
-
-
-
-
-input[required] +span::after {
+input[required] +div::before {
     content: "*";
     color: red;
+    align-items: center;
+    padding: 0.5em;
+
 }
 
 form{
     display: flex;
-    flex-direction: column;
+    flex: 10;
+    text-align: center;
 }
 
-label, div {
-    flex: 2;
+label, div, input{
+    display: flex;
+}
+
+div, label{
+    flex: 1;
+}
+
+input[required] + div::after{
+    content:url(pt_interro.png);
 }
 
 .champ{
-    flex: 3;
-}
-input{
-    flex: 3;
-}
+    justify-content: space-between;
+} 
 
 .espaceHor{
     height: 3vh;
+}
+
+.btn{
+    justify-content: center;
+}
+#erreurCode{
+    color: red;
 }
