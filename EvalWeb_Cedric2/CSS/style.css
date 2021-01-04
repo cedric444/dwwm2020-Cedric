@@ -1,0 +1,59 @@
+html, body {
+    margin: 0;
+    padding : 0;
+}
+
+body, header, .entete, .libelle{
+    display: flex;
+    flex: 1;
+    
+}
+
+body {
+    background-color: #f8cbad;
+}
+
+.espace {
+    flex: 1;
+}
+
+.espaceHor {
+    height: 5vh;
+}
+.modifier, .supprimer{
+    flex : 0.5;
+}
+
+body{
+    flex-direction: column;
+}
+
+img {
+    width: 100%;
+}
+
+.titre {
+    flex : 3;
+    text-align: center;
+    
+}
+.contenu{
+    align-self: center;
+}
+
+.ajouter{
+    border: 1px solid black;
+    background-color: #f2a16a;
+    
+}
+
+a{
+    text-decoration: none;
+    padding: 1.2 em;
+
+}
+
+nav{
+    padding: 1em;
+    justify-content: baseline;
+}
