@@ -1,0 +1,28 @@
+
+
+
+
+input[required] +span::after {
+    content: "*";
+    color: red;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+label, div {
+    flex: 2;
+}
+
+.champ{
+    flex: 3;
+}
+input{
+    flex: 3;
+}
+
+.espaceHor{
+    height: 3vh;
+}

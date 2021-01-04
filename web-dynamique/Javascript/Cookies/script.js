@@ -27,7 +27,7 @@ function eraseCookie(name) {
     createCookie(name,"",-1);
 }
 var nbVisite = 0;
-window.addEventListener("load", (e)=>{
+window.addEventListener("reload", (e)=>{
     nbVisite++;
     document.getElementById("phrase").innerHTML = "Vous avez visité cette page"+nbVisite++;
 })
