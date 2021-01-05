@@ -1,4 +1,4 @@
-function verifNom {
+function verifNom() {
     document.getElementById("nom").addEventListener("blur", (e) => {
         var nom = e.target.value;
         var message;
@@ -12,6 +12,7 @@ function verifNom {
     });
 }
 
+function verifCode() {
 document.getElementById("codePostal").addEventListener("blur", (e)=> {
     var longueur= e.target.value;
     var message;
@@ -28,4 +29,12 @@ document.getElementById("codePostal").addEventListener("blur", (e)=> {
     }
     var erreur = document.getElementById("erreurCode");
     erreur.insertAdjacentElement("afterBegin", message);
-})
+});
+}
+
+document.getElementsByClassName("info")[0].addEventListener("mouseover", (e)=>{
+    var parent = e.target.parentNode.parentNode;
+    var infobulle= (parent.getElementsByTagName("input")[0]).title;
+    var mess = infobulle;
+    
+});

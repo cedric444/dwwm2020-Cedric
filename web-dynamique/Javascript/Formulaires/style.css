@@ -6,6 +6,14 @@ input[required] +div::before {
 
 }
 
+img{
+    width: 100%;
+}
+
+.image{
+    flex: 1;
+}
+
 form{
     display: flex;
     flex: 10;
@@ -20,9 +28,9 @@ div, label{
     flex: 1;
 }
 
-input[required] + div::after{
+/* input[required] + div::after{
     content:url(pt_interro.png);
-}
+} */
 
 .champ{
     justify-content: space-between;
@@ -37,4 +45,12 @@ input[required] + div::after{
 }
 #erreurCode{
     color: red;
+}
+
+input:invalid{
+    border:solid red 1px;
+}
+
+input:valid{
+    border: solid green 1px;
 }
