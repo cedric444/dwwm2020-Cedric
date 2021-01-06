@@ -54,3 +54,9 @@ input{
     flex: 0;
     visibility: hidden;
 }
+
+.oeil{
+    position: absolute;
+    margin-left: 48vw;
+        
+}

@@ -47,14 +47,15 @@
                 <div class="espaceHor"></div>
                 <div class="champ">
                     <label for="mdp">Mot de passe</label>
-                    <input type="text" name="mdp" id="mdp" class="checkValidity" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[\d])(?=.[!@#$%^&*+])[a-zA-z\d!@#$%^&*+]{8,}" required>
+                    <input type="password" name="mdp" id="mdp" class="checkValidity" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[\d])(?=.[!@#$%^&*+])[a-zA-z\d!@#$%^&*+]{8,}" required>
                     <div class="image"><img src="pt_interro.png" alt="infobulle" class="info"></div>
+                    <div class="oeil"><img src="oeil.png" id="oeil"></div>
                     <div class="erreur"><img src="valider.png" class="valider"></div>
                 </div>
                 <div class="espaceHor"></div>
                 <div class="champ">
                     <label for="verifMdp">Vérification Mot de passe</label>
-                    <input type="text" name="verifMdp" id="verifMdp" class="checkValidity" pattern="(?=.*[a-z](?=.*[A-Z])(?=.*[\d])(?=.[!@#$%^&*+])[a-zA-z\d!@#$%^&*+]{8,}" required>
+                    <input type="password" name="verifMdp" id="verifMdp" class="checkValidity" pattern="(?=.*[a-z](?=.*[A-Z])(?=.*[\d])(?=.[!@#$%^&*+])[a-zA-z\d!@#$%^&*+]{8,}" required>
                     <div class="image"><img src="pt_interro.png" alt="infobulle" class="info"></div>
                     <div class="erreur"><img src="valider.png" class="valider"></div>
                 </div>
