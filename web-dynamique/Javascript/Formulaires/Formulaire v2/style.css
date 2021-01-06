@@ -13,18 +13,22 @@ label{
 
 form{
     justify-content: center;
+    width: 80vw;
 }
 
 .champ{
     display: flex;
     flex-direction: row;
 }
+
 .espaceHor{
     height: 3vh;
 }
+
 fieldset{
     text-align: center;
 }
+
 input[required] +div::before {
     content: "*";
     color: red;
@@ -32,12 +36,21 @@ input[required] +div::before {
     padding: 0.5em;
 
 }
+
 img{
     width: 100%;
 }
+
 .image{
     flex: 0.05;
 }
+
 input{
     flex: 1.5;
+}
+
+.valider{
+    width:auto;
+    flex: 0;
+    visibility: hidden;
 }
