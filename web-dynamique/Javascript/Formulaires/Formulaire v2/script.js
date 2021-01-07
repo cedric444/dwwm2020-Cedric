@@ -70,19 +70,23 @@ oeil.addEventListener("mouseup", (e)=>{
 
 // Verification de confiramtion du mot de passe
 
-function verifMdp(mdp){
-    var mdp2= getElementById("verifMdp");
-    if (mdp === "")
+function verifMdp(){
+    mdp = document.getElementById("mdp");
+    var regles = ["(?=.*[a-z])","(?=.*[A-Z])","(?=.*[\d])","(?=.[!@#$%^&*+])","[a-zA-z\d!@#$%^&*+]{8,}"];
+    for(let i=0; i<regles.length; i++)
     {
-        var conf= 0;
+        let regle= regles[i];
+        if (regle.checkValidity())
+        {
+            flag = true;
+        }
     }
-    else if(mdp === mdp2)
+    var i = 0;
+    flag = true;
+    while(flag)
     {
-        conf = 1;
-    }
-    else (mdp != mdp2 )
-    {
-        conf = 2;
+        valider.scr= "valider.png";
+        i++;
     }
 }
 
