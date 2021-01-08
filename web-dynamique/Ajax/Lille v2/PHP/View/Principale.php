@@ -8,10 +8,10 @@
 		<div class="ville">Ville</div>
 		<div class="nom">Nom</div>
 		<div class="adresse">Adresse</div>
-		<div class="etat">Etat</div>
+		<!-- <div class="etat">Etat</div> -->
 		<div class="type">Type</div>
-		<div class="velosDispo">Nombre de vélos disponibles</div>
-		<div class="placesDispo">Nombre de places dispo</div>
+		<!-- <div class="velosDispo">Nombre de vélos disponibles</div>
+		<div class="placesDispo">Nombre de places dispo</div> -->
 	</div>
 	<div class="espaceHorizon"></div>
 </div>
