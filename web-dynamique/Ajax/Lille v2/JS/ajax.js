@@ -15,7 +15,7 @@ req.onreadystatechange = function (event) {
             enregs = reponse.records.sort(compareTo);            
             for (let i = 0; i < enregs.length; i++) {
                 // on crée la ligne et les div internes
-                ligne = document.createElement("div");
+                ligne = document.createElement("class");
                 ligne.setAttribute("class", "ligne");
                 ligne.id = i;
                 ville = document.createElement("div");
@@ -48,6 +48,7 @@ req.onreadystatechange = function (event) {
                 if(valEtat ==="EN SERVICE")
                 {
                     // etat.innerHTML= image;
+                    nom.style.fontWeight ="bolder";
                     nom.style.color ="green"; 
                 }
                 else
@@ -94,7 +95,7 @@ function compareTo(obj1, obj2){
         }
         else if (obj2.fields.nom > obj2.fields.nom)
         {
-            return 0;
+            return 1;
         }
         else{
             return 0

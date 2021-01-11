@@ -10,8 +10,8 @@ Réalisé par MP<br>
 </div>
 </div>
 </div>
-<!-- <script src="JS/ajax.js"></script> -->
-<script src="JS/test.js"></script>
+<script src="JS/script.js"></script>
+
 </body>
 
 </html>

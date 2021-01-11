@@ -1,0 +1,35 @@
+html, body{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    background-color: rgb(64, 146, 240)
+}
+
+#titre{
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgba(18, 93, 214, 0.76)
+}
+
+img{
+    width: 100%;
+}
+
+#titre_page{
+    font-size: 5em;
+    flex: 5;
+    align-self: center;
+    text-align: center;
+}
+
+#logo{
+    flex: 0.5;
+}
+.contenu{
+    flex-direction: column;
+}
+.espaceHor{
+    height: 5em;
+}

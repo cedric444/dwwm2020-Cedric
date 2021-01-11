@@ -4,8 +4,10 @@
 	<h3>Selectionner un nom</h3>
 </div> -->
 <div id="divContenu">
+	<label for="ville">Ville</label>
+	<input name="ville" class="ville" placeholder="votre commune">
 	<div class="ligne titreLigne">
-		<div class="ville">Ville</div>
+		<!-- <div class="ville">Ville</div> -->
 		<div class="nom">Nom</div>
 		<div class="adresse">Adresse</div>
 		<!-- <div class="etat">Etat</div> -->
