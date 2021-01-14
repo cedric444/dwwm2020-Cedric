@@ -323,7 +323,7 @@ REFERENCES Stages(idStage);
 ALTER TABLE ValeurTravauxDangereux
 ADD CONSTRAINT FK_ValeurTravauxDangereux_LibelleTravauxDangereux
 FOREIGN KEY (idLibelleTravauxDangereux)
-REFERENCES Stages(idLibelleTravauxDangereux);
+REFERENCES LibelleTravauxDangereux(idLibelleTravauxDangereux);
 
 ALTER TABLE ValeurHoraires
 ADD CONSTRAINT FK_ValeurHoraires_Stages
@@ -333,7 +333,7 @@ REFERENCES Stages(idStage);
 ALTER TABLE ValeurHoraires
 ADD CONSTRAINT FK_ValeurHoraires_LibelleHoraires
 FOREIGN KEY (idLibelleHoraire)
-REFERENCES Stages(idLibelleHoraire);
+REFERENCES LibelleHoraires(idLibelleHoraire);
 
 ALTER TABLE ValeurComportementsProfessionnels
 ADD CONSTRAINT FK_ValeurComportementsProfessionnels_Stages
@@ -343,7 +343,7 @@ REFERENCES Stages(idStage);
 ALTER TABLE ValeurComportementsProfessionnels
 ADD CONSTRAINT FK_ValeurComportementsProfessionnels_LibelleComportementsProfessionnels
 FOREIGN KEY (idLibelleComportementProfessionnel)
-REFERENCES Stages(idLibelleComportementProfessionnel);
+REFERENCES LibelleComportementsProfessionnels(idLibelleComportementProfessionnel);
 
 ALTER TABLE ValeurAcquis
 ADD CONSTRAINT FK_ValeurAcquis_Stages
