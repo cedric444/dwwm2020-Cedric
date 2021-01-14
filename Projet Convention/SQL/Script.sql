@@ -200,7 +200,6 @@ CREATE TABLE evaluations
         dateEvaluation       Date NOT NULL ,
         objectifAcquisition  Int NOT NULL ,
         comportementMt       Int NOT NULL ,
-        evalComportement     Char (1) NOT NULL ,
 		satisfactionEnt      Int NOT NULL ,
         remarqueEnt          Char(250) NOT NULL ,
         perspectiveEmb       Int NOT NULL 
@@ -238,7 +237,7 @@ CREATE TABLE ValeurHoraires
     idValeurHoraires   Int Auto_increment NOT NULL PRIMARY KEY,
     idStage   Int   NOT NULL,
     idLibelleHoraire INT NOT NULL , 
-    valeurHoraire  Int
+    valeurHoraire  Time
 )ENGINE=InnoDB, CHARSET = UTF8;
 
 CREATE TABLE LibelleComportementsProfessionnels
