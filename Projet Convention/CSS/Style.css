@@ -144,7 +144,7 @@ footer {
     margin-top: 1em;
     align-items: center;
     justify-content: center;
-    position: absolute;
+    position: sticky;
     width: 99%;
     bottom: 0.2em;
     color: var(--CouleurTexte);

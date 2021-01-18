@@ -1,23 +1,23 @@
 <section>
 <?php
 
-$mode=$_GET["mode"];
+$mode=$_GET['mode'];
 
 switch($mode)
 {
     case "ajouter":
     {
-        echo'<form action="index.php?page="ActionFormation&mode=ajouter" method="POST">';
+        echo'<form action="Index.php?page=ActionFormation&mode=ajouter" method="POST">';
         break;
     }
     case "modifier":
     {
-        echo'<form action="index.php?page="ActionFormation&mode=modifier" method="POST">';
+        echo'<form action="Index.php?page=ActionFormation&mode=modifier" method="POST">';
         break;
     }
     case "supprimer":
     {
-        echo'<form action="index.php?page="ActionFormation&mode=supprimer" method="POST">';
+        echo'<form action="Index.php?page=ActionFormation&mode=supprimer" method="POST">';
         break;
     }
 }
@@ -59,7 +59,7 @@ switch($mode)
     }
 }
 echo'<div class="demi"></div>';
-echo'<a href="index.php?page=ListeFormation"><button class="bouton"><i class="far fa-arrow-alt-circle-left"></i> Retour</button></a>';
+echo'<a href="Index.php?page=ListeFormations"><button class="bouton"><i class="far fa-arrow-alt-circle-left"></i> Retour</button></a>';
 ?>
 <div></div>
 </div>
