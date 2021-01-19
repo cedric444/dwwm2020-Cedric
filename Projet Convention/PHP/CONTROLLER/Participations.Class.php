@@ -1,56 +1,67 @@
 <?php
 
-class Villes 
+class Participations 
 {
 
 	/*****************Attributs***************** */
 
-	private $_idVille;
-	private $_nomVille;
-	private $_codePostal;
-	private $_idDepartement;
+	private $_idParticipation;
+	private $_dateDebut;
+	private $_dateFin;
+	private $_idSessionFormation;
+	private $_idStagiaire;
 
 	/***************** Accesseurs ***************** */
 
 
-	public function getIdVille()
+	public function getIdParticipation()
 	{
-		return $this->_idVille;
+		return $this->_idParticipation;
 	}
 
-	public function setIdVille($idVille)
+	public function setIdParticipation($idParticipation)
 	{
-		$this->_idVille=$idVille;
+		$this->_idParticipation=$idParticipation;
 	}
 
-	public function getNomVille()
+	public function getDateDebut()
 	{
-		return $this->_nomVille;
+		return $this->_dateDebut;
 	}
 
-	public function setNomVille($nomVille)
+	public function setDateDebut($dateDebut)
 	{
-		$this->_nomVille=$nomVille;
+		$this->_dateDebut=$dateDebut;
 	}
 
-	public function getCodePostal()
+	public function getDateFin()
 	{
-		return $this->_codePostal;
+		return $this->_dateFin;
 	}
 
-	public function setCodePostal($codePostal)
+	public function setDateFin($dateFin)
 	{
-		$this->_codePostal=$codePostal;
+		$this->_dateFin=$dateFin;
 	}
 
-	public function getIdDepartement()
+	public function getIdSessionFormation()
 	{
-		return $this->_idDepartement;
+		return $this->_idSessionFormation;
 	}
 
-	public function setIdDepartement($idDepartement)
+	public function setIdSessionFormation($idSessionFormation)
 	{
-		$this->_idDepartement=$idDepartement;
+		$this->_idSessionFormation=$idSessionFormation;
+	}
+
+	public function getIdStagiaire()
+	{
+		return $this->_idStagiaire;
+	}
+
+	public function setIdStagiaire($idStagiaire)
+	{
+		$this->_idStagiaire=$idStagiaire;
 	}
 
 	/*****************Constructeur***************** */
@@ -83,7 +94,7 @@ class Villes
 	*/
 	public function toString()
 	{
-		return "IdVille : ".$this->getIdVille()."NomVille : ".$this->getNomVille()."CodePostal : ".$this->getCodePostal()."IdDepartement : ".$this->getIdDepartement()."\n";
+		return "IdParticipation : ".$this->getIdParticipation()."DateDebut : ".$this->getDateDebut()."DateFin : ".$this->getDateFin()."IdSessionFormation : ".$this->getIdSessionFormation()."IdStagiaire : ".$this->getIdStagiaire()."\n";
 	}
 
 

@@ -1,56 +1,45 @@
 <?php
 
-class Villes 
+class Animations 
 {
 
 	/*****************Attributs***************** */
 
-	private $_idVille;
-	private $_nomVille;
-	private $_codePostal;
-	private $_idDepartement;
+	private $_idAnimation;
+	private $_idUtilisateur;
+	private $_idFormation;
 
 	/***************** Accesseurs ***************** */
 
 
-	public function getIdVille()
+	public function getIdAnimation()
 	{
-		return $this->_idVille;
+		return $this->_idAnimation;
 	}
 
-	public function setIdVille($idVille)
+	public function setIdAnimation($idAnimation)
 	{
-		$this->_idVille=$idVille;
+		$this->_idAnimation=$idAnimation;
 	}
 
-	public function getNomVille()
+	public function getIdUtilisateur()
 	{
-		return $this->_nomVille;
+		return $this->_idUtilisateur;
 	}
 
-	public function setNomVille($nomVille)
+	public function setIdUtilisateur($idUtilisateur)
 	{
-		$this->_nomVille=$nomVille;
+		$this->_idUtilisateur=$idUtilisateur;
 	}
 
-	public function getCodePostal()
+	public function getIdFormation()
 	{
-		return $this->_codePostal;
+		return $this->_idFormation;
 	}
 
-	public function setCodePostal($codePostal)
+	public function setIdFormation($idFormation)
 	{
-		$this->_codePostal=$codePostal;
-	}
-
-	public function getIdDepartement()
-	{
-		return $this->_idDepartement;
-	}
-
-	public function setIdDepartement($idDepartement)
-	{
-		$this->_idDepartement=$idDepartement;
+		$this->_idFormation=$idFormation;
 	}
 
 	/*****************Constructeur***************** */
@@ -83,7 +72,7 @@ class Villes
 	*/
 	public function toString()
 	{
-		return "IdVille : ".$this->getIdVille()."NomVille : ".$this->getNomVille()."CodePostal : ".$this->getCodePostal()."IdDepartement : ".$this->getIdDepartement()."\n";
+		return "IdAnimation : ".$this->getIdAnimation()."IdUtilisateur : ".$this->getIdUtilisateur()."IdFormation : ".$this->getIdFormation()."\n";
 	}
 
 
