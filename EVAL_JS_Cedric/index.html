@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" lang=fr>
+        <title>Calculateur de mensualité d'un prêt</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1>Calcul du taux d'intérêt</h1>
+            <div class="container">
+        </header>
+        <div class="cadre">
+            <div class="ligne">
+                <label for="capitalEmprunté">Capital Emmprunté</label>
+                <input name="capitalEmprunté" type="text" class="donnees" id="capital"><div> e</div><div class="error"></div>               
+            </div>
+            <div></div>
+            <div class="ligne">
+                <label for="tauxNominalAnnuel">Taux Nominal Annuel</label>
+                <input name="tauxNominalAnnuel" type="text" class="donnees" id="taux"><div> %</div><div class="error"></div>                
+            </div>
+            <div></div>
+            <div class="ligne">
+                <label for="dureEmprunt">Durée d'emprunt</label>
+                <input name="dureEmprunt" type="text" class="donnees" id="duree"><div> Ans</div><div class="error"></div>                
+            </div>            
+        </div>
+        <div class="espaceHor"></div>
+        <div class="cadre">
+            <div class="ligne">
+                <label for="mensualite">Mensualité</label>
+                <input name="mensualite" type="text" id="mensualite"><div> e</div><div></div>              
+            </div>
+            <div></div>
+            <div class="ligne">
+                <label for="coutTotal">Coût Total</label>
+                <input name="coutTotal" type="text" id="cout"><div> e</div><div></div>                
+            </div>      
+        </div>
+        <div class="espaceHor"></div>
+        <div>
+            <div class="ligne">
+                <button class="bouton" id="clacul">Calculer</button>
+                <div class="mini"></div>  
+                <button class="bouton" id="nouveauCalcul">Nouveau Calcul</button>
+            </div class="ligne">
+        </div>
+        <footer>
+            <script src="script.js"></script>
+        </footer>
+    </body>
+</html>

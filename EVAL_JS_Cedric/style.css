@@ -1,0 +1,45 @@
+html, body, div, header{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    flex-direction: column;
+    width: 90%;
+}
+
+body{
+    background-color: wheat;
+}
+
+h1{
+    align-self: center;
+}
+
+.cadre{
+    align-items: center;
+    
+    border: solid black 1px;
+}
+
+.ligne{
+
+    flex-direction: row;
+}
+
+label, input{
+
+    flex: 2;
+}
+
+.espaceHor{
+
+    height: 5em;
+}
+
+.mini{
+    flex: 0.5
+}
+
+
+
+
+

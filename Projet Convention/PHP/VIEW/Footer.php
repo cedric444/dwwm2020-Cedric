@@ -10,6 +10,7 @@ if (isset($page))
     {
         case "FormFRStagiaire" : echo '<script src="./JS/VerifFormStagiaire.js"></script>';break;
         case "ListeUtilisateurs" : echo '<script src="./JS/FiltreUtilisateurs.js"></script>';break;
+        case "FormStagiaire" : echo '<script src="./JS/FormStagiaire.js"></script>';break;
 
     }
 }
