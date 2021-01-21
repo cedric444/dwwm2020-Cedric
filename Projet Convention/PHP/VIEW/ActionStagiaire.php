@@ -3,6 +3,7 @@
 $mode=$_GET['mode'];
 
 $stagiaire = new Stagiaires($_POST);
+var_dump($stagiaire);
 
 
 

@@ -31,6 +31,33 @@ if(isset($_FILES['xls-stagiaires']['name]']) && in_array($_FILES['xls-stagiaires
 
     //On crée un tableau contenant toutes les valeurs du fichier
     $sheetData= $spreadsheet->getActiveSheet()->toArray();
-    var_dump($sheetData);
 }
 
+//On parcourt la feuille excel
+
+foreach($sheetData as $elt)
+{
+    
+        $tempGenreStagiaire = $elt[1];
+        $tempNomStagiaire = $elt[2];
+        $tempPrenomStagiaire = $elt[3];
+        $tempNumBenefStagiaire = $elt[4];
+        $tempNumSecuStagiaire = $elt[5];
+        $tempDateNaissanceStagiaire = $elt[6];
+        $tempEmailStagiaire = $elt[7];
+
+        //On crée un objet stagiaire temporaire
+
+        $TempStagiaire = new Stagiaires(["genreStagiaire"=>$tempGenreStagiaire, "nomStagiaire"=>$tempNomStagiaire,"prenomStagiaire"=>$tempPrenomStagiaire,"numBenefStagiaire"=>$tempNumBenefStagiaire,"numSecuStagiaire"=>$tempNumSecuStagiaire,"dateNaissanceStagiaire"=>$tempDateNaissanceStagiaire,"emailStagiaire"=>$tempEmailStagiaire]);
+
+        //On vérifie s'il est déja en BDD
+        if(StagiairesManager::getByEmail($tempEmailStagiaire) != false)
+        {
+            StagiairesManager::update($tempStagiaire);
+        }
+        else
+        {
+            StagiairesManager::add($tempStagiaire);
+        }
+    
+}

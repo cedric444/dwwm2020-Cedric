@@ -40,13 +40,13 @@ if(isset($_GET["id"]))
     <div >
             <div class="info">
             <div class="grande"></div>
-                <label for="homme">Homme</label>
-                <input type="radio" <?php if($mode == "modifier" || $mode == "ajouter") echo'required';?> id="genre" name="genre" <?php if($mode !="ajouter") echo'value="'.$obj->getGenreStagiaire().'"';if("M") echo'checked';?>>
+                <label for="genreStagiaire">Homme</label>
+                <input type="radio" <?php if($mode == "modifier" || $mode == "ajouter") echo'required';?> id="homme" name="genreStagiaire" value="M" <?php if($mode !="ajouter" && $obj->getGenreStagiaire()=="M") echo'checked';if($mode =="details" ||$mode=="supprimer") echo'disabled'?>>
             </div>
             <div class="mini"></div>
             <div class="info">
-                <label for="femme">Femme</label>
-                <input type="radio" <?php if($mode == "modifier" || $mode == "ajouter") echo'required';?> id="genre" name="genre" <?php if($mode !="ajouter") echo'value='.$obj->getGenreStagiaire().'"';if("F") echo'checked';?>>
+                <label for="genreStagiaire">Femme</label>
+                <input type="radio" <?php if($mode == "modifier" || $mode == "ajouter") echo'required';?> id="femme" name="genreStagiaire" value="F" <?php if($mode!="ajouter" && $obj->getGenreStagiaire()=="F") echo'checked';if($mode =="details" ||$mode=="supprimer") echo'disabled'?>>
                 <div class="grande"></div>
             </div>
     </div>
