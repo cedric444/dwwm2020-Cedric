@@ -3,18 +3,32 @@
 <?php
 
 $mode=$_GET['mode'];
-
+// $type = $_GET['type'];
 switch($mode)
 {
     case "ajouter":
     {
-        echo'<form action="Index.php?page=ActionStagiaire&mode=ajouter" method="POST">';
-        break;
+        // if ($type=="file")
+        // {
+        //     echo'<form action="Index.php?page=ActionStagiaire&mode=ajouter&type=file" method="POST">';
+        // }
+        // else
+        // {
+            echo'<form action="Index.php?page=ActionStagiaire&mode=ajouter" method="POST">';
+            break;
+        // }
     }
     case "modifier":
-    {
-        echo'<form action="Index.php?page=ActionStagiaire&mode=modifier" method="POST"';
-        break;
+    {   
+        // if ($type=="file")
+        // {
+        //     echo'<form action="Index.php?page=ActionStagiaire&mode=ajouter&type=file" method="POST">';
+        // }
+        // else
+        // {
+            echo'<form action="Index.php?page=ActionStagiaire&mode=modifier" method="POST"';
+            break;
+        // }
     }
     case "details":
     {    
@@ -36,12 +50,22 @@ if(isset($_GET["id"]))
 
 <div class="espaceHor"></div>
 <div class="colonne">
+    <?php
+    if ($mode =="ajouter" || $mode=="modifier"){
+        echo'<div class="info">
+            
+            <label for="file">Ajouter fichier</label>
+            <div class="mini"></div>
+            <input type="file" name="file">
+            </div>
+            <div class="espaceHor"></div>';
+    }?>
     <input name="idStagiaire" type="hidden" <?php if(isset($obj)) echo'value="'.$obj->getIdStagiaire().'"';?>>
     <div >
             <div class="info">
             <div class="grande"></div>
                 <label for="genreStagiaire">Homme</label>
-                <input type="radio" <?php if($mode == "modifier" || $mode == "ajouter") echo'required';?> id="homme" name="genreStagiaire" value="M" <?php if($mode !="ajouter" && $obj->getGenreStagiaire()=="M") echo'checked';if($mode =="details" ||$mode=="supprimer") echo'disabled'?>>
+                <input type="radio" <?php if($mode == "modifier" || $mode == "ajouter") echo'required';?> id="homme" name="genreStagiaire" value="M" <?php if($mode !="ajouter" && $obj->getGenreStagiaire()=="M") echo'checked';if($mode =="details" ||$mode=="supprimer") echo'disabled';?>>
             </div>
             <div class="mini"></div>
             <div class="info">

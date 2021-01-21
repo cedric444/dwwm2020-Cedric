@@ -1,5 +1,5 @@
 <?php
-
+require 'vendor/autoload.php';
 //Affichage des erreurs
 ini_set('display_errors',1);
 
