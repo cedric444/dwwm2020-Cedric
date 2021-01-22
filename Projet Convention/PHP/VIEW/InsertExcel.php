@@ -6,11 +6,11 @@ ini_set('display_errors',1);
 use PhpOffice\PhpSpreadsheet\Reader\Csv;
 use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
 
-//On initialise un tableau contenant tous les typs possibles de feuilles
+//On initialise un tableau contenant tous les types possibles de feuilles
 
 $files_mimes= array('text/x-comma-separated-values', 'text/comma-separated-values', 'application/octet-stream', 'application/vnd.ms-excel', 'application/x-csv', 'text/x-csv', 'text/csv', 'application/csv', 'application/excel', 'application/vnd.msexcel', 'text/plain', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
 
-if(isset($_FILES['xls-stagiaires']['name]']) && in_array($_FILES['xls-stagiaires']['type'], $files_mimes)){
+if(isset($_FILES['xls-stagiaires']['name']) && in_array($_FILES['xls-stagiaires']['type'], $files_mimes)){
 
     //On récupère le nom du fichier et son extension
     $arr_file = explode('.',$_FILES['xls-stagiaires']['name']);
@@ -35,7 +35,7 @@ if(isset($_FILES['xls-stagiaires']['name]']) && in_array($_FILES['xls-stagiaires
 
 //On parcourt la feuille excel
 
-foreach($sheetData as $elt)
+for($i=6; $i<count($sheetData); $i++)
 {
     
         $tempGenreStagiaire = $elt[1];

@@ -45,7 +45,14 @@ switch($mode)
 if(isset($_GET["id"]))
 {
     $obj=StagiairesManager::findById($_GET["id"]);
+    $id = $obj->getIdStagiaire();   
 }
+$part=ParticipationsManager::getByStagiaire($id);
+foreach($part as $elt)
+{
+    $idSession=$elt->getIdSessionFormation();
+}
+$session = SessionsFormationsManager::findById($idSession);
 ?>
 
 <div class="espaceHor"></div>
@@ -99,7 +106,10 @@ if(isset($_GET["id"]))
         <label class="double" for="emailStagiaire">Email</label>
         <input class="double" name="emailStagiaire" id="emailStagiaire" pattern="^[a-z]+[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$" <?php if($mode!="ajouter") echo'value="'.$obj->getEmailStagiaire().'"';if($mode=="details"||$mode=="supprimer")echo'disabled';?>><div class="erreur"></div>
     </div>
-    
+    <div class=info>
+        <label class="double" for="numOffreSessionFormation">Session</label>
+        <input class="double" name="numOffreSessionFormation" id="numOffreSessionFormation" pattern="\d{6}" <?php echo'value="'.$session->getNumOffreFormation().'"';if($mode=="details"||$mode=="supprimer") echo'disabled'?>><div class="erreur"></div>
+    </div>    
 </div>
 <div class="espaceHor"></div>
 <div><div></div>

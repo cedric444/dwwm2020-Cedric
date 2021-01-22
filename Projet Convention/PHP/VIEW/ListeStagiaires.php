@@ -4,6 +4,7 @@ $stagiaires=StagiairesManager::getList();
 <section class="colonne">
     <h2 class="centre">Liste des stagiaires</h2>
     <div><a href="Index.php?page=FormStagiaire&mode=ajouter"><button class="bouton"><i class="fas fa-plus-circle"></i> Ajouter</button></a></div>
+    <div><a href="Index.php?page=FormStagiaireMasse"><button class="bouton"><i class="fas fa-plus-circle"></i> Ajouter en masse</button></a></div>
     <div class="espaceHor"></div>
     <div class="info">
         <div class="case titreColonne">Nom du stagiaire</div>

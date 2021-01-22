@@ -8,6 +8,7 @@ var numBenef = document.getElementById("numBenef");
 var numSecu = document.getElementById("numSecu");
 var ddn = document.getElementById("ddn");
 var emailStagiaire = document.getElementById("emailStagiaire");
+var numOffreSessionFormation = document.getElementById("numOffreSessionFormation");
 
 //Liste des inputs
 var inputs = document.getElementsByTagName("input");
@@ -19,7 +20,7 @@ numBenef.addEventListener("keyup", verification);
 numSecu.addEventListener("keyup", verification);
 ddn.addEventListener("change", verification);
 emailStagiaire.addEventListener("keyup", verification);
-
+numOffreSessionFormation.addEventListener("keyup", verification);
 
 /*******************Fonctions**********************/
 

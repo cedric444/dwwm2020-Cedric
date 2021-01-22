@@ -6,6 +6,7 @@ $stagiaire = new Stagiaires($_POST);
 // var_dump($stagiaire);
 
 
+
 switch($mode)
 {
     case "ajouter":
