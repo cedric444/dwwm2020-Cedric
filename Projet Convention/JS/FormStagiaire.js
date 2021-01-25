@@ -8,10 +8,12 @@ var numBenef = document.getElementById("numBenef");
 var numSecu = document.getElementById("numSecu");
 var ddn = document.getElementById("ddn");
 var emailStagiaire = document.getElementById("emailStagiaire");
-var numOffreSessionFormation = document.getElementById("numOffreSessionFormation");
-var formations = document.getElementsByClassName("formation");
+var numOffreFormation = document.getElementById("numOffreFormation");
+var selectFormation = document.getElementById("selectFormation");
+var selectSession=document.getElementById("selectSession");
 //Liste des inputs
 var inputs = document.getElementsByTagName("input");
+var req= new XMLHttpRequest();
 
 //Valeur des inputs
 nom.addEventListener("keyup", verification);
@@ -20,7 +22,7 @@ numBenef.addEventListener("keyup", verification);
 numSecu.addEventListener("keyup", verification);
 ddn.addEventListener("change", verification);
 emailStagiaire.addEventListener("keyup", verification);
-numOffreSessionFormation.addEventListener("keyup", verification);
+// numOffreFormation.addEventListener("keyup", verification);
 
 
 /*******************Fonctions**********************/
@@ -41,22 +43,63 @@ function verification(event) {
     }
 }
 
-/***************Requête sessions****************/
+function changeFormation(e)
+{
+    if(selectFormation.value!="default")
+    {
+        if (selectFormation.value != "defaut") // si c'est pas le choix par defaut
+        {
+            req.open('POST', 'index.php?page=SessionAPI', true);
+            req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            var id = selectFormation.value;
+            var args = "idForm=" + id;
+            req.send(args);
+        }
+    }
+}
 
-const req = new XMLHttpRaquest();
-req.onreadystatechange = function(event) {
+function ajoutSession(reponse)
+{
+    selectSession.innerHTML = "";
+    if(reponse.length==0)
+    {
+        let defaut=document.createElement("option");
+        defaut.setAttribute("value","default");
+        defaut.innerHTML="Acune Session à afficher";
+        selectSession.appendChild(defaut);
+    }
+    else{
+        if(reponse.length>1) // Si nombre de sessions>1
+        {
+            let defaut=document.createElement("option");
+            defaut.setAttribute("value","default");
+            defaut.innerHTML="Selectionnez une session";
+            selectSession.appendChild(defaut);
+        }
+        for (let i = 0; i < reponse.length; i++) { 
+                let session=document.createElement("option");
+                session.setAttribute("value",reponse[i].idSessionFormation);
+                session.innerHTML=reponse[i].numOffreFormation;
+                selectSession.appendChild(session);
+        }
+    }
+}
+selectFormation.addEventListener("change",changeFormation);
+selectSession.addEventListener("change",function(){
+    affichage.innerHTML="";
+});
+
+
+
+
+req.onreadystatechange = function (event) {
     if (this.readyState === XMLHttpRequest.DONE) {
-        if(this.status === 200) {
+        if (this.status === 200) {
             console.log("Réponse reçue: %s", this.responseText);
-            reponse= JSON.parse(this.responseText);
-            sessionStorage.innerHTML="";
-            for(let i=0; i<reponse.length; i++)
-            {
-                
-            }
-            
+            reponse = JSON.parse(this.responseText);
+            ajoutSession(reponse)
+        } else {
+            console.log("Status de la réponse: %d (%s)", this.status, this.statusText);
         }
     }
 };
-req.open('POST', 'index.php?page=SessionAPI', true);
-req.send(null);

@@ -46,10 +46,14 @@ function afficherPage($page)
 	$chemin=$page[0];
 	$nom=$page[1];
 	$titre=$page[2];
-
-	include 'PHP/VIEW/Head.php';
-	include 'PHP/VIEW/Header.php';
-	include 'PHP/VIEW/Nav.php';
-	include $chemin.$nom.'.php';
-	include 'PHP/VIEW/Footer.php';
+	if ($page[3]) // C'est une API
+    {
+        include $chemin . $nom . '.php';
+    } else {
+		include 'PHP/VIEW/Head.php';
+		include 'PHP/VIEW/Header.php';
+		include 'PHP/VIEW/Nav.php';
+		include $chemin.$nom.'.php';
+		include 'PHP/VIEW/Footer.php';
+	}
 }

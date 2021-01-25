@@ -101,11 +101,11 @@ if(isset($_GET["id"]))
         $formations = FormationsManager::getList();
         echo'<div class="info">
         <label class="double">Formation</label>
-        <select>';
+        <select id="selectFormation">';
         foreach($formations as $elt)
         {
             
-                echo'<option class="formation" value="'.$elt->getIdFormation().'">'.$elt->getLibelleFormation().'</option>';
+                echo'<option value="'.$elt->getIdFormation().'">'.$elt->getLibelleFormation().'</option>';
                 $id = $elt->getIdFormation();
         }
 
@@ -115,8 +115,8 @@ if(isset($_GET["id"]))
         
         echo'<div class="info">
         <label class="double">Session</label>
-        <select id="session">';
-        $liste = SessionsFormationsManager::getByFormation(false);
+        <select id="selectSession">';
+        $liste = SessionsFormationsManager::getByFormation($id, false);
         var_dump($liste);
         foreach($liste as $elt)
         {   
