@@ -9,7 +9,7 @@ var numSecu = document.getElementById("numSecu");
 var ddn = document.getElementById("ddn");
 var emailStagiaire = document.getElementById("emailStagiaire");
 var numOffreSessionFormation = document.getElementById("numOffreSessionFormation");
-
+var formations = document.getElementsByClassName("formation");
 //Liste des inputs
 var inputs = document.getElementsByTagName("input");
 
@@ -21,6 +21,7 @@ numSecu.addEventListener("keyup", verification);
 ddn.addEventListener("change", verification);
 emailStagiaire.addEventListener("keyup", verification);
 numOffreSessionFormation.addEventListener("keyup", verification);
+
 
 /*******************Fonctions**********************/
 
@@ -39,3 +40,23 @@ function verification(event) {
         monInput.style.border = "1px solid var(--BordureBouton)";
     }
 }
+
+/***************Requête sessions****************/
+
+const req = new XMLHttpRaquest();
+req.onreadystatechange = function(event) {
+    if (this.readyState === XMLHttpRequest.DONE) {
+        if(this.status === 200) {
+            console.log("Réponse reçue: %s", this.responseText);
+            reponse= JSON.parse(this.responseText);
+            sessionStorage.innerHTML="";
+            for(let i=0; i<reponse.length; i++)
+            {
+                
+            }
+            
+        }
+    }
+};
+req.open('POST', 'index.php?page=SessionAPI', true);
+req.send(null);

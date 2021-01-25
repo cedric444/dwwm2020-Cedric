@@ -66,6 +66,7 @@ $routes=[
 	"FormStagiaire" => ["PHP/VIEW/", "FormStagiaire", "Gestion des Stagiaires"],
 	"FormStagiaireMasse" => ["PHP/VIEW/", "FormStagiaireMasse", "Gestion des Stagiaires"],
 	"ActionStagiaire" => ["PHP/VIEW/", "ActionStagiaire", "Gestion des Stagiaires"],
+	"ActionStagiaireMasse" => ["PHP/VIEW/", "ActionStagiaireMasse", "Gestion des Stagiaires"],
 ];
 
 if(isset($_GET["page"]))

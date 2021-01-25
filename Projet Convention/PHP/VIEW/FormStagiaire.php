@@ -3,32 +3,20 @@
 <?php
 
 $mode=$_GET['mode'];
-// $type = $_GET['type'];
+
 switch($mode)
 {
     case "ajouter":
-    {
-        // if ($type=="file")
-        // {
-        //     echo'<form action="Index.php?page=ActionStagiaire&mode=ajouter&type=file" method="POST">';
-        // }
-        // else
-        // {
+    { 
             echo'<form action="Index.php?page=ActionStagiaire&mode=ajouter" method="POST">';
             break;
-        // }
+
     }
     case "modifier":
     {   
-        // if ($type=="file")
-        // {
-        //     echo'<form action="Index.php?page=ActionStagiaire&mode=ajouter&type=file" method="POST">';
-        // }
-        // else
-        // {
             echo'<form action="Index.php?page=ActionStagiaire&mode=modifier" method="POST"';
             break;
-        // }
+    
     }
     case "details":
     {    
@@ -44,29 +32,23 @@ switch($mode)
 
 if(isset($_GET["id"]))
 {
-    $obj=StagiairesManager::findById($_GET["id"]);
-    $id = $obj->getIdStagiaire();   
+    if($mode !="ajouter")
+    {
+        $obj=StagiairesManager::findById($_GET["id"]);
+        $id = $obj->getIdStagiaire();
+        $part=ParticipationsManager::getByStagiaire($id);
+        foreach($part as $elt)
+        {
+            $idSession=$elt->getIdSessionFormation();
+        }
+        $session = SessionsFormationsManager::findById($idSession);
+    }   
 }
-$part=ParticipationsManager::getByStagiaire($id);
-foreach($part as $elt)
-{
-    $idSession=$elt->getIdSessionFormation();
-}
-$session = SessionsFormationsManager::findById($idSession);
+
 ?>
 
 <div class="espaceHor"></div>
 <div class="colonne">
-    <?php
-    if ($mode =="ajouter" || $mode=="modifier"){
-        echo'<div class="info">
-            
-            <label for="file">Ajouter fichier</label>
-            <div class="mini"></div>
-            <input type="file" name="file">
-            </div>
-            <div class="espaceHor"></div>';
-    }?>
     <input name="idStagiaire" type="hidden" <?php if(isset($obj)) echo'value="'.$obj->getIdStagiaire().'"';?>>
     <div >
             <div class="info">
@@ -106,10 +88,44 @@ $session = SessionsFormationsManager::findById($idSession);
         <label class="double" for="emailStagiaire">Email</label>
         <input class="double" name="emailStagiaire" id="emailStagiaire" pattern="^[a-z]+[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$" <?php if($mode!="ajouter") echo'value="'.$obj->getEmailStagiaire().'"';if($mode=="details"||$mode=="supprimer")echo'disabled';?>><div class="erreur"></div>
     </div>
-    <div class=info>
+    <?php
+    if($mode !="ajouter")
+    {
+         
+        echo'<div class=info>
         <label class="double" for="numOffreSessionFormation">Session</label>
-        <input class="double" name="numOffreSessionFormation" id="numOffreSessionFormation" pattern="\d{6}" <?php echo'value="'.$session->getNumOffreFormation().'"';if($mode=="details"||$mode=="supprimer") echo'disabled'?>><div class="erreur"></div>
-    </div>    
+        <input class="double" name="numOffreSessionFormation" id="numOffreSessionFormation" pattern="\d{6}" value="'.$session->getNumOffreFormation().'"';if($mode=="details"||$mode=="supprimer") echo'disabled><div class="erreur"></div>
+    </div>';
+    }
+    else{
+        $formations = FormationsManager::getList();
+        echo'<div class="info">
+        <label class="double">Formation</label>
+        <select>';
+        foreach($formations as $elt)
+        {
+            
+                echo'<option class="formation" value="'.$elt->getIdFormation().'">'.$elt->getLibelleFormation().'</option>';
+                $id = $elt->getIdFormation();
+        }
+
+        echo'</select><div></div></div>';
+        
+        
+        
+        echo'<div class="info">
+        <label class="double">Session</label>
+        <select id="session">';
+        $liste = SessionsFormationsManager::getByFormation(false);
+        var_dump($liste);
+        foreach($liste as $elt)
+        {   
+                echo'<option value="'.$elt->getIdSessionFormation().'">'.$elt->getNumOffreFormation().'</option>';
+        }
+
+        echo'</select><div></div></div>';
+    }
+    ?>    
 </div>
 <div class="espaceHor"></div>
 <div><div></div>
