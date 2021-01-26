@@ -29,6 +29,10 @@ if(isset($_FILES['xls-stagiaires']['name']) && in_array($_FILES['xls-stagiaires'
 
     //Lecture  du fichier
     $spreadsheet= $reader->load($_FILES['xls-stagiaires']['tmp_name']);
+    //Récupération de la cellule contenant la formation
+    $libelleFormation = $spreadsheet->getActiveSheet()->getCell('B1')->getValue();
+    $libelleFormation= substr($libelleFormation, 0, -9);
+    var_dump($libelleFormation);
 
     //Récupération de la cellule contenant le numéro de l'offre
     $numOffreFormation = $spreadsheet->getActiveSheet()->getCell('C3')->getValue();
@@ -61,7 +65,7 @@ if(!empty($sheetData))
         $tempStagiaire[$i] = new Stagiaires(["nomStagiaire"=>$tempNomStagiaire,"prenomStagiaire"=>$tempPrenomStagiaire,"numBenefStagiaire"=>$tempNumBenefStagiaire,"dateNaissanceStagiaire"=>$tempDateNaissanceStagiaire,"emailStagiaire"=>$tempEmailStagiaire]);
         
        // On vérifie s'il est déja en BDD
-        if(StagiairesManager::getByEmail($tempEmailStagiaire) != false)
+        if(StagiairesManager::getByEmail($tempEmailStagiaire[$i]) != false)
         {
             StagiairesManager::update($tempStagiaire[$i]);
         }
@@ -72,4 +76,4 @@ if(!empty($sheetData))
     }
 }  
 var_dump($tempStagiaire);
-    
+// header("location:index.php?page=ListeStagiaires");
