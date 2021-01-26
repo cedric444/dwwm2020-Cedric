@@ -2,7 +2,7 @@
 require 'vendor/autoload.php';
 //Affichage des erreurs
 ini_set('display_errors',1);
- var_dump($_POST);
+//  var_dump($_POST);
 use PhpOffice\PhpSpreadsheet\Reader\Csv;
 use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
 
@@ -29,37 +29,47 @@ if(isset($_FILES['xls-stagiaires']['name']) && in_array($_FILES['xls-stagiaires'
 
     //Lecture  du fichier
     $spreadsheet= $reader->load($_FILES['xls-stagiaires']['tmp_name']);
+
+    //Récupération de la cellule contenant le numéro de l'offre
+    $numOffreFormation = $spreadsheet->getActiveSheet()->getCell('C3')->getValue();
+    var_dump($numOffreFormation);
+
     //On crée un tableau contenant toutes les valeurs du fichier
     $sheetData= $spreadsheet->getActiveSheet()->toArray();
-    var_dump($sheetData);
+    // var_dump($sheetData);
 }
 
 //On parcourt la feuille excel
 
-for($i=5; $i<count($sheetData); $i++)
+if(!empty($sheetData))
 {
+    for($i=5; $i<count($sheetData); $i++)
+    {
     
-        // $tempGenreStagiaire = $elt[1];
-        $tempNomStagiaire = $sheetData[1];
-        // var_dump($tempnomStagiaire);
-        // $tempPrenomStagiaire = $sheetData[3];
-        // $tempNumBenefStagiaire = $sheetData[0];
-        // $tempNumSecuStagiaire = $elt[5];
-        // $tempDateNaissanceStagiaire =$sheetData[9];
-        // $tempEmailStagiaire = $sheetData[10];
-
+         // $tempGenreStagiaire = $elt[1];
+        $tempNomStagiaire = $sheetData[$i][1];
+        $tempPrenomStagiaire = $sheetData[$i][3];
+        $tempNumBenefStagiaire = $sheetData[$i][0];
+        
+         // $tempNumSecuStagiaire = $elt[5];
+        $tempDateNaissanceStagiaire =$sheetData[$i][4];
+        $tempEmailStagiaire = $sheetData[$i][10];
+        
+ 
         //On crée un objet stagiaire temporaire
-
-        // $tempStagiaire = new Stagiaires(["nomStagiaire"=>$tempNomStagiaire,"prenomStagiaire"=>$tempPrenomStagiaire,"numBenefStagiaire"=>$tempNumBenefStagiaire,"dateNaissanceStagiaire"=>$tempDateNaissanceStagiaire,"emailStagiaire"=>$tempEmailStagiaire]);
-
-        //On vérifie s'il est déja en BDD
-        // if(StagiairesManager::getByEmail($tempEmailStagiaire) != false)
-        // {
-        //     StagiairesManager::update($tempStagiaire);
-        // }
-        // else
-        // {
-        //     StagiairesManager::add($tempStagiaire);
-        // }
     
-}
+        $tempStagiaire[$i] = new Stagiaires(["nomStagiaire"=>$tempNomStagiaire,"prenomStagiaire"=>$tempPrenomStagiaire,"numBenefStagiaire"=>$tempNumBenefStagiaire,"dateNaissanceStagiaire"=>$tempDateNaissanceStagiaire,"emailStagiaire"=>$tempEmailStagiaire]);
+        
+       // On vérifie s'il est déja en BDD
+        if(StagiairesManager::getByEmail($tempEmailStagiaire) != false)
+        {
+            StagiairesManager::update($tempStagiaire[$i]);
+        }
+        else
+        {
+            StagiairesManager::add($tempStagiaire[$i]);
+        }
+    }
+}  
+var_dump($tempStagiaire);
+    

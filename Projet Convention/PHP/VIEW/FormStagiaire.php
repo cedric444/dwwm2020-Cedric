@@ -101,7 +101,7 @@ if(isset($_GET["id"]))
         $formations = FormationsManager::getList();
         echo'<div class="info">
         <label class="double">Formation</label>
-        <select id="selectFormation">';
+        <select class="double" id="selectFormation">';
         foreach($formations as $elt)
         {
             
@@ -115,7 +115,7 @@ if(isset($_GET["id"]))
         
         echo'<div class="info">
         <label class="double">Session</label>
-        <select id="selectSession">';
+        <select class="double" id="selectSession">';
         $liste = SessionsFormationsManager::getByFormation($id, false);
         var_dump($liste);
         foreach($liste as $elt)
