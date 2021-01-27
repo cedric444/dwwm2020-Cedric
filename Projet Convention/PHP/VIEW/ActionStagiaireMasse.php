@@ -38,6 +38,7 @@ if(isset($_FILES['xls-stagiaires']['name']) && in_array($_FILES['xls-stagiaires'
     $numOffreFormation = $spreadsheet->getActiveSheet()->getCell('C3')->getValue();
     var_dump($numOffreFormation);
 
+
     //On crée un tableau contenant toutes les valeurs du fichier
     $sheetData= $spreadsheet->getActiveSheet()->toArray();
     // var_dump($sheetData);
@@ -48,6 +49,7 @@ if(isset($_FILES['xls-stagiaires']['name']) && in_array($_FILES['xls-stagiaires'
 if(!empty($sheetData))
 {
     for($i=5; $i<count($sheetData); $i++)
+    // for($i=5; $i<6; $i++)
     {
     
          // $tempGenreStagiaire = $elt[1];
@@ -56,24 +58,36 @@ if(!empty($sheetData))
         $tempNumBenefStagiaire = $sheetData[$i][0];
         
          // $tempNumSecuStagiaire = $elt[5];
-        $tempDateNaissanceStagiaire =$sheetData[$i][4];
-        $tempEmailStagiaire = $sheetData[$i][10];
+        $ddn =  new DateTime($sheetData[$i][4]);
+       $tempDateNaissanceStagiaire =  $ddn->format("Y-m-d");
+       $tempEmailStagiaire = $sheetData[$i][10];
         
  
         //On crée un objet stagiaire temporaire
     
-        $tempStagiaire[$i] = new Stagiaires(["nomStagiaire"=>$tempNomStagiaire,"prenomStagiaire"=>$tempPrenomStagiaire,"numBenefStagiaire"=>$tempNumBenefStagiaire,"dateNaissanceStagiaire"=>$tempDateNaissanceStagiaire,"emailStagiaire"=>$tempEmailStagiaire]);
+        $tempStagiaire = new Stagiaires(["nomStagiaire"=>$tempNomStagiaire,"prenomStagiaire"=>$tempPrenomStagiaire, "numBenefStagiaire"=>$tempNumBenefStagiaire,"dateNaissanceStagiaire"=>$tempDateNaissanceStagiaire,"emailStagiaire"=>$tempEmailStagiaire]);
         
-       // On vérifie s'il est déja en BDD
-        if(StagiairesManager::getByEmail($tempEmailStagiaire[$i]) != false)
-        {
-            StagiairesManager::update($tempStagiaire[$i]);
-        }
-        else
-        {
-            StagiairesManager::add($tempStagiaire[$i]);
-        }
-    }
-}  
 var_dump($tempStagiaire);
-// header("location:index.php?page=ListeStagiaires");
+       
+    //    if($sheetData[$i][1] != "")
+    //    {    
+    //         // On vérifie s'il est déja en BDD
+   
+            if(StagiairesManager::getByEmail($tempEmailStagiaire) != false)
+            {
+             
+                StagiairesManager::update($tempStagiaire);                      //Si oui, on update
+            }
+            else
+            {  
+                 echo "toto";
+                StagiairesManager::add($tempStagiaire);                         //Si non, on l'ajoute
+            }
+        //}
+    }
+} 
+
+
+
+
+header("location:index.php?page=ListeStagiaires");

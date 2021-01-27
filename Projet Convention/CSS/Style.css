@@ -75,6 +75,10 @@ label {
 .centerItem {
     align-items: center;
 }
+.centerSelf {
+    align-self: center;
+}
+
 
 a {
     color: var(--CouleurTexte);
@@ -100,7 +104,18 @@ a {
 button:disabled{
     border: solid var(--CouleurOmbre) 2px;
 }
+.grandBouton{
+    width: 100%;
+    letter-spacing: 0.2em;
+    font-size: 1.2em;
+    font-weight: 900;
+    padding: 0.5em 4em;
+    background : linear-gradient(to right,var(--BordureBouton),var(--FondPage),90%, var(--BordureBouton));
 
+}
+.zoneBouton{
+    padding: 2em 0;
+}
 /********* input & Select *********/
 input, textarea,
 select ,.case {
@@ -157,6 +172,9 @@ select option::selection {
 .incorrect{
     border: red solid 3px;
 }
+.correct{
+    border: #3db651 solid 3px;
+}
 
 
 /******** Header ********/
@@ -192,4 +210,76 @@ footer {
 }
 .container{
     padding-bottom: 3.5em;
+    flex-direction: column;
+}
+
+.aideMdp {
+    flex-direction: column;
+    z-index: 2;
+    font-size: 0.8em;
+    display: none;
+    white-space: nowrap;
+    border-radius: 2vh;
+    background-color: white;
+    padding: 1vh;
+}
+
+.oeil {
+    position: absolute;
+    left: 32vw;
+    top: 4vh;
+}
+
+/*   MENU   */
+
+
+.menu a{
+    font-size: 1.5em;
+   
+}
+
+.menu > div {
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    border: 2px solid var(--CouleurOmbre);
+    padding: 0.2em;
+    transition: 0.2s;
+    height: 100%;
+    margin: 0.5em 0;
+    background : linear-gradient(to right,var(--FondPage),90%, var(--BordureBouton));
+}
+.menu > div:hover a {
+    color : var(--FondPage);
+}
+.menu > div:hover{
+    
+    background : linear-gradient(0.25turn,var(--FondPage),40%, var(--BordureBouton));
+    border: 2px solid var(--CouleurTexte);
+    background-position: right center;
+}
+
+/* Interface Utilisateur */
+.bordureTitre
+{
+    border:1px solid var(--CouleurTexte);
+}
+.indic{
+    flex:none;
+    padding:0.5em;
+    border-radius:10em;
+    border:1px solid var(--BordureBouton);
+}
+.texteInfoBulle
+{
+    position:absolute;
+    top:0.5vh;
+    left:10vh;
+    font-size:0.8em;
+    display:none;
+    white-space:nowrap;
+    border-radius:2vh;
+    background-color:#aaa;
+    color:black;
+    padding:1vh;
+    z-index: 1;
 }

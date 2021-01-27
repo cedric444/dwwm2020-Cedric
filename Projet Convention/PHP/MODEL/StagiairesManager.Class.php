@@ -78,4 +78,5 @@ class StagiairesManager
 			return false;
 		}
 	}
+	
 }
