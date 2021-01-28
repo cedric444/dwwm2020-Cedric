@@ -38,6 +38,7 @@ if (isset($_GET["id"]))
         $obj = StagiairesManager::findById($_GET["id"]);
         $id = $obj->getIdStagiaire();
         $part = ParticipationsManager::getByStagiaire($id);
+        var_dump($part);
         foreach ($part as $elt)
         {
             $idSession = $elt->getIdSessionFormation();

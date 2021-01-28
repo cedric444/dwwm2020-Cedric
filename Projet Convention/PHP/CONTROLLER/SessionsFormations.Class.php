@@ -8,6 +8,8 @@ class SessionsFormations
 	private $_idSessionFormation;
 	private $_numOffreFormation;
 	private $_idFormation;
+	private $_dateDebut;
+	private $_dateFin;
 
 	/***************** Accesseurs ***************** */
 
@@ -40,6 +42,26 @@ class SessionsFormations
 	public function setIdFormation($idFormation)
 	{
 		$this->_idFormation=$idFormation;
+	}
+
+	public function getDateDebut()
+	{
+		return $this->_dateDebut;
+	}
+
+	public function setDateDebut($dateDebut)
+	{
+		$this->_dateDebut = $dateDebut;
+	}
+
+	public function getDateFin()
+	{
+		return $this->_dateFin;
+	}
+
+	public function setDateFin($dateFin)
+	{
+		$this->_dateFin = $dateFin;
 	}
 
 	/*****************Constructeur***************** */
@@ -103,4 +125,6 @@ class SessionsFormations
 	{
 		return;
 	}
+
+	
 }

@@ -67,7 +67,7 @@ if(!empty($sheetData))
     
         $tempStagiaire = new Stagiaires(["nomStagiaire"=>$tempNomStagiaire,"prenomStagiaire"=>$tempPrenomStagiaire, "numBenefStagiaire"=>$tempNumBenefStagiaire,"dateNaissanceStagiaire"=>$tempDateNaissanceStagiaire,"emailStagiaire"=>$tempEmailStagiaire]);
         
-var_dump($tempStagiaire);
+
        
     //    if($sheetData[$i][1] != "")
     //    {    
@@ -80,7 +80,6 @@ var_dump($tempStagiaire);
             }
             else
             {  
-                 echo "toto";
                 StagiairesManager::add($tempStagiaire);                         //Si non, on l'ajoute
             }
         //}
