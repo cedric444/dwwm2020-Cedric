@@ -1,0 +1,6 @@
+Planning:
+-Définir les pattern pour chaque input
+-JS Déclarer les variables
+-Ecrire le code JS pour le bouton soumettre
+-Ecrire la fonction d'affichage des messages
+-Définir les évènements
