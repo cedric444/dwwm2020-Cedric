@@ -37,6 +37,7 @@ if (isset($_GET["id"]))
     {
         $obj = StagiairesManager::findById($_GET["id"]);
         $id = $obj->getIdStagiaire();
+        var_dump($id);
         $part = ParticipationsManager::getByStagiaire($id);
         var_dump($part);
         foreach ($part as $elt)
