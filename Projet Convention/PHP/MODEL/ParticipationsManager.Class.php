@@ -67,21 +67,6 @@ class ParticipationsManager
         }return $liste;
 
 	}
-
-	public static function getBySession($idSessionFormation)
-    {
-        $db = DbConnect::getDb();
-        $id = (int) $idSessionFormation;
-        $liste = [];
-        $q = $db->query("SELECT * FROM Participations where idSessionFormation=".$id);
-        while ($donnees = $q->fetch(PDO::FETCH_ASSOC)) {
-            if ($donnees != false) {
-                $liste[] = new Participations($donnees);
-            }
-        }return $liste;
-
-	}
-
 	public static function getBySessionStagiaire($idSession, $idStagiaire)
 	{
  		$db=DbConnect::getDb();

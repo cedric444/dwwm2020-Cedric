@@ -43,7 +43,6 @@ class SessionsFormations
 	{
 		$this->_idFormation=$idFormation;
 	}
-
 	public function getDateDebut()
 	{
 		return $this->_dateDebut;
@@ -51,7 +50,7 @@ class SessionsFormations
 
 	public function setDateDebut($dateDebut)
 	{
-		$this->_dateDebut = $dateDebut;
+		$this->_dateDebut=$dateDebut;
 	}
 
 	public function getDateFin()
@@ -61,9 +60,8 @@ class SessionsFormations
 
 	public function setDateFin($dateFin)
 	{
-		$this->_dateFin = $dateFin;
+		$this->_dateFin=$dateFin;
 	}
-
 	/*****************Constructeur***************** */
 
 	public function __construct(array $options = [])
@@ -125,6 +123,4 @@ class SessionsFormations
 	{
 		return;
 	}
-
-	
 }

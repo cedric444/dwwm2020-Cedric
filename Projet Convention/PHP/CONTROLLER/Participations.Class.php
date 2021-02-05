@@ -22,6 +22,8 @@ class Participations
 		$this->_idParticipation=$idParticipation;
 	}
 
+	
+
 	public function getIdSessionFormation()
 	{
 		return $this->_idSessionFormation;

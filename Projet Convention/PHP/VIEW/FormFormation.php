@@ -28,14 +28,48 @@ if (isset($_GET["id"]))
 }
 ?>
 
-    <div class="espaceHor"></div>
-    <div class="colonne">
-        <input name="idFormation" type="hidden" <?php if(isset($obj)) echo'value="'.$obj->getIdFormation().'"';?>>
-        <div class="info">
-            <label class="double" for="libelleFormation">Nom de la formation</label>
-            <input class="double" name="libelleFormation" <?php if($mode != "ajouter") echo'value="'.$obj->getLibelleFormation().'"';if($mode=="supprimer")echo'disabled';?>>
-        </div>
+<div class="espaceHor"></div>
+<div class="colonne">
+    <input name="idFormation" type="hidden" <?php if(isset($obj)) echo'value="'.$obj->getIdFormation().'"';?>>
+    <div class="info">
+        <label class="double" for="libelleFormation">Nom de la formation</label>
+        <input class="double" name="libelleFormation" <?php if($mode != "ajouter") echo'value="'.$obj->getLibelleFormation().'"';if($mode=="supprimer")echo'disabled';?>>
     </div>
+    <div class="info">
+        <label class="double" for="grn">grn</label>
+        <input class="double" name="grn" <?php if($mode != "ajouter") echo'value="'.$obj->getGrn().'"';if($mode=="supprimer")echo'disabled';?>>
+    </div>
+</div>
+<?php
+$idFormation= $obj->getIdFormation();
+$animation= AnimationsManager::getByFormation($idFormation);
+
+var_dump($animation);
+// $idUtilisateur= $animation->getIdUtilisateur();
+$formateurs = AnimationsManager::getByUtilisateurFormation($idUtilisateur, $idFormation);
+echo '<div class="info">
+        <label class="double">Formation</label>
+        <select class="double" id="selectFormation">';
+foreach ($formateurs as $elt)
+{
+    if ($elt->getIdUtilisateur() == $idUtilisateur)
+    {
+        $sel = " selected ";
+    }
+    else
+    {
+        $sel = "";
+    }
+    echo'<option '.$sel.'value="' .$elt->getIdUtilisateur().'">'.$elt->getNomUtilisateur().' '.$elt->getPrenomUtilisateur().'</option>';
+}
+    ?>
+        </select>
+    </div>
+        <div class="info">
+            <label class="double" for="finaliteFormation">Finalité de la formation</label>
+            <input class="double" name="finaliteFormation" <?php if($mode != "ajouter") echo'value="'.$obj->getFinaliteFormation().'"';if($mode=="supprimer")echo'disabled';?>>
+        </div>
+    
     <div class="espaceHor"></div>
 <div><div></div>
 <?php

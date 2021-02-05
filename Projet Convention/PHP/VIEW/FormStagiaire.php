@@ -37,9 +37,7 @@ if (isset($_GET["id"]))
     {
         $obj = StagiairesManager::findById($_GET["id"]);
         $id = $obj->getIdStagiaire();
-        var_dump($id);
         $part = ParticipationsManager::getByStagiaire($id);
-        var_dump($part);
         foreach ($part as $elt)
         {
             $idSession = $elt->getIdSessionFormation();
@@ -191,11 +189,11 @@ foreach ($formations as $elt)
 echo '</select><div></div></div>';
 
 echo '<div class="info">
-        <label class="double">Session</label>
+        <label class="double">N° Offre</label>
         <input type="hidden" name = "idAncienneSession" value ="' . $idSession . '">
         <select class="double" id="selectSession" name="idSessionFormation" >';
 $liste = SessionsFormationsManager::getByFormation($idFormation, false);
-var_dump($liste);
+// var_dump($liste);
 $sel = "";
 foreach ($liste as $elt)
 {

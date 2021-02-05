@@ -1,7 +1,7 @@
 <?php
 
 $mode = $_GET['mode'];
-// var_dump($_POST);
+var_dump($_POST);
 $formation = new Formations($_POST);
 
 switch($mode)

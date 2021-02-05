@@ -5,17 +5,21 @@ class FormationsManager
 	public static function add(Formations $obj)
 	{
  		$db=DbConnect::getDb();
-		$q=$db->prepare("INSERT INTO Formations (libelleFormation) VALUES (:libelleFormation)");
+		$q=$db->prepare("INSERT INTO Formations (libelleFormation, grn, finaliteFormation) VALUES (:libelleFormation,:grn,:finaliteFormation)");
 		$q->bindValue(":libelleFormation", $obj->getLibelleFormation());
+		$q->bindValue(":grn", $obj->getGrn());
+		$q->bindValue(":finaliteFormation", $obj->getFinaliteFormation());
 		$q->execute();
 	}
 
 	public static function update(Formations $obj)
 	{
  		$db=DbConnect::getDb();
-		$q=$db->prepare("UPDATE Formations SET idFormation=:idFormation,libelleFormation=:libelleFormation WHERE idFormation=:idFormation");
+		$q=$db->prepare("UPDATE Formations SET idFormation=:idFormation,libelleFormation=:libelleFormation,grn=:grn,finaliteFormation=:finaliteFormation WHERE idFormation=:idFormation");
 		$q->bindValue(":idFormation", $obj->getIdFormation());
 		$q->bindValue(":libelleFormation", $obj->getLibelleFormation());
+		$q->bindValue(":grn", $obj->getGrn());
+		$q->bindValue(":finaliteFormation", $obj->getFinaliteFormation());
 		$q->execute();
 	}
 	public static function delete(Formations $obj)
@@ -42,7 +46,7 @@ class FormationsManager
 	{
  		$db=DbConnect::getDb();
 		$liste = [];
-		$q = $db->query("SELECT * FROM Formations");
+		$q = $db->query("SELECT * FROM Formations  ORDER BY libelleFormation");
 		while($donnees = $q->fetch(PDO::FETCH_ASSOC))
 		{
 			if($donnees != false)
