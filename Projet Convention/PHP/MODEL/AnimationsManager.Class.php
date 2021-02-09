@@ -84,7 +84,7 @@ class AnimationsManager
 	public static function getByUtilisateurFormation($idUtilisateur, $idFormation)
 	{
  		$db=DbConnect::getDb();
-		$q=$db->query("SELECT * FROM Animations WHERE idUtilisateur =".$idUtilisateur ." And idFormation=".$idFormation);
+		$q=$db->query("SELECT * FROM Animations WHERE idUtilisateur =".$idUtilisateur ." AND idFormation=".$idFormation);
 		$results = $q->fetch(PDO::FETCH_ASSOC);
 		if($results != false)
 		{

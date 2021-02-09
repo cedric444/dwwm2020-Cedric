@@ -24,7 +24,20 @@ switch($mode)
 
 if (isset($_GET["id"]))
 {
-    $obj =FormationsManager::findById($_GET["id"]);
+    if($mode !="ajouter")
+    {
+        $obj =FormationsManager::findById($_GET["id"]);
+        // var_dump($obj);
+        $animations = AnimationsManager::getByFormation($obj->getIdFormation());
+        // var_dump($animations);
+        foreach($animations as $elt)
+        {
+            $idAnimation = $elt->getIdAnimation();
+        }
+        $animation = AnimationsManager::findById($idAnimation);
+        $idUtilisateur = $animation->getIdUtilisateur();
+        // var_dump($idUtilisateur);
+    }
 }
 ?>
 
@@ -39,36 +52,39 @@ if (isset($_GET["id"]))
         <label class="double" for="grn">grn</label>
         <input class="double" name="grn" <?php if($mode != "ajouter") echo'value="'.$obj->getGrn().'"';if($mode=="supprimer")echo'disabled';?>>
     </div>
+
+    <div class="info">
+        <label class="double" for="finaliteFormation">Finalité de la formation</label>
+        <input class="double" name="finaliteFormation" <?php if($mode != "ajouter") echo'value="'.$obj->getFinaliteFormation().'"';if($mode=="supprimer")echo'disabled';?>>
+    </div>
 </div>
 <?php
-$idFormation= $obj->getIdFormation();
-$animation= AnimationsManager::getByFormation($idFormation);
-
-var_dump($animation);
-// $idUtilisateur= $animation->getIdUtilisateur();
-$formateurs = AnimationsManager::getByUtilisateurFormation($idUtilisateur, $idFormation);
 echo '<div class="info">
-        <label class="double">Formation</label>
-        <select class="double" id="selectFormation">';
-foreach ($formateurs as $elt)
-{
-    if ($elt->getIdUtilisateur() == $idUtilisateur)
+        <label class="double" for="idUtilisateur">Formateur</label>';
+        if($mode!="ajouter"){echo'<input type="hidden" name="idAncienUtilisateur" value="' .$idUtilisateur.'">';} 
+?>
+<select class="double" id="selectUtilisateur" name="idUtilisateur" multiple <?php if($mode=="supprimer")echo'disabled';?>>
+<?php
+$sel="";
+    
+$liste = UtilisateursManager::getList();
+foreach($liste as $elt)
+{           
+    if($elt->getIdUtilisateur()== $idUtilisateur)
     {
-        $sel = " selected ";
+        $sel="selected";
     }
     else
     {
-        $sel = "";
+        $sel="";
     }
-    echo'<option '.$sel.'value="' .$elt->getIdUtilisateur().'">'.$elt->getNomUtilisateur().' '.$elt->getPrenomUtilisateur().'</option>';
+    echo '<option ' . $sel . ' value="' . $elt->getIdUtilisateur() . '">' . $elt->getNomUtilisateur(). ' ' . $elt->getPrenomUtilisateur() . '</option>';
 }
-    ?>
-        </select>
-    </div>
-        <div class="info">
-            <label class="double" for="finaliteFormation">Finalité de la formation</label>
-            <input class="double" name="finaliteFormation" <?php if($mode != "ajouter") echo'value="'.$obj->getFinaliteFormation().'"';if($mode=="supprimer")echo'disabled';?>>
-        </div>
+        
+
+echo'</select>';
+
+?>
     
     <div class="espaceHor"></div>
 <div><div></div>
@@ -93,7 +109,7 @@ switch($mode)
     }
 }
 echo'<div class="demi"></div>';
-echo'<a href="Index.php?page=ListeFormations"><button class="bouton"><i class="far fa-arrow-alt-circle-left"></i> Retour</button></a>';
+echo'<a href="Index.php?page=ListeFormations"><button class="bouton" type="button"><i class="far fa-arrow-alt-circle-left"></i> Retour</button></a>';
 ?>
 <div></div>
 </div>

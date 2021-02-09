@@ -56,4 +56,18 @@ class FormationsManager
 		}
 		return $liste;
 	}
+	public static function getByLibelle($libelle)
+	{
+		$db=DbConnect::getDb();
+	   $q=$db->query('SELECT * FROM Formations WHERE libelleFormation ="'.$libelle.'"');
+	   $results = $q->fetch(PDO::FETCH_ASSOC);
+	   if($results != false)
+	   {
+		   return new Formations($results);
+	   }
+	   else
+	   {
+		   return false;
+	   }
+   }
 }
