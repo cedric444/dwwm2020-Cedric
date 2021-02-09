@@ -63,10 +63,11 @@ echo '<div class="info">
         <label class="double" for="idUtilisateur">Formateur</label>';
         if($mode!="ajouter"){echo'<input type="hidden" name="idAncienUtilisateur" value="' .$idUtilisateur.'">';} 
 ?>
+<input type="hidden" name="utilisateur" valeur="">
 <select class="double" id="selectUtilisateur" name="idUtilisateur" multiple <?php if($mode=="supprimer")echo'disabled';?>>
 <?php
 $sel="";
-    
+$idUtilisateur = "";    
 $liste = UtilisateursManager::getList();
 foreach($liste as $elt)
 {           
@@ -78,7 +79,7 @@ foreach($liste as $elt)
     {
         $sel="";
     }
-    echo '<option ' . $sel . ' value="' . $elt->getIdUtilisateur() . '">' . $elt->getNomUtilisateur(). ' ' . $elt->getPrenomUtilisateur() . '</option>';
+    echo '<option ' . $sel . ' value="' . $elt->getIdUtilisateur() . '" name="valeur">' . $elt->getNomUtilisateur(). ' ' . $elt->getPrenomUtilisateur() . '</option>';
 }
         
 

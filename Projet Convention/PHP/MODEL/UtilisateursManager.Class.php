@@ -76,4 +76,18 @@ class UtilisateursManager
 			return false;
 		}
 	}
+	public static function getByRole($idRole)
+	{
+		$db=DbConnect::getDb();
+	   $q=$db->query('SELECT * FROM Utilisateurs WHERE idRole ="'.$idRole.'"');
+	   $results = $q->fetch(PDO::FETCH_ASSOC);
+	   if($results != false)
+	   {
+		   return new Utilisateurs($results);
+	   }
+	   else
+	   {
+		   return false;
+	   }
+   }
 }
