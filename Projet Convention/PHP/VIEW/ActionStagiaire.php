@@ -3,8 +3,8 @@
 $mode = $_GET['mode'];
 
 $stagiaire = new Stagiaires($_POST);
- var_dump($_POST);
-//recherche des info Sessions
+//  var_dump($_POST);
+//recherche des info Sesssions
 $sess = SessionsFormationsManager::findById($_POST["idSessionFormation"]);
 
 switch ($mode)

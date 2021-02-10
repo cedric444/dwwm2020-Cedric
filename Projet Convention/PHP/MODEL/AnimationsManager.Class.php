@@ -80,7 +80,6 @@ class AnimationsManager
         }return $liste;
 
 	}
-
 	public static function getByUtilisateurFormation($idUtilisateur, $idFormation)
 	{
  		$db=DbConnect::getDb();

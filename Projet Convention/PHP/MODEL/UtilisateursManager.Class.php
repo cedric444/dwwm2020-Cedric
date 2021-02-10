@@ -76,18 +76,18 @@ class UtilisateursManager
 			return false;
 		}
 	}
-	public static function getByRole($idRole)
+	public static function getListByRole($idRole)
 	{
-		$db=DbConnect::getDb();
-	   $q=$db->query('SELECT * FROM Utilisateurs WHERE idRole ="'.$idRole.'"');
-	   $results = $q->fetch(PDO::FETCH_ASSOC);
-	   if($results != false)
-	   {
-		   return new Utilisateurs($results);
-	   }
-	   else
-	   {
-		   return false;
-	   }
-   }
+ 		$db=DbConnect::getDb();
+		$liste = [];
+		$q = $db->query("SELECT * FROM Utilisateurs where idRole = ".$idRole." ORDER BY nomUtilisateur");
+		while($donnees = $q->fetch(PDO::FETCH_ASSOC))
+		{
+			if($donnees != false)
+			{
+				$liste[] = new Utilisateurs($donnees) ;
+			}
+		}
+		return $liste;
+	}
 }

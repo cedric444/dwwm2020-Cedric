@@ -1,7 +1,7 @@
 <?php
 
 $mode = $_GET['mode'];
-var_dump($_POST);
+ var_dump($_POST);
 $formation = new Formations($_POST);
 
 
@@ -28,7 +28,6 @@ switch($mode)
 
             AnimationsManager::delete($anim);
             $anim =new Animations(["idFormation"=> $formation->getIdFormation(), "idUtilisateur"=> $_POST['idUtilisateur']]);
-            var_dump($anim);
             AnimationsManager::add($anim);
         }
         FormationsManager::update($formation);
@@ -42,4 +41,4 @@ switch($mode)
         break;
     }
 }
-header("location:Index.php?page=ListeFormations");
+//header("location:Index.php?page=ListeFormations");

@@ -193,7 +193,7 @@ echo '<div class="info">
         <input type="hidden" name = "idAncienneSession" value ="' . $idSession . '">
         <select class="double" id="selectSession" name="idSessionFormation" >';
 $liste = SessionsFormationsManager::getByFormation($idFormation, false);
-// var_dump($liste);
+var_dump($liste);
 $sel = "";
 foreach ($liste as $elt)
 {
@@ -241,7 +241,7 @@ switch ($mode)
 }
 echo '<div class="demi"></div>';
 echo '<a href="Index.php?page=ListeStagiaires">
-        <button class="bouton" type="button"><i class="far fa-arrow-alt-circle-left"></i> Retour</button>
+        <button class="bouton" type="button"><i class="far fa-arrow-alt-circle-left"></i> &nbsp Retour</button>
     </a>';
 ?>
 <div></div>

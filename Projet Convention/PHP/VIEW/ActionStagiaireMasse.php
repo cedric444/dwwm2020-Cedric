@@ -80,7 +80,7 @@ var_dump($tempStagiaire);
             }
             else
             {  
-                 echo "toto";
+                //  echo "toto";
                 StagiairesManager::add($tempStagiaire);                         //Si non, on l'ajoute
             }
         //}
@@ -90,4 +90,4 @@ var_dump($tempStagiaire);
 
 
 
-// header("location:index.php?page=ListeStagiaires");
+header("location:index.php?page=ListeStagiaires");
