@@ -1,0 +1,20 @@
+/*
+Theme Name: Theme enfant
+Description: Theme enfant de Cedric WPServeur
+Author: Cedric- WPserveur
+Author URI: https://www.wpserveur.net
+Template: WPServeur
+Version: 0.1.0
+*/
+body {
+    display: flex;
+    flex: 1;
+}
+.header-footer-group {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+.entry-header {
+    padding: 4rem 0;
+}

@@ -65,7 +65,7 @@ class UtilisateursManager
 	public static function getByEmail($email)
 	{
  		$db=DbConnect::getDb();
-		$q=$db->query("SELECT * FROM Utilisateurs WHERE emailUtilisateur =".$email);
+		$q=$db->query('SELECT * FROM Utilisateurs WHERE emailUtilisateur ="'.$email.'"');
 		$results = $q->fetch(PDO::FETCH_ASSOC);
 		if($results != false)
 		{
@@ -75,5 +75,19 @@ class UtilisateursManager
 		{
 			return false;
 		}
+	}
+	public static function getListByRole($idRole)
+	{
+ 		$db=DbConnect::getDb();
+		$liste = [];
+		$q = $db->query("SELECT * FROM Utilisateurs where idRole = ".$idRole." ORDER BY nomUtilisateur");
+		while($donnees = $q->fetch(PDO::FETCH_ASSOC))
+		{
+			if($donnees != false)
+			{
+				$liste[] = new Utilisateurs($donnees) ;
+			}
+		}
+		return $liste;
 	}
 }

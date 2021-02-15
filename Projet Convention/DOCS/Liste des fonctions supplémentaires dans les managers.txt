@@ -11,4 +11,5 @@ animationsManager::getByFormation
 animationsManager::getByUtilisateur
 sessionsManager::getByFormation
 participationsManager::getByStagiaire
-participationsManager::getBySession
+StagiaireFormation::getListStagiaire
+StagiaireFormation::getListSession

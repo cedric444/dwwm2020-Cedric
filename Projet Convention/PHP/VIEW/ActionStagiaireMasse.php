@@ -49,7 +49,7 @@ if(isset($_FILES['xls-stagiaires']['name']) && in_array($_FILES['xls-stagiaires'
 if(!empty($sheetData))
 {
     for($i=5; $i<count($sheetData); $i++)
-    // for($i=5; $i<6; $i++)
+    //for($i=5; $i<6; $i++)
     {
     
          // $tempGenreStagiaire = $elt[1];
@@ -67,7 +67,7 @@ if(!empty($sheetData))
     
         $tempStagiaire = new Stagiaires(["nomStagiaire"=>$tempNomStagiaire,"prenomStagiaire"=>$tempPrenomStagiaire, "numBenefStagiaire"=>$tempNumBenefStagiaire,"dateNaissanceStagiaire"=>$tempDateNaissanceStagiaire,"emailStagiaire"=>$tempEmailStagiaire]);
         
-
+var_dump($tempStagiaire);
        
     //    if($sheetData[$i][1] != "")
     //    {    
@@ -80,6 +80,7 @@ if(!empty($sheetData))
             }
             else
             {  
+                //  echo "toto";
                 StagiairesManager::add($tempStagiaire);                         //Si non, on l'ajoute
             }
         //}

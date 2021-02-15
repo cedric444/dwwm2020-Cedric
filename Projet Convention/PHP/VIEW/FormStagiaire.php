@@ -38,7 +38,6 @@ if (isset($_GET["id"]))
         $obj = StagiairesManager::findById($_GET["id"]);
         $id = $obj->getIdStagiaire();
         $part = ParticipationsManager::getByStagiaire($id);
-        var_dump($part);
         foreach ($part as $elt)
         {
             $idSession = $elt->getIdSessionFormation();
@@ -190,7 +189,7 @@ foreach ($formations as $elt)
 echo '</select><div></div></div>';
 
 echo '<div class="info">
-        <label class="double">Session</label>
+        <label class="double">N° Offre</label>
         <input type="hidden" name = "idAncienneSession" value ="' . $idSession . '">
         <select class="double" id="selectSession" name="idSessionFormation" >';
 $liste = SessionsFormationsManager::getByFormation($idFormation, false);
@@ -242,7 +241,7 @@ switch ($mode)
 }
 echo '<div class="demi"></div>';
 echo '<a href="Index.php?page=ListeStagiaires">
-        <button class="bouton" type="button"><i class="far fa-arrow-alt-circle-left"></i> Retour</button>
+        <button class="bouton" type="button"><i class="far fa-arrow-alt-circle-left"></i> &nbsp Retour</button>
     </a>';
 ?>
 <div></div>
