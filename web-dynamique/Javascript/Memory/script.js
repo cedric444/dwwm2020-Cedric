@@ -19,7 +19,7 @@ function initialise()
     listeImages[i].src="Images/"+listeImages[i]+".jpg";
     cartesRecto[i].addEventListener("click", selectionImage);
      retourne(cartesRecto[i], true);
-    // retourne(listeImages[i], false);
+     retourne(listeImages[i], false);
     }
 
 }
