@@ -8,28 +8,36 @@ body, div
 .ligne
 {
     flex-direction: row;
-    justify-content: center;
-    background-color: white;
+    /* justify-content: center; */
+    /* background-color: white; */
     border: none;
 }
 div{
     border : solid black 1px;
     font-size: 1.2em;
-    padding: 1em;
+    padding: 0.8em;
     border: none;
 }
 .espace{
-    flex: 0.01;
-    background-color: white;
+    flex: 0.5;
+    /* background-color: white; */
     border: none;
 }
 #result
 {
     flex: 4;
     border: black solid 1px;
+    background-color: white;
 
 }
 .btn
 {
-    background-color: gray;
+    background-color: black;
+    color: red;
+}
+.calculatrice
+{
+    border: solid black 2px;
+    background-color:rgba(22, 20, 20, 0.77);
+    display: block;
 }

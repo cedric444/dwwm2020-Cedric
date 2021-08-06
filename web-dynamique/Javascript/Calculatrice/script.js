@@ -1,5 +1,5 @@
 //On recupere les boutons et on écoute les clicks
-
+ 
 var lesBoutons = document.getElementsByClassName("btn");
 for (i=0; i<lesBoutons.length; i++)
 {
@@ -14,6 +14,15 @@ var reset = document.getElementById("clear");
 reset.addEventListener("click", function(){
     result.textContent= "";
     for (let i=0; i<lesBoutons.length; i++)
+    {
+        lesBoutons[i].addEventListener("click", clickBtn)
+    }
+});
+
+var erase = document.getElementById("supp");
+erase.addEventListener("click", function() {
+    result.textContent= result.substring(0, result.length-1);
+    for(let i=0; i<lesBoutons.length; i++)
     {
         lesBoutons[i].addEventListener("click", clickBtn)
     }
