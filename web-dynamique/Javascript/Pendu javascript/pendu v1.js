@@ -865,7 +865,7 @@ function dessinerPendu(nbErreur)
             document.write("     ________          " + "\n");
             document.write("      |     |          " + "\n");
             document.write("      |     O          " + "\n");
-            document.write("      |    /|\\        " + "\n");
+            document.write("      |    /|\         " + "\n");
             document.write("      |     |          " + "\n");
             document.write("      |                " + "\n");
             document.write("      |                " + "\n");
@@ -875,9 +875,9 @@ function dessinerPendu(nbErreur)
             document.write("     ________          " + "\n");
             document.write("      |     |          " + "\n");
             document.write("      |     O          " + "\n");
-            document.write("      |    /|\\        " + "\n");
+            document.write("      |    /|\         " + "\n");
             document.write("      |     |          " + "\n");
-            document.write("      |    / \\        " + "\n");
+            document.write("      |    / \         " + "\n");
             document.write("      |                " + "\n");
             document.write("     _|_______         " + "\n");
             break;
